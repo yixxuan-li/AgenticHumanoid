@@ -1,0 +1,54 @@
+{
+  "task": "Dex3 pick benchmark",
+  "success": true,
+  "fall_detected": false,
+  "simulated_seconds": 15.000000000000945,
+  "max_prop_height_m": 0.9455760766469931,
+  "final_prop_position_m": [
+    4.125276009532497,
+    1.9782951726752518,
+    0.9455760766469931
+  ],
+  "hand_contact_seconds": 7.38,
+  "lifted_contact_seconds": 3.7800000000000002,
+  "contact_parts": [
+    "right_hand_index_0_link",
+    "right_hand_index_1_link",
+    "right_hand_middle_1_link",
+    "right_hand_thumb_2_link"
+  ],
+  "mean_wrist_tracking_error_m": 0.034175310014050934,
+  "final_wrist_tracking_error_m": 0.01339226191340978,
+  "initial_robot_root_m": [
+    4.0,
+    1.65,
+    0.74
+  ],
+  "initial_benchmark_prop_m": [
+    4.15,
+    2.03,
+    0.766
+  ],
+  "scene_fingerprint": "3a10a6c709259882909cf0d04dfa1a736984999b0c85457acc3f9f5a55d1baf1",
+  "benchmark_variant": "Only added red test_block is reset to an accessible table edge; initial robot pose is set near it. Video-observed objects remain in place.",
+  "object_weld_or_external_force": false,
+  "root_teleport_during_execution": false,
+  "controller": "Released 29-DoF BFM controls body; separate torque-limited Dex3 finger PD",
+  "settings": {
+    "device": "cuda",
+    "video": true,
+    "seconds": 15.0,
+    "root_y": 1.65,
+    "wrist_forward_offset": 0.16,
+    "wrist_height_offset": 0.035,
+    "root_x": 4.0,
+    "root_height": 0.74,
+    "block_x": 4.15,
+    "block_y": 2.03,
+    "run_name": "aligned"
+  },
+  "limitations": [
+    "Exploratory scripted grasp, not a trained autonomous manipulation agent.",
+    "Scene dimensions and object physical properties are provisional."
+  ]
+}

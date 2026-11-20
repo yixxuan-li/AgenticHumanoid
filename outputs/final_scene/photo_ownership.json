@@ -1,0 +1,33 @@
+{
+  "meshes": 148,
+  "triangles_by_body": {
+    "background": 167116,
+    "far_green_chair": 4870,
+    "near_green_chair": 7158,
+    "right_green_chair": 2508,
+    "left_green_chair": 2832,
+    "office_window": 10046,
+    "office_table_end": 8505,
+    "gray_chair": 2707,
+    "storage_bin": 589,
+    "cabinet_door": 3487,
+    "cardboard_box": 1801,
+    "pick_box": 786,
+    "bottle": 270,
+    "cutaway_ceiling": 38938,
+    "cutaway_front": 30874
+  },
+  "static_geometry": "outputs/fusion",
+  "dynamic_geometry": "outputs/geometry_full",
+  "collision": false,
+  "ownership": "proximity to fitted collision bodies with class color gates; majority per triangle",
+  "floor_projection_tolerance_m": 0.035,
+  "chair_panel_projection_tolerance_m": 0.055,
+  "limitations": [
+    "Occluded faces retain estimated primitive fallbacks.",
+    "Lighting and shadows are baked into source pixels.",
+    "Glass and occlusion boundaries contain holes.",
+    "Ownership near object boundaries is approximate.",
+    "Cabinet door joint is inferred, with primitive appearance."
+  ]
+}

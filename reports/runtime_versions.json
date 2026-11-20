@@ -1,0 +1,27 @@
+{
+  "python": "3.12.15 (main, Oct  9 2026, 15:22:32) [Clang 22.1.3 ]",
+  "packages": {
+    "numpy": "2.5.1",
+    "scipy": "1.17.0",
+    "Pillow": "12.3.0",
+    "mujoco": "3.11.0",
+    "torch": "2.11.0+cu128",
+    "torchvision": "0.26.0+cu128",
+    "pycolmap": "4.2.1",
+    "usd-core": "imported from existing runtime; distribution name unavailable",
+    "imageio": "2.37.2",
+    "imageio-ffmpeg": "imported from existing runtime; distribution name unavailable",
+    "opencv-python-headless-noffmpeg": "4.14.0.94rc1",
+    "open3d": "0.19.0",
+    "requests": "2.32.3"
+  },
+  "isaac_runtime": {
+    "python": "3.11 (isaac51 conda environment)",
+    "Isaac Sim": "5.1.0",
+    "Isaac Lab": "0.47.2",
+    "device": "NVIDIA GeForce RTX 5090",
+    "driver": "580.76.05",
+    "physics_dt_seconds": 0.005,
+    "controller_dt_seconds": 0.02
+  }
+}

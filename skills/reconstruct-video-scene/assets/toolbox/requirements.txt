@@ -1,0 +1,18 @@
+# Tested workspace versions are recorded in reports/runtime_versions.json.
+numpy>=2.0
+scipy>=1.14
+Pillow>=11
+opencv-python-headless>=4.10
+mujoco==3.11.0
+usd-core>=25.5
+torch>=2.8
+torchvision>=0.23
+einops
+huggingface-hub
+safetensors
+imageio
+imageio-ffmpeg
+pycolmap>=4.0
+matplotlib>=3.9
+requests
+open3d==0.19.0

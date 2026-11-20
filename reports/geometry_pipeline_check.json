@@ -1,0 +1,11 @@
+{
+  "test": "synthetic rendered metric geometry through depth/pose audit and source-textured mesh export",
+  "median_pair_relative_errors": [
+    0.0001291904384050015,
+    0.0001212115694179233,
+    0.00012016766018320422
+  ],
+  "mesh_vertices": 7396,
+  "passed": true,
+  "caveat": "Pipeline contract check, not an assessment of learned geometry or the input video."
+}

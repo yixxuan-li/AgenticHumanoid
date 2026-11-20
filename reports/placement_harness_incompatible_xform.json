@@ -1,0 +1,104 @@
+{
+  "runtime": "Isaac Lab / PhysX",
+  "scene_fingerprint": "a98fc6d3f3bac94a387d9582d4b2c8eca3264f0141da01c35464f889f791a728",
+  "checks": {
+    "all_bodies_follow_scene_placement": false,
+    "hinges_preserve_closed_frame": false
+  },
+  "all_passed": false,
+  "placements": {
+    "origin": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "shifted": [
+      8.0,
+      0.0,
+      0.0
+    ]
+  },
+  "results": {
+    "origin/far_green_chair": {
+      "position_error_m": 0.7141767482743226
+    },
+    "origin/near_green_chair": {
+      "position_error_m": 0.61026331927916
+    },
+    "origin/right_green_chair": {
+      "position_error_m": 1.1397949613419607
+    },
+    "origin/left_green_chair": {
+      "position_error_m": 0.16295455713517473
+    },
+    "origin/office_window": {
+      "position_error_m": 0.0073462724545748925
+    },
+    "origin/office_table_end": {
+      "position_error_m": 0.007467977274540178
+    },
+    "origin/gray_chair": {
+      "position_error_m": 0.0860206560459283
+    },
+    "origin/storage_bin": {
+      "position_error_m": 1.307267279291809
+    },
+    "origin/cabinet_door": {
+      "position_error_m": 0.00685490446188507,
+      "relative_angle_rad": -0.05237364000686018
+    },
+    "origin/cardboard_box": {
+      "position_error_m": 0.01456712896966513
+    },
+    "origin/pick_box": {
+      "position_error_m": 0.0006986461003367486
+    },
+    "origin/bottle": {
+      "position_error_m": 0.19974993409019412
+    },
+    "origin/test_block": {
+      "position_error_m": 0.02552593804257467
+    },
+    "shifted/far_green_chair": {
+      "position_error_m": 8.004373123450645
+    },
+    "shifted/near_green_chair": {
+      "position_error_m": 7.781899904553159
+    },
+    "shifted/right_green_chair": {
+      "position_error_m": 8.50425892704446
+    },
+    "shifted/left_green_chair": {
+      "position_error_m": 8.1097097382138
+    },
+    "shifted/office_window": {
+      "position_error_m": 7.994974183036917
+    },
+    "shifted/office_table_end": {
+      "position_error_m": 7.996169002101238
+    },
+    "shifted/gray_chair": {
+      "position_error_m": 8.00080770065758
+    },
+    "shifted/storage_bin": {
+      "position_error_m": 8.496108278673644
+    },
+    "shifted/cabinet_door": {
+      "position_error_m": 8.006832203681,
+      "relative_angle_rad": -0.03495477861770002
+    },
+    "shifted/cardboard_box": {
+      "position_error_m": 7.987274998676571
+    },
+    "shifted/pick_box": {
+      "position_error_m": 7.993791394957113
+    },
+    "shifted/bottle": {
+      "position_error_m": 7.917186607321893
+    },
+    "shifted/test_block": {
+      "position_error_m": 7.974382885653828
+    }
+  },
+  "scope": "Two referenced scene copies, one translated 8 m; verifies placement and world-anchored hinge behavior, not large-batch training performance"
+}

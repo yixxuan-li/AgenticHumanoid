@@ -1,0 +1,14 @@
+{
+  "sha256": "3a10a6c709259882909cf0d04dfa1a736984999b0c85457acc3f9f5a55d1baf1",
+  "files": {
+    "scene.xml": "4d3c437217f07efe144c8f41c1670d908167407c53bd585ccd57bd2f45ffa814",
+    "scene.usda": "388bb5b444cd766ae0ae980dfb04df666ec2f14189025b379667bce17579ee88",
+    "manifest.json": "187faf72b9a5bf03169b761465077755075287dcefdb0ee05bc7447dc5ccf257",
+    "textures/box_label.png": "690e99649394cac1feabf48ba3e5b108258c4dcb6d6ece34e492b9a4351cbea1",
+    "textures/desktop.png": "688d6d2f595df41e647885ea924c0c0095ccabde8c327494ff8416bfe11aa974",
+    "textures/fiducial.png": "120deb05b9d576bd32d7cc9cf0b7b2ea4c2cd4dba3185099869e960af8d4a78d",
+    "textures/floor.png": "2c1187f04ce6a23fbd38a6db5d370cfa0faa43a1b7edf87b157760d6d052bbc3",
+    "textures/screen.png": "40f77a2392586b09008b0767961d86ae767f7e7acf77de82a94f5ada50193834",
+    "textures/whiteboard.png": "dc6b37f9b2087b194c91e31d4fa124b8d4044bd29297202471fc3187d1e51df9"
+  }
+}

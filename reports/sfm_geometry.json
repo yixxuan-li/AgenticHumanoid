@@ -1,0 +1,35 @@
+{
+  "floor_candidates": 142,
+  "table_candidates": 200,
+  "source": "COLMAP sparse points and source-frame region/color masks",
+  "metric_anchor": "assumed 0.74 m desk height, not measured",
+  "floor_normal": [
+    -0.2654212398944482,
+    -0.9444400432994443,
+    -0.1938674032049703
+  ],
+  "floor_offset": 18.31957606052512,
+  "floor_inliers": 47,
+  "floor_residual_median_m": 0.18702169999743004,
+  "tabletop_height_model_units": 11.566114676037639,
+  "provisional_m_per_model_unit": 0.0639799985325333,
+  "observed_bounds_m": [
+    [
+      -0.4555325692086654,
+      -1.3296150883482665,
+      0.030737097067555952
+    ],
+    [
+      3.9701402612092993,
+      4.167958614826893,
+      2.848116863063174
+    ]
+  ],
+  "caution": "Plane/color masks can include other surfaces; scale is only a diagnostic hypothesis.",
+  "quality_checks": {
+    "floor_majority_inliers": false,
+    "floor_residual_under_3cm": false,
+    "few_points_below_floor": true
+  },
+  "accepted_for_scale": false
+}

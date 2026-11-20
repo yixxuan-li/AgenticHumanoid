@@ -1,0 +1,158 @@
+{
+  "runtime": "Isaac Lab / PhysX",
+  "scene_fingerprint": "a33e42e3cba84ebb9b5f1d0feea63f1931752413a8fb83f530d9ede0743edd59",
+  "checks": {
+    "all_bodies_follow_scene_placement": true,
+    "hinges_preserve_closed_frame": true
+  },
+  "all_passed": true,
+  "placements": {
+    "origin": {
+      "translation_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "yaw_rad": 0.0
+    },
+    "shifted": {
+      "translation_m": [
+        8.0,
+        0.0,
+        0.0
+      ],
+      "yaw_rad": 0.0
+    },
+    "rotated": {
+      "translation_m": [
+        0.0,
+        8.0,
+        0.0
+      ],
+      "yaw_rad": 1.5707963267948966
+    }
+  },
+  "results": {
+    "origin/far_green_chair": {
+      "position_error_m": 2.639443308744523e-07
+    },
+    "origin/near_green_chair": {
+      "position_error_m": 6.664009403692567e-07
+    },
+    "origin/right_green_chair": {
+      "position_error_m": 1.8476104639718161e-07
+    },
+    "origin/left_green_chair": {
+      "position_error_m": 1.9405866377128695e-07
+    },
+    "origin/office_window": {
+      "position_error_m": 8.246622478261322e-07
+    },
+    "origin/office_table_end": {
+      "position_error_m": 4.5105330938614304e-07
+    },
+    "origin/gray_chair": {
+      "position_error_m": 4.3904113962253755e-07
+    },
+    "origin/storage_bin": {
+      "position_error_m": 1.3946481125749695e-07
+    },
+    "origin/cabinet_door": {
+      "position_error_m": 2.3456115178290178e-07,
+      "relative_angle_rad": 7.68295915776207e-09
+    },
+    "origin/cardboard_box": {
+      "position_error_m": 7.124687560924344e-08
+    },
+    "origin/pick_box": {
+      "position_error_m": 1.0509228312374162e-07
+    },
+    "origin/bottle": {
+      "position_error_m": 0.004246438690938894
+    },
+    "origin/test_block": {
+      "position_error_m": 0.0010000143078994631
+    },
+    "shifted/far_green_chair": {
+      "position_error_m": 8.595683508394814e-07
+    },
+    "shifted/near_green_chair": {
+      "position_error_m": 1.2555727281718639e-06
+    },
+    "shifted/right_green_chair": {
+      "position_error_m": 4.0181477263562064e-07
+    },
+    "shifted/left_green_chair": {
+      "position_error_m": 7.6853018723941e-07
+    },
+    "shifted/office_window": {
+      "position_error_m": 1.8842831823076359e-06
+    },
+    "shifted/office_table_end": {
+      "position_error_m": 4.039638543359851e-06
+    },
+    "shifted/gray_chair": {
+      "position_error_m": 1.4189567361744994e-06
+    },
+    "shifted/storage_bin": {
+      "position_error_m": 1.3946481130498879e-07
+    },
+    "shifted/cabinet_door": {
+      "position_error_m": 2.468614484458998e-07,
+      "relative_angle_rad": 7.68295915776207e-09
+    },
+    "shifted/cardboard_box": {
+      "position_error_m": 3.0618924034289166e-07
+    },
+    "shifted/pick_box": {
+      "position_error_m": 1.7208108812411523e-07
+    },
+    "shifted/bottle": {
+      "position_error_m": 0.004536632626815541
+    },
+    "shifted/test_block": {
+      "position_error_m": 0.001000014307899463
+    },
+    "rotated/far_green_chair": {
+      "position_error_m": 1.1162708200430014e-06
+    },
+    "rotated/near_green_chair": {
+      "position_error_m": 2.2959641364367455e-06
+    },
+    "rotated/right_green_chair": {
+      "position_error_m": 4.2438998351397133e-07
+    },
+    "rotated/left_green_chair": {
+      "position_error_m": 5.431876937711242e-07
+    },
+    "rotated/office_window": {
+      "position_error_m": 2.939025644201108e-06
+    },
+    "rotated/office_table_end": {
+      "position_error_m": 2.145495241529369e-06
+    },
+    "rotated/gray_chair": {
+      "position_error_m": 4.7334318675629956e-07
+    },
+    "rotated/storage_bin": {
+      "position_error_m": 1.3946481121000508e-07
+    },
+    "rotated/cabinet_door": {
+      "position_error_m": 2.881499910317584e-07,
+      "relative_angle_rad": 1.706036387716381e-07
+    },
+    "rotated/cardboard_box": {
+      "position_error_m": 3.4693180366152566e-07
+    },
+    "rotated/pick_box": {
+      "position_error_m": 1.720810881241152e-07
+    },
+    "rotated/bottle": {
+      "position_error_m": 0.01613447840288149
+    },
+    "rotated/test_block": {
+      "position_error_m": 0.0010000143241998612
+    }
+  },
+  "scope": "Three referenced scene copies: origin, translated 8 m, and translated/rotated 90 degrees; verifies placement and scene-local hinge behavior, not large-batch training performance"
+}

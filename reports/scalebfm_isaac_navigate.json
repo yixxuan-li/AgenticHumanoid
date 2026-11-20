@@ -1,0 +1,25 @@
+{
+  "runtime": "Isaac Lab 0.47.2 / Isaac Sim 5.1 / PhysX",
+  "task": "navigate",
+  "mode": 0,
+  "simulated_seconds": 12.0,
+  "fall_detected": false,
+  "success": true,
+  "root_tracking_rmse_m": 0.07136082649230957,
+  "root_displacement_m": 1.02768874168396,
+  "final_root_m": [
+    2.877694606781006,
+    0.6479913592338562,
+    0.777701735496521
+  ],
+  "max_applied_torque_nm": 34.218109130859375,
+  "root_teleport_during_execution": false,
+  "reference_forcing": false,
+  "scene_scale": "provisional",
+  "scene_fingerprint": "3a10a6c709259882909cf0d04dfa1a736984999b0c85457acc3f9f5a55d1baf1",
+  "motor_model": "official G1_29DOF_CYLINDER_CFG implicit PD, armature, effort/velocity limits and damping; 50 Hz BFM / 200 Hz physics",
+  "limitations": [
+    "Scripted reference test, not learned visual exploration.",
+    "No pick/grasp success is claimed."
+  ]
+}

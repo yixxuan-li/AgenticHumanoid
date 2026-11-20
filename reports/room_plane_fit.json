@@ -1,0 +1,104 @@
+{
+  "scale_status": "Assumed 0.74 m tabletop anchor; no real measurement",
+  "planes": {
+    "ceiling": {
+      "normal": [
+        0.008237763792595214,
+        0.00441627087026486,
+        0.9999563169455443
+      ],
+      "offset": -2.7301890480420856,
+      "axis_coordinate_at_reference_m": 2.694552785784713,
+      "reference_xyz": [
+        3.0,
+        2.5,
+        1.5
+      ],
+      "quality": {
+        "candidates": 15000,
+        "inliers": 7781,
+        "inlier_fraction": 0.5187333333333334,
+        "median_residual_model_units": 0.005705663391970983
+      }
+    },
+    "right_wall": {
+      "normal": [
+        0.9985821163087346,
+        0.03642909973689008,
+        -0.03881594621710032
+      ],
+      "offset": -5.9737089358788245,
+      "axis_coordinate_at_reference_m": 5.949295514947412,
+      "reference_xyz": [
+        3.0,
+        2.5,
+        1.5
+      ],
+      "quality": {
+        "candidates": 15000,
+        "inliers": 13448,
+        "inlier_fraction": 0.8965333333333333,
+        "median_residual_model_units": 0.004286490938016918
+      }
+    },
+    "left_wall": {
+      "normal": [
+        0.9982339002027407,
+        0.05844471734677179,
+        0.010644035901877857
+      ],
+      "offset": 0.03377895935539053,
+      "axis_coordinate_at_reference_m": -0.19620332122096673,
+      "reference_xyz": [
+        3.0,
+        2.5,
+        1.5
+      ],
+      "quality": {
+        "candidates": 15000,
+        "inliers": 6766,
+        "inlier_fraction": 0.45106666666666667,
+        "median_residual_model_units": 0.006549244884828578
+      }
+    },
+    "window_wall": {
+      "normal": [
+        0.061980820871231856,
+        0.9977253750683753,
+        -0.026503844792754527
+      ],
+      "offset": -4.978169264767973,
+      "axis_coordinate_at_reference_m": 4.8429985746451205,
+      "reference_xyz": [
+        3.0,
+        2.5,
+        1.5
+      ],
+      "quality": {
+        "candidates": 15000,
+        "inliers": 6474,
+        "inlier_fraction": 0.4316,
+        "median_residual_model_units": 0.005711818930970836
+      }
+    }
+  },
+  "recommended_rectangular_envelope": {
+    "dimensions_m": [
+      6.17,
+      5.66,
+      2.74
+    ],
+    "source_geometry_shift_m": [
+      0.2,
+      0.6,
+      0.0
+    ],
+    "window_structural_y_95_percentile_dense_m": 5.050636230778299,
+    "derivation": "Representative right-wall plane plus 2 cm, observed window structural depth 95th percentile, and ceiling plane plus 4 cm; rounded outward to centimeters",
+    "limitations": [
+      "Axis-aligned envelope approximates recovered wall slopes/recesses.",
+      "Window/left-wall individual plane inlier fractions are below 50%; this is an observed extent bound, not a surveyed rectangular room.",
+      "All dimensions inherit the assumed table-height scale."
+    ]
+  }
+}

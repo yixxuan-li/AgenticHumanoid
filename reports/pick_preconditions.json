@@ -1,0 +1,21 @@
+{
+  "skill": "pick",
+  "target": "pick_box",
+  "target_position_m": [
+    4.95,
+    2.22,
+    0.7809700844538382
+  ],
+  "reachable_approach_candidates": [],
+  "gripper_available": false,
+  "status": "rejected",
+  "reasons": [
+    "Loaded g1_29dof asset has rubber hands and no finger actuators.",
+    "No base approach was found within the assumed 0.60 m horizontal reach envelope at 0.32 m collision radius."
+  ],
+  "assumptions": [
+    "Reach envelope is an estimated precondition, not a robot IK/reachability proof.",
+    "Layout is provisional."
+  ],
+  "next_step": "Use g1_29dof_dex3 with independently mapped finger control, collision-aware arm targets, and contact-based grasp evaluation."
+}

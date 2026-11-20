@@ -1,0 +1,37 @@
+{
+  "task": "navigate",
+  "mode": 0,
+  "mode_name": "Pelvis-1",
+  "success": true,
+  "fall_detected": false,
+  "simulated_seconds": 12.000000000000476,
+  "requested_seconds": 12.0,
+  "root_displacement_m": 1.0552886242074335,
+  "root_tracking_rmse_m": 0.06592098958715807,
+  "final_root_error_m": 0.04853729266670385,
+  "max_applied_torque_nm": 30.3058747543301,
+  "initial_root_m": [
+    2.8,
+    1.35,
+    0.76
+  ],
+  "final_root_m": [
+    3.85528508596778,
+    1.3472672878685734,
+    0.7786809402041542
+  ],
+  "checkpoint": "released humanoid_transformer_m/model_22200.pt",
+  "controller": "upstream PyTorch architecture and export wrapper; named joint mapping; 200 Hz torque-limited PD; 50 Hz BFM",
+  "reference_forcing": false,
+  "root_teleport_during_execution": false,
+  "environment_contact_pairs": {},
+  "nonfloor_contact_impulse_ns": 0.0,
+  "peak_nonfloor_contact_force_n": 0.0,
+  "collision_free_above_1n": true,
+  "scene_scale": "provisional_dense_fit",
+  "limitations": [
+    "This is a scripted reference/task experiment, not an autonomous learned exploration agent.",
+    "No grasp success is claimed for the rubber-hand robot."
+  ],
+  "scene_fingerprint": "a98fc6d3f3bac94a387d9582d4b2c8eca3264f0141da01c35464f889f791a728"
+}

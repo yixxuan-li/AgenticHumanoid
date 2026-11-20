@@ -1,0 +1,3 @@
+interface:
+  display_name: "Video Scene Reconstruction"
+  short_description: "Build calibrated interactive scenes from room video"

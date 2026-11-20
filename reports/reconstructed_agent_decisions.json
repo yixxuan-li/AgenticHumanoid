@@ -1,0 +1,29 @@
+[
+  {
+    "skill": "navigate",
+    "goal": [
+      4.55,
+      4.0
+    ],
+    "status": "rejected",
+    "reason": "goal is obstructed for radius 0.32 m: (np.float64(4.5600000000000005), np.float64(4.0))"
+  },
+  {
+    "skill": "navigate",
+    "goal": [
+      1.35,
+      3.8
+    ],
+    "status": "reachable",
+    "length_m": 3.477645019878172
+  },
+  {
+    "skill": "navigate",
+    "goal": [
+      4.55,
+      1.6
+    ],
+    "status": "reachable",
+    "length_m": 1.859411254969543
+  }
+]

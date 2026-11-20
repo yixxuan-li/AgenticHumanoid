@@ -1,0 +1,552 @@
+{
+  "scene_fingerprint": "6b2501c9a8432a90ebc24b7b21435c2eb8d203f0c7979dbce2e4e8f91a416522",
+  "method": "Unseen video frames; pose-only SIFT/3D PnP against learned input depth; no held-out pixels used as reconstruction texture",
+  "training_video_frame_indices": [
+    7,
+    22,
+    37,
+    52,
+    67,
+    82,
+    97,
+    112,
+    127,
+    142,
+    157,
+    172,
+    187,
+    202,
+    217,
+    232,
+    247,
+    262,
+    277,
+    292,
+    307,
+    322,
+    337,
+    352,
+    367,
+    382,
+    397,
+    412,
+    427,
+    442,
+    457,
+    472,
+    487,
+    502
+  ],
+  "results": [
+    {
+      "video_frame": 60,
+      "time_seconds": 2.0,
+      "status": "rendered",
+      "pose_reference_training_frame": "frame_0005.jpg",
+      "correspondences": 165,
+      "pnp_inliers": 162,
+      "median_reprojection_error_px": 0.4722228591664146,
+      "mean_absolute_rgb_error_0_255": 13.47180897887324,
+      "gray_ssim": 0.7975514420696324,
+      "camera_center_provisional_m": [
+        2.962169327434492,
+        1.3494902595358367,
+        1.5816184066967778
+      ],
+      "camera_rotation_cv": [
+        [
+          0.2590292707714863,
+          -0.9656720762734623,
+          -0.019526340908953055
+        ],
+        [
+          -0.19682871302125476,
+          -0.03298311143713778,
+          -0.9798829379524485
+        ],
+        [
+          0.9456015517193215,
+          0.25766170741036776,
+          -0.19861558327680495
+        ]
+      ],
+      "intrinsic": [
+        [
+          463.8728942871094,
+          0.0,
+          160.0
+        ],
+        [
+          0.0,
+          467.97833251953125,
+          284.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "visible_primitive_pixels": {
+        "floor_main__slab__visual": 835,
+        "wall_right__wall": 1305,
+        "ceiling_visual__surface": 220,
+        "right_desk_0__top": 719,
+        "right_workbench__top__visual": 2207,
+        "office_window__seat__visual": 746,
+        "office_window__post": 60,
+        "office_window__back_frame_-0.235": 162,
+        "office_window__back_rail_0.515": 4,
+        "office_window__arm_-0.29": 400,
+        "office_window__arm_post_-0.29": 173,
+        "office_window__spoke_2": 251,
+        "office_window__caster_2": 143,
+        "office_window__spoke_3": 311,
+        "office_window__spoke_4": 71,
+        "tall_cabinet__left": 7,
+        "tall_cabinet__top": 15,
+        "tall_cabinet__base": 171,
+        "cabinet_door__panel": 9512
+      }
+    },
+    {
+      "video_frame": 150,
+      "time_seconds": 5.0,
+      "status": "rendered",
+      "pose_reference_training_frame": "frame_0011.jpg",
+      "correspondences": 204,
+      "pnp_inliers": 195,
+      "median_reprojection_error_px": 0.48711336690122997,
+      "mean_absolute_rgb_error_0_255": 18.702059492370893,
+      "gray_ssim": 0.674277046322839,
+      "camera_center_provisional_m": [
+        3.274344188416496,
+        1.501329290587708,
+        1.5740146072170806
+      ],
+      "camera_rotation_cv": [
+        [
+          0.850085972423883,
+          -0.5256392406140165,
+          -0.032515045976622914
+        ],
+        [
+          -0.12498440408578493,
+          -0.1413833308111212,
+          -0.9820334273862955
+        ],
+        [
+          0.5115982195272605,
+          0.8388767147176476,
+          -0.18588469350934678
+        ]
+      ],
+      "intrinsic": [
+        [
+          463.94281005859375,
+          0.0,
+          160.0
+        ],
+        [
+          0.0,
+          466.7804870605469,
+          284.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "visible_primitive_pixels": {
+        "floor_main__slab__visual": 592,
+        "wall_window__wall": 790,
+        "wall_right__wall": 300,
+        "ceiling_visual__surface": 258,
+        "ceiling_window_beam__beam": 1843,
+        "window_2__night_glass": 2167,
+        "window_2__rail_-0.7": 41,
+        "window_2__sill": 482,
+        "window_2__blind": 1024,
+        "window_2__blind_slat_7": 2,
+        "window_2__blind_slat_8": 21,
+        "window_2__blind_slat_9": 43,
+        "window_2__blind_slat_10": 45,
+        "window_2__blind_slat_11": 55,
+        "window_2__blind_slat_12": 59,
+        "window_2__blind_slat_13": 56,
+        "window_2__blind_slat_14": 44,
+        "window_2__blind_slat_15": 32,
+        "window_2__blind_slat_16": 8,
+        "window_2__blind_slat_17": 3,
+        "central_table_0__top": 1981,
+        "central_table_0__mat__visual": 19945,
+        "central_table_0__leg_0.7_-0.3": 175,
+        "right_desk_0__top": 328,
+        "right_desk_1__top": 1370,
+        "window_counter__top__visual": 1620,
+        "right_green_chair__seat__visual": 1321,
+        "right_green_chair__back__visual": 1087,
+        "right_green_chair__leg_-0.18_-0.16": 148,
+        "right_green_chair__leg_-0.18_0.16": 253,
+        "right_green_chair__leg_0.18_-0.16": 62,
+        "right_green_chair__leg_0.18_0.16": 198,
+        "office_window__mesh_vertical_7": 11,
+        "office_window__mesh_vertical_8": 15,
+        "office_window__mesh_vertical_9": 11,
+        "office_window__mesh_vertical_10": 17,
+        "office_window__mesh_vertical_11": 10,
+        "office_window__mesh_vertical_12": 10,
+        "office_window__mesh_vertical_13": 22,
+        "office_window__mesh_vertical_14": 9,
+        "office_window__mesh_vertical_15": 5,
+        "office_window__mesh_vertical_16": 13,
+        "office_window__mesh_vertical_17": 13,
+        "office_window__mesh_vertical_18": 8,
+        "office_window__mesh_vertical_19": 1,
+        "office_window__mesh_vertical_20": 4,
+        "office_window__mesh_vertical_21": 4,
+        "office_window__mesh_vertical_22": 3,
+        "office_window__mesh_vertical_23": 1,
+        "office_window__mesh_vertical_24": 1,
+        "office_window__mesh_vertical_25": 1,
+        "office_window__mesh_vertical_26": 3,
+        "office_window__mesh_horizontal_19": 1,
+        "office_window__mesh_horizontal_20": 12,
+        "office_window__mesh_horizontal_21": 16,
+        "office_window__mesh_horizontal_22": 12,
+        "office_window__mesh_horizontal_23": 13,
+        "office_window__mesh_horizontal_24": 17,
+        "office_window__mesh_horizontal_25": 13,
+        "office_window__mesh_horizontal_26": 16,
+        "office_window__mesh_horizontal_27": 16,
+        "office_window__back_frame_0.235": 105,
+        "office_window__back_rail_1.005": 325,
+        "office_window__spoke_0": 209,
+        "office_window__caster_0": 117,
+        "office_window__spoke_1": 391,
+        "office_window__caster_1": 164,
+        "test_block__block": 705
+      }
+    },
+    {
+      "video_frame": 240,
+      "time_seconds": 8.0,
+      "status": "rendered",
+      "pose_reference_training_frame": "frame_0016.jpg",
+      "correspondences": 276,
+      "pnp_inliers": 258,
+      "median_reprojection_error_px": 0.5507831124079503,
+      "mean_absolute_rgb_error_0_255": 21.656385710093897,
+      "gray_ssim": 0.617025960920654,
+      "camera_center_provisional_m": [
+        3.3139478938698614,
+        1.3696121337264051,
+        1.552286014267554
+      ],
+      "camera_rotation_cv": [
+        [
+          0.9984559248680029,
+          -0.046438681693666335,
+          -0.03048302705663073
+        ],
+        [
+          -0.04132343836045694,
+          -0.25420342075301827,
+          -0.9662675583499291
+        ],
+        [
+          0.037123301820426176,
+          0.9660352321318403,
+          -0.255729917573074
+        ]
+      ],
+      "intrinsic": [
+        [
+          469.5856628417969,
+          0.0,
+          160.0
+        ],
+        [
+          0.0,
+          471.46435546875,
+          284.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "visible_primitive_pixels": {
+        "floor_main__slab__visual": 545,
+        "wall_window__wall": 1439,
+        "ceiling_visual__surface": 29,
+        "ceiling_window_beam__beam": 1362,
+        "window_1__sill": 57,
+        "window_1__blind": 1666,
+        "window_1__blind_slat_8": 4,
+        "window_1__blind_slat_9": 54,
+        "window_1__blind_slat_10": 58,
+        "window_1__blind_slat_11": 57,
+        "window_1__blind_slat_12": 62,
+        "window_1__blind_slat_13": 62,
+        "window_1__blind_slat_14": 68,
+        "window_1__blind_slat_15": 70,
+        "window_1__blind_slat_16": 65,
+        "window_1__blind_slat_17": 69,
+        "window_1__blind_slat_18": 57,
+        "window_1__blind_slat_19": 9,
+        "window_1__blind_header": 2,
+        "window_2__mullion_-0.95": 22,
+        "window_2__sill": 120,
+        "window_2__blind": 522,
+        "window_2__blind_slat_8": 6,
+        "window_2__blind_slat_9": 26,
+        "window_2__blind_slat_10": 25,
+        "window_2__blind_slat_11": 25,
+        "window_2__blind_slat_12": 27,
+        "window_2__blind_slat_13": 25,
+        "window_2__blind_slat_14": 26,
+        "window_2__blind_slat_15": 21,
+        "window_2__blind_slat_16": 17,
+        "window_2__blind_slat_17": 1,
+        "central_table_0__top": 5074,
+        "central_table_0__mat__visual": 41840,
+        "central_table_0__leg_0.7_-0.3": 1083,
+        "central_table_0__leg_0.7_0.3": 50,
+        "window_counter__top__visual": 2036,
+        "far_green_chair__back__visual": 105,
+        "bottle__bottle": 175,
+        "bottle__cap": 18,
+        "test_block__block": 493
+      }
+    },
+    {
+      "video_frame": 330,
+      "time_seconds": 11.0,
+      "status": "rendered",
+      "pose_reference_training_frame": "frame_0023.jpg",
+      "correspondences": 182,
+      "pnp_inliers": 158,
+      "median_reprojection_error_px": 0.600913890179732,
+      "mean_absolute_rgb_error_0_255": 23.37514304577465,
+      "gray_ssim": 0.552541605551204,
+      "camera_center_provisional_m": [
+        3.388355668599298,
+        1.2959900105938464,
+        1.5251025597262893
+      ],
+      "camera_rotation_cv": [
+        [
+          0.8275275244860918,
+          0.5554609253392263,
+          -0.08161713447071625
+        ],
+        [
+          0.07483874138382471,
+          -0.25321621017766444,
+          -0.9645106083871477
+        ],
+        [
+          -0.5564147365104608,
+          0.7920509524800481,
+          -0.25111338010835493
+        ]
+      ],
+      "intrinsic": [
+        [
+          469.3760070800781,
+          0.0,
+          160.0
+        ],
+        [
+          0.0,
+          472.23028564453125,
+          284.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "visible_primitive_pixels": {
+        "floor_main__slab__visual": 856,
+        "wall_left__wall": 6354,
+        "wall_window__wall": 1342,
+        "ceiling_visual__surface": 78,
+        "ceiling_window_beam__beam": 2358,
+        "window_0__night_glass": 1261,
+        "window_0__mullion_-0.95": 179,
+        "window_0__mullion_0": 47,
+        "window_0__rail_-0.7": 116,
+        "window_0__sill": 534,
+        "window_0__blind": 91,
+        "window_0__blind_slat_0": 6,
+        "window_0__blind_slat_1": 6,
+        "window_0__blind_slat_2": 6,
+        "window_0__blind_slat_3": 3,
+        "window_0__blind_slat_4": 3,
+        "window_0__blind_slat_5": 1,
+        "window_0__blind_header": 51,
+        "central_table_0__top": 3574,
+        "central_table_0__mat__visual": 21642,
+        "central_table_0__leg_-0.7_-0.3": 1507,
+        "central_table_0__leg_-0.7_0.3": 139,
+        "left_desk_1__top": 298,
+        "window_counter__top__visual": 1138,
+        "near_green_chair__seat__visual": 256,
+        "office_table_end__seat__visual": 3453,
+        "office_table_end__post": 437,
+        "office_table_end__mesh_vertical_0": 1,
+        "office_table_end__mesh_vertical_1": 18,
+        "office_table_end__mesh_vertical_2": 33,
+        "office_table_end__mesh_vertical_3": 39,
+        "office_table_end__mesh_vertical_4": 35,
+        "office_table_end__mesh_vertical_5": 44,
+        "office_table_end__mesh_vertical_6": 47,
+        "office_table_end__mesh_vertical_7": 49,
+        "office_table_end__mesh_vertical_8": 45,
+        "office_table_end__mesh_vertical_9": 44,
+        "office_table_end__mesh_vertical_10": 45,
+        "office_table_end__mesh_vertical_11": 49,
+        "office_table_end__mesh_vertical_12": 47,
+        "office_table_end__mesh_vertical_13": 48,
+        "office_table_end__mesh_vertical_14": 47,
+        "office_table_end__mesh_vertical_15": 43,
+        "office_table_end__mesh_vertical_16": 49,
+        "office_table_end__mesh_vertical_17": 42,
+        "office_table_end__mesh_vertical_18": 43,
+        "office_table_end__mesh_vertical_19": 44,
+        "office_table_end__mesh_vertical_20": 43,
+        "office_table_end__mesh_vertical_21": 44,
+        "office_table_end__mesh_vertical_22": 43,
+        "office_table_end__mesh_vertical_23": 44,
+        "office_table_end__mesh_vertical_24": 42,
+        "office_table_end__mesh_vertical_25": 37,
+        "office_table_end__mesh_vertical_26": 39,
+        "office_table_end__mesh_horizontal_0": 31,
+        "office_table_end__mesh_horizontal_1": 31,
+        "office_table_end__mesh_horizontal_2": 36,
+        "office_table_end__mesh_horizontal_3": 38,
+        "office_table_end__mesh_horizontal_4": 42,
+        "office_table_end__mesh_horizontal_5": 47,
+        "office_table_end__mesh_horizontal_6": 44,
+        "office_table_end__mesh_horizontal_7": 40,
+        "office_table_end__mesh_horizontal_8": 41,
+        "office_table_end__mesh_horizontal_9": 43,
+        "office_table_end__mesh_horizontal_10": 42,
+        "office_table_end__mesh_horizontal_11": 46,
+        "office_table_end__mesh_horizontal_12": 49,
+        "office_table_end__mesh_horizontal_13": 45,
+        "office_table_end__mesh_horizontal_14": 50,
+        "office_table_end__mesh_horizontal_15": 49,
+        "office_table_end__mesh_horizontal_16": 50,
+        "office_table_end__mesh_horizontal_17": 50,
+        "office_table_end__mesh_horizontal_18": 48,
+        "office_table_end__mesh_horizontal_19": 49,
+        "office_table_end__mesh_horizontal_20": 49,
+        "office_table_end__mesh_horizontal_21": 45,
+        "office_table_end__mesh_horizontal_22": 50,
+        "office_table_end__mesh_horizontal_23": 53,
+        "office_table_end__mesh_horizontal_24": 48,
+        "office_table_end__mesh_horizontal_25": 47,
+        "office_table_end__mesh_horizontal_26": 47,
+        "office_table_end__mesh_horizontal_27": 43,
+        "office_table_end__back_frame_-0.235": 13,
+        "office_table_end__back_frame_0.235": 547,
+        "office_table_end__back_rail_0.515": 428,
+        "office_table_end__back_rail_1.005": 670,
+        "office_table_end__arm_-0.29": 332,
+        "office_table_end__arm_post_-0.29": 35,
+        "office_table_end__arm_0.29": 71,
+        "office_table_end__arm_post_0.29": 32,
+        "office_table_end__spoke_0": 581,
+        "office_table_end__caster_0": 164,
+        "office_table_end__spoke_2": 732,
+        "office_table_end__caster_2": 215,
+        "office_table_end__spoke_3": 877,
+        "office_table_end__caster_3": 270,
+        "office_table_end__spoke_4": 739,
+        "office_table_end__caster_4": 215,
+        "storage_bin__case": 111,
+        "storage_bin__lid": 480,
+        "pick_box__case__visual": 232
+      }
+    },
+    {
+      "video_frame": 420,
+      "time_seconds": 14.0,
+      "status": "rendered",
+      "pose_reference_training_frame": "frame_0028.jpg",
+      "correspondences": 193,
+      "pnp_inliers": 177,
+      "median_reprojection_error_px": 0.571707077554294,
+      "mean_absolute_rgb_error_0_255": 18.320659110915493,
+      "gray_ssim": 0.6796350162459055,
+      "camera_center_provisional_m": [
+        3.5937163801652963,
+        1.7311622913201763,
+        1.6043978094228797
+      ],
+      "camera_rotation_cv": [
+        [
+          -0.11808761757566,
+          0.9894635825755903,
+          -0.08376833131907796
+        ],
+        [
+          0.11467768358677077,
+          -0.07020531980441524,
+          -0.9909188876786699
+        ],
+        [
+          -0.9863591351340937,
+          -0.12662160885029822,
+          -0.1051790126863954
+        ]
+      ],
+      "intrinsic": [
+        [
+          493.3961486816406,
+          0.0,
+          160.0
+        ],
+        [
+          0.0,
+          495.6465759277344,
+          284.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "visible_primitive_pixels": {
+        "floor_main__slab__visual": 155,
+        "wall_left__wall": 12866,
+        "ceiling_visual__surface": 2172,
+        "left_desk_0__top": 3698,
+        "left_desk_1__top": 85,
+        "left_green_chair__seat__visual": 902,
+        "left_green_chair__back__visual": 1238,
+        "left_green_chair__leg_-0.18_-0.16": 202,
+        "left_green_chair__leg_-0.18_0.16": 316,
+        "left_green_chair__leg_0.18_-0.16": 135,
+        "left_green_chair__leg_0.18_0.16": 313,
+        "gray_chair__seat__visual": 199,
+        "gray_chair__back__visual": 1476,
+        "gray_chair__leg_0.18_-0.16": 35,
+        "gray_chair__leg_0.18_0.16": 321
+      }
+    }
+  ],
+  "limitations": [
+    "Review poses are estimated using learned geometry.",
+    "RGB/SSIM agreement is descriptive and does not verify metric scale or physical parameters.",
+    "Views are intermediate positions along the recorded path, not unseen backsides.",
+    "Input frames were matched back to decoded source frames by minimum thumbnail RGB error."
+  ]
+}

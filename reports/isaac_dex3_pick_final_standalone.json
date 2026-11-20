@@ -1,0 +1,44 @@
+{
+  "runtime": "Isaac Lab / PhysX",
+  "task": "Dex3 contact grasp",
+  "success": true,
+  "fall_detected": false,
+  "simulated_seconds": 20.0,
+  "max_prop_height_m": 0.9678847193717957,
+  "lifted_contact_seconds": 4.18,
+  "hand_contact_seconds": 7.04,
+  "contact_parts": [
+    "right_hand_index_0_link",
+    "right_hand_index_1_link",
+    "right_hand_middle_1_link",
+    "right_hand_thumb_2_link"
+  ],
+  "final_prop_position_m": [
+    3.894243001937866,
+    2.4531638622283936,
+    0.9678847193717957
+  ],
+  "initial_prop_position_m": [
+    3.910386085510254,
+    2.4791367053985596,
+    0.7652263641357422
+  ],
+  "initial_root_m": [
+    3.760399341583252,
+    2.0981898307800293,
+    0.7420938014984131
+  ],
+  "final_wrist_error_m": 0.002529858611524105,
+  "max_applied_torque_nm": 19.807357788085938,
+  "scene_fingerprint": "c12f494f94ca26c82842d8a91b99601dad92394442e4da88c55979519b7a74b0",
+  "robot_asset": "outputs/robots/g1_dex3_v4/g1_dex3.usd",
+  "object_weld_or_external_force": false,
+  "root_teleport_during_execution": false,
+  "body_controller": "Released ScaleBFM medium; official G1 motor configuration",
+  "hand_controller": "Dex3 implicit finger drives: 6 stiffness, 0.2 damping, 0.7 Nm / thumb-base 2.45 Nm limits",
+  "state_access": "Simulator body/wrist/object state; scripted references and task-space integral correction",
+  "limitations": [
+    "Standalone approach-pose grasp; navigation is not part of this trial.",
+    "Scene scale and material/mass parameters are provisional."
+  ]
+}

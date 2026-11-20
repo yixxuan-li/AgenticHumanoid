@@ -1,0 +1,43 @@
+{
+  "task": "explore",
+  "mode": 0,
+  "mode_name": "Pelvis-1",
+  "success": true,
+  "fall_detected": false,
+  "simulated_seconds": 38.00000000000099,
+  "requested_seconds": 38.0,
+  "root_displacement_m": 2.8310428098903735,
+  "root_tracking_rmse_m": 0.06925474910346296,
+  "final_root_error_m": 0.028078641563798568,
+  "max_applied_torque_nm": 68.14953615804505,
+  "initial_root_m": [
+    2.8,
+    1.35,
+    0.76
+  ],
+  "final_root_m": [
+    1.3519046289614498,
+    3.782657638840432,
+    0.7805455004618427
+  ],
+  "checkpoint": "released humanoid_transformer_m/model_22200.pt",
+  "controller": "upstream PyTorch architecture and export wrapper; named joint mapping; 200 Hz torque-limited PD; 50 Hz BFM",
+  "reference_forcing": false,
+  "root_teleport_during_execution": false,
+  "environment_contact_pairs": {},
+  "nonfloor_contact_impulse_ns": 0.0,
+  "peak_nonfloor_contact_force_n": 0.0,
+  "collision_free_above_1n": true,
+  "scene_scale": "provisional_dense_fit",
+  "limitations": [
+    "This is a scripted reference/task experiment, not an autonomous learned exploration agent.",
+    "No grasp success is claimed for the rubber-hand robot."
+  ],
+  "scene_fingerprint": "1e1ed8b1b968bf2f8a878e485d851afd934c7fa6ba8dd16a45d393fccbc958ff",
+  "agent": "map-based symbolic goal screening + A* waypoints + closed-loop ScaleBFM root tracking",
+  "planned_goal_m": [
+    1.36,
+    3.8000000000000003
+  ],
+  "goal_error_m": 0.019138770149638645
+}

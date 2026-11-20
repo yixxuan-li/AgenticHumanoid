@@ -1,0 +1,37 @@
+{
+  "scene_fingerprint": "a98fc6d3f3bac94a387d9582d4b2c8eca3264f0141da01c35464f889f791a728",
+  "checks": {
+    "mujoco_model_loads": true,
+    "mujoco_files_local": true,
+    "mujoco_files_exist": true,
+    "usd_dependencies_resolved_except_declared_runtime_modules": true,
+    "usd_files_local": true
+  },
+  "all_passed": true,
+  "mujoco_meshes": 167,
+  "mujoco_external_files": 221,
+  "usd": [
+    {
+      "asset": "/home/lhy/Yixuan/AgenticHumanoid/outputs/final_scene/scene.usda",
+      "layers": 1,
+      "non_layer_assets": 73,
+      "runtime_provided_material_modules": [],
+      "unresolved_non_runtime_assets": [],
+      "outside_assets": [],
+      "outside_layers": []
+    },
+    {
+      "asset": "/home/lhy/Yixuan/AgenticHumanoid/outputs/robots/g1_dex3_v4/g1_dex3.usd",
+      "layers": 5,
+      "non_layer_assets": 0,
+      "runtime_provided_material_modules": [
+        "OmniPBR.mdl"
+      ],
+      "unresolved_non_runtime_assets": [],
+      "outside_assets": [],
+      "outside_layers": []
+    }
+  ],
+  "resolution_context": "usd-core outside Isaac Kit; OmniPBR.mdl is supplied by the tested Isaac runtime",
+  "scope": "File locality and resolver dependencies; runtime/physics validation is separate"
+}

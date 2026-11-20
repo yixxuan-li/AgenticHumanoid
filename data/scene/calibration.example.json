@@ -1,0 +1,5 @@
+{
+  "description": "Actual measured height of the central folding table above the floor; replace null with the measurement in meters",
+  "reconstructed_length_m": 0.74,
+  "measured_length_m": null
+}

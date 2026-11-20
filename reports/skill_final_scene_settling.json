@@ -1,0 +1,75 @@
+{
+  "scene": "outputs/final_scene",
+  "scene_fingerprint": "a33e42e3cba84ebb9b5f1d0feea63f1931752413a8fb83f530d9ede0743edd59",
+  "checks": {
+    "finite_state": true,
+    "no_initial_penetrations_over_5mm": true,
+    "settled_penetration_under_8mm": true,
+    "free_bodies_drift_under_6cm": true,
+    "positive_dynamic_masses": true,
+    "mass_consistency": true,
+    "usd_meters": true,
+    "usd_z_up": true,
+    "usd_rigid_count": true
+  },
+  "all_passed": true,
+  "scale_status": "provisional_dense_fit",
+  "free_bodies": {
+    "far_green_chair": {
+      "displacement_m": 0.000993994119892152,
+      "mass_kg": 3.999999999999999
+    },
+    "near_green_chair": {
+      "displacement_m": 0.0009939593914082428,
+      "mass_kg": 3.999999999999999
+    },
+    "right_green_chair": {
+      "displacement_m": 0.0009940652876046572,
+      "mass_kg": 3.999999999999999
+    },
+    "left_green_chair": {
+      "displacement_m": 0.0009940983434583157,
+      "mass_kg": 3.999999999999999
+    },
+    "office_window": {
+      "displacement_m": 0.000993904672290969,
+      "mass_kg": 12.000000000000025
+    },
+    "office_table_end": {
+      "displacement_m": 0.0009950870675357428,
+      "mass_kg": 12.000000000000025
+    },
+    "gray_chair": {
+      "displacement_m": 0.0009941841581887303,
+      "mass_kg": 3.9999999999999982
+    },
+    "storage_bin": {
+      "displacement_m": 0.0009700844546991823,
+      "mass_kg": 1.9999999999999998
+    },
+    "cardboard_box": {
+      "displacement_m": 0.0009700844540907384,
+      "mass_kg": 0.5000000000000001
+    },
+    "pick_box": {
+      "displacement_m": 0.0009700844540412928,
+      "mass_kg": 0.1
+    },
+    "bottle": {
+      "displacement_m": 0.0009759550919035009,
+      "mass_kg": 0.4000000000000001
+    },
+    "test_block": {
+      "displacement_m": 2.9915569789787676e-05,
+      "mass_kg": 0.08
+    }
+  },
+  "initial_penetrations": [],
+  "max_settled_penetration_m": 0.0,
+  "simulated_seconds": 3.999999999999781,
+  "limitations": [
+    "Settling is not task/affordance validation.",
+    "USD structure checks are not an Isaac Lab runtime test.",
+    "Scale and mass/friction provenance must be assessed separately."
+  ]
+}

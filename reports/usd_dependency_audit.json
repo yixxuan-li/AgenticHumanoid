@@ -1,0 +1,28 @@
+[
+  {
+    "asset": "/home/lhy/Yixuan/AgenticHumanoid/outputs/final_scene/scene.usda",
+    "layers": 1,
+    "non_layer_assets": 73,
+    "unresolved": [],
+    "assets_outside_directory": [],
+    "layer_paths": [
+      "/home/lhy/Yixuan/AgenticHumanoid/outputs/final_scene/scene.usda"
+    ]
+  },
+  {
+    "asset": "/home/lhy/Yixuan/AgenticHumanoid/outputs/robots/g1_dex3_v4/g1_dex3.usd",
+    "layers": 5,
+    "non_layer_assets": 0,
+    "unresolved": [
+      "OmniPBR.mdl"
+    ],
+    "assets_outside_directory": [],
+    "layer_paths": [
+      "/home/lhy/Yixuan/AgenticHumanoid/outputs/robots/g1_dex3_v4/g1_dex3.usd",
+      "/home/lhy/Yixuan/AgenticHumanoid/outputs/robots/g1_dex3_v4/configuration/g1_dex3_base.usd",
+      "/home/lhy/Yixuan/AgenticHumanoid/outputs/robots/g1_dex3_v4/configuration/g1_dex3_physics.usd",
+      "/home/lhy/Yixuan/AgenticHumanoid/outputs/robots/g1_dex3_v4/configuration/g1_dex3_robot.usd",
+      "/home/lhy/Yixuan/AgenticHumanoid/outputs/robots/g1_dex3_v4/configuration/g1_dex3_sensor.usd"
+    ]
+  }
+]

@@ -1,0 +1,298 @@
+{
+  "task": "Dex3 pick benchmark",
+  "success": false,
+  "fall_detected": false,
+  "simulated_seconds": 48.220000000006216,
+  "max_prop_height_m": 0.7723999542100844,
+  "final_prop_position_m": [
+    4.1178918036593295,
+    1.8004435811421877,
+    0.025970084453141976
+  ],
+  "hand_contact_seconds": 2.4,
+  "lifted_contact_seconds": 0.0,
+  "contact_parts": [
+    "right_hand_index_1_link",
+    "right_hand_middle_1_link",
+    "right_hand_thumb_2_link"
+  ],
+  "mean_wrist_tracking_error_m": 0.10289241386546205,
+  "final_wrist_tracking_error_m": 0.08825095397739821,
+  "initial_robot_root_m": [
+    1.85,
+    0.65,
+    0.76
+  ],
+  "initial_benchmark_prop_m": [
+    4.15,
+    2.03,
+    0.766
+  ],
+  "scene_fingerprint": "3a10a6c709259882909cf0d04dfa1a736984999b0c85457acc3f9f5a55d1baf1",
+  "benchmark_variant": "Only added red test_block is reset to an accessible table edge; initial robot pose is set near it. Video-observed objects remain in place.",
+  "object_weld_or_external_force": false,
+  "root_teleport_during_execution": false,
+  "controller": "Released 29-DoF BFM controls body; separate torque-limited Dex3 finger PD",
+  "settings": {
+    "device": "cpu",
+    "video": false,
+    "seconds": 20.0,
+    "root_y": 1.65,
+    "wrist_forward_offset": 0.16,
+    "wrist_height_offset": 0.035,
+    "root_x": 4.0,
+    "root_height": 0.74,
+    "block_x": 4.15,
+    "block_y": 2.03,
+    "run_name": "agent_slow",
+    "navigate_first": true,
+    "navigation_speed": 0.12,
+    "slow_grasp": true
+  },
+  "limitations": [
+    "Exploratory scripted grasp, not a trained autonomous manipulation agent.",
+    "Scene dimensions and object physical properties are provisional."
+  ],
+  "agent": "A* base approach -> lower -> BFM hand reach -> finger close -> lift and hold",
+  "navigation_success": true,
+  "navigation_goal_error_m": 0.06225785984412307,
+  "pick_start_seconds": 28.23282826994501,
+  "planned_path_m": [
+    [
+      1.84,
+      0.64
+    ],
+    [
+      1.8800000000000001,
+      0.68
+    ],
+    [
+      1.92,
+      0.68
+    ],
+    [
+      1.96,
+      0.68
+    ],
+    [
+      2.0,
+      0.68
+    ],
+    [
+      2.04,
+      0.68
+    ],
+    [
+      2.08,
+      0.68
+    ],
+    [
+      2.12,
+      0.68
+    ],
+    [
+      2.16,
+      0.68
+    ],
+    [
+      2.2,
+      0.68
+    ],
+    [
+      2.24,
+      0.68
+    ],
+    [
+      2.2800000000000002,
+      0.68
+    ],
+    [
+      2.32,
+      0.68
+    ],
+    [
+      2.36,
+      0.68
+    ],
+    [
+      2.4,
+      0.68
+    ],
+    [
+      2.44,
+      0.68
+    ],
+    [
+      2.48,
+      0.68
+    ],
+    [
+      2.52,
+      0.68
+    ],
+    [
+      2.56,
+      0.68
+    ],
+    [
+      2.6,
+      0.68
+    ],
+    [
+      2.64,
+      0.68
+    ],
+    [
+      2.68,
+      0.68
+    ],
+    [
+      2.72,
+      0.68
+    ],
+    [
+      2.7600000000000002,
+      0.68
+    ],
+    [
+      2.8000000000000003,
+      0.68
+    ],
+    [
+      2.84,
+      0.68
+    ],
+    [
+      2.88,
+      0.68
+    ],
+    [
+      2.92,
+      0.68
+    ],
+    [
+      2.96,
+      0.68
+    ],
+    [
+      3.0,
+      0.68
+    ],
+    [
+      3.04,
+      0.68
+    ],
+    [
+      3.08,
+      0.68
+    ],
+    [
+      3.12,
+      0.68
+    ],
+    [
+      3.16,
+      0.72
+    ],
+    [
+      3.2,
+      0.76
+    ],
+    [
+      3.24,
+      0.8
+    ],
+    [
+      3.2800000000000002,
+      0.84
+    ],
+    [
+      3.3200000000000003,
+      0.88
+    ],
+    [
+      3.36,
+      0.92
+    ],
+    [
+      3.4,
+      0.96
+    ],
+    [
+      3.44,
+      1.0
+    ],
+    [
+      3.48,
+      1.04
+    ],
+    [
+      3.52,
+      1.08
+    ],
+    [
+      3.56,
+      1.08
+    ],
+    [
+      3.6,
+      1.12
+    ],
+    [
+      3.64,
+      1.12
+    ],
+    [
+      3.68,
+      1.16
+    ],
+    [
+      3.72,
+      1.2
+    ],
+    [
+      3.7600000000000002,
+      1.24
+    ],
+    [
+      3.8000000000000003,
+      1.28
+    ],
+    [
+      3.84,
+      1.32
+    ],
+    [
+      3.88,
+      1.36
+    ],
+    [
+      3.88,
+      1.4000000000000001
+    ],
+    [
+      3.92,
+      1.44
+    ],
+    [
+      3.92,
+      1.48
+    ],
+    [
+      3.96,
+      1.52
+    ],
+    [
+      3.96,
+      1.56
+    ],
+    [
+      3.96,
+      1.6
+    ],
+    [
+      4.0,
+      1.6400000000000001
+    ]
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "base_scene_fingerprint": "a33e42e3cba84ebb9b5f1d0feea63f1931752413a8fb83f530d9ede0743edd59",
+  "variation": "Chosen hypothetical multipliers, not measured scale or statistical confidence bounds",
+  "robot_scale": "Published metric robot size and hand geometry remain fixed",
+  "results": [
+    {
+      "factor": 0.95,
+      "scene": "outputs/sensitivity/scale095",
+      "physics_passed": true,
+      "physics_report": "reports/scale095_physics.json",
+      "planning_status": "rejected",
+      "execution": "not attempted",
+      "reason": "goal is obstructed for radius 0.32 m: (3.56, 2.0)"
+    },
+    {
+      "factor": 1.05,
+      "scene": "outputs/sensitivity/scale105",
+      "physics_passed": true,
+      "physics_report": "reports/scale105_physics.json",
+      "planning_status": "planned",
+      "execution": "attempted",
+      "pick_success": true,
+      "pick_report": "reports/dex3_pick_scale105_pick.json"
+    }
+  ]
+}

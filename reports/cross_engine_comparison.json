@@ -1,0 +1,12 @@
+{
+  "squat": {
+    "mean_cross_engine_root_difference_m": 0.014683546214761263,
+    "mujoco_reference_rmse_m": 0.05991938695815708,
+    "isaac_reference_rmse_m": 0.046996118244623096
+  },
+  "navigate": {
+    "mean_cross_engine_root_difference_m": 0.0195614117503035,
+    "mujoco_reference_rmse_m": 0.06604135456239557,
+    "isaac_reference_rmse_m": 0.07136082629508303
+  }
+}

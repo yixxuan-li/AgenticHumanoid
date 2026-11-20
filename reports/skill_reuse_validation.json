@@ -1,0 +1,55 @@
+{
+  "scene_fingerprint": "a33e42e3cba84ebb9b5f1d0feea63f1931752413a8fb83f530d9ede0743edd59",
+  "checks": {
+    "skill_structure": true,
+    "generic_export_on_final_scene": true,
+    "generic_physx_on_final_scene": true,
+    "synthetic_floor_cube_and_hinge": true,
+    "packaged_roi_pipeline": true,
+    "source_derived_fusion_format": true,
+    "placed_scene_references": true,
+    "no_private_photos_or_weights": true
+  },
+  "all_passed": true,
+  "skill_path": "skills/reconstruct-video-scene",
+  "installation": "Self-contained folder and ZIP; not globally installed",
+  "structural_output": "Skill is valid!",
+  "tested_scope": [
+    "Actual room settling in both engines",
+    "Separate synthetic floor, free cube and hinged panel",
+    "Four actual source frames through packaged ROI alignment",
+    "Source-derived fusion/export pipeline",
+    "Three placed native scene references"
+  ],
+  "files_sha256": {
+    "SKILL.md": "07a782851ad6bfc3a118952889d14c1ad0323a50debd2ce18641a0d8e9439b75",
+    "references/workflow.md": "712350dea07c3832d88271f2bcde5702db051db5713f9491124acd3f3d553107",
+    "references/manifest.md": "1c7efc8de26becaad4f486eae1e91419b4b8e18901a0ea96a276c5ece620bf64",
+    "agents/openai.yaml": "fc1e115ffce4baf69472dc27a3e693d676e74c436fcbfd0e42807e492ce82a69",
+    "assets/toolbox/requirements.txt": "0c503e002dd345926ba2db11e741fc22bbfce46f2c8b6dbabd79fa2ab3aab8a1",
+    "assets/toolbox/scripts/validate_isaac.py": "f2b8725461ad02677b8be2f5524e5f139c632cabe48d4ed12fcea35898e78a70",
+    "assets/toolbox/scripts/process_geometry.py": "6d791d09c09b8d7086ec6af9e33765c8e83c411270e4a91c324134c52e165907",
+    "assets/toolbox/scripts/rescale_scene.py": "728c8d2810cd9c4d2058992e25ff1338863ab768b63f0794a46113216daacba1",
+    "assets/toolbox/scripts/fuse_geometry.py": "2f23c25442ddabd575264144d4d33bd3fcf55a158b1c817e711e8fb45ebb564f",
+    "assets/toolbox/scripts/inspect_video.py": "c764c7246d23a72a5f4afea616ddf7d313bfdf201867a519dd99d7bd918cc8e4",
+    "assets/toolbox/scripts/run_vggt.py": "1e0507e23b55ad934c8a383892bda57b231afcc1350cf7b763d418012ad53890",
+    "assets/toolbox/scripts/texture_fused_geometry.py": "7fb3eb5491a2e29f74f2f2e7b9c6fc3025dda30f075936014590fcb822e0334c",
+    "assets/toolbox/scripts/view_scene.py": "fe783dd2361115664dd5858d2b87ed94eec7abafac21e936f2acff06637e84e6",
+    "assets/toolbox/scripts/download_sources.py": "44a3246451796a83333b4ee3c2842892248ce070dc0da429deb37df2837ec72b",
+    "assets/toolbox/scripts/audit_assets.py": "24af8d68c2b607d6576aafa514e461b68b2a8415128b7864211b67575be76be8",
+    "assets/toolbox/scripts/download_ranges.py": "1d483cb394b4e124cdfa32c5c349495ee7a08d0a6cb5f7131689ff8b61054507",
+    "assets/toolbox/scripts/bootstrap_sources.py": "9cff323629fb2c8ec5d92492682fd80bc433014b1112fc94efc27c5adf2903d6",
+    "assets/toolbox/scripts/validate_scene_placement.py": "453db19803fd73314bc530ab589da42ceb5027fb59b08b8f5f99f1324cdfded1",
+    "assets/toolbox/scripts/validate_export.py": "976334cef172a836f72fd76062bf40dbac9fa964b72135808470b981628c3660",
+    "assets/toolbox/scene_reconstruction/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "assets/toolbox/scene_reconstruction/export.py": "96fd15e6b700905930df0aa07641cc36895543401d5cffbdd4bf024ccc83792f",
+    "assets/toolbox/scene_reconstruction/navigation.py": "a45d0d082c4f39fbcd4cdcdbc949ae9844de9fb030930746ee810150d3901534",
+    "assets/toolbox/scene_reconstruction/provenance.py": "06747ce7a6c8ffe63335ae343d00efbc44e60cebd1c3aa273bd182c3ae3371d5",
+    "assets/toolbox/scene_reconstruction/layout.py": "2ff7583548e0df3d1552a9fceecd7d76af2c0ae5e78b48deae5797de57aa0467"
+  },
+  "limitations": [
+    "Generic semantic fitting and ownership still require source-specific work.",
+    "Tests do not establish arbitrary-video accuracy or true metric scale.",
+    "Final room appearance and measured metric anchor await user review/input."
+  ]
+}

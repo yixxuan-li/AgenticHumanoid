@@ -1,0 +1,8 @@
+{
+  "scalebfm": {
+    "url": "https://huggingface.co/WeishuaiZeng/ScaleBFM/resolve/main/checkpoint/humanoid_transformer_m/model_22200.pt",
+    "sha256": "88d5a79946c03ed25503f48b2af71d16290844ef066ca9b6c8fa8dc3837422e3",
+    "expected_sha256": "88d5a79946c03ed25503f48b2af71d16290844ef066ca9b6c8fa8dc3837422e3",
+    "verified": true
+  }
+}

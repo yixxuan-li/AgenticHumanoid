@@ -1,0 +1,215 @@
+{
+  "agent": "map-based skill router + A* approach + BFM task tracking",
+  "task": "pick",
+  "scene": "outputs/sensitivity/scale105",
+  "scene_fingerprint": "a5e8efe138efeb2a0d19e22e9da01af58f4451e816b5047f66a2eb031e9723a1",
+  "state_access": "Scene manifest and simulator object/root/wrist state",
+  "steps": [
+    {
+      "skill": "navigate",
+      "goal": [
+        3.948418350074891,
+        2.204009980654256
+      ],
+      "path_length_m": 1.5656854249492382,
+      "waypoints_m": [
+        [
+          2.96,
+          1.4000000000000001
+        ],
+        [
+          3.0,
+          1.44
+        ],
+        [
+          3.04,
+          1.44
+        ],
+        [
+          3.08,
+          1.48
+        ],
+        [
+          3.12,
+          1.52
+        ],
+        [
+          3.16,
+          1.52
+        ],
+        [
+          3.2,
+          1.52
+        ],
+        [
+          3.24,
+          1.52
+        ],
+        [
+          3.2800000000000002,
+          1.52
+        ],
+        [
+          3.3200000000000003,
+          1.52
+        ],
+        [
+          3.36,
+          1.52
+        ],
+        [
+          3.4,
+          1.52
+        ],
+        [
+          3.44,
+          1.56
+        ],
+        [
+          3.48,
+          1.56
+        ],
+        [
+          3.52,
+          1.56
+        ],
+        [
+          3.56,
+          1.6
+        ],
+        [
+          3.6,
+          1.6
+        ],
+        [
+          3.64,
+          1.6400000000000001
+        ],
+        [
+          3.68,
+          1.6400000000000001
+        ],
+        [
+          3.72,
+          1.6400000000000001
+        ],
+        [
+          3.7600000000000002,
+          1.68
+        ],
+        [
+          3.8000000000000003,
+          1.68
+        ],
+        [
+          3.84,
+          1.72
+        ],
+        [
+          3.88,
+          1.72
+        ],
+        [
+          3.92,
+          1.76
+        ],
+        [
+          3.92,
+          1.8
+        ],
+        [
+          3.96,
+          1.84
+        ],
+        [
+          3.96,
+          1.8800000000000001
+        ],
+        [
+          3.96,
+          1.92
+        ],
+        [
+          3.96,
+          1.96
+        ],
+        [
+          3.96,
+          2.0
+        ],
+        [
+          3.96,
+          2.04
+        ],
+        [
+          3.96,
+          2.08
+        ],
+        [
+          3.96,
+          2.12
+        ],
+        [
+          3.96,
+          2.16
+        ],
+        [
+          3.96,
+          2.2
+        ]
+      ]
+    },
+    {
+      "skill": "settle",
+      "root_height_m": 0.78
+    },
+    {
+      "skill": "reach_close_lift_hold",
+      "target": "test_block",
+      "profile": {
+        "robot_root_height_m": 0.74,
+        "settled_root_height_m": 0.78,
+        "wrist_forward_offset_m": 0.145,
+        "wrist_height_offset_m": 0.07,
+        "wrist_lateral_offset_m": 0.015,
+        "pose_servo": true,
+        "slow_grasp": true,
+        "grasp_seconds": 20.0
+      }
+    }
+  ],
+  "status": "planned",
+  "command": [
+    "/home/lhy/Yixuan/AgenticHumanoid/.venv/bin/python",
+    "scripts/run_pick.py",
+    "--scene",
+    "outputs/sensitivity/scale105/scene.xml",
+    "--run-name",
+    "scale105_plan",
+    "--device",
+    "cpu",
+    "--navigate-first",
+    "--seconds",
+    "20.0",
+    "--root-x",
+    "3.948418350074891",
+    "--root-y",
+    "2.204009980654256",
+    "--root-height",
+    "0.74",
+    "--settled-root-height",
+    "0.78",
+    "--block-x",
+    "4.105918350074891",
+    "--block-y",
+    "2.603009980654256",
+    "--wrist-forward-offset",
+    "0.145",
+    "--wrist-height-offset",
+    "0.07",
+    "--wrist-lateral-offset",
+    "0.015",
+    "--pose-servo",
+    "--slow-grasp"
+  ]
+}

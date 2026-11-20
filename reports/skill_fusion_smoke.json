@@ -1,0 +1,9 @@
+{
+  "dataset": "Four actual source-video frames; generic ROI alignment, separate fusion output",
+  "mujoco_meshes": 4,
+  "cameras": 4,
+  "collision_enabled_geometries": 0,
+  "usd_opened": true,
+  "artifact_directory": "/tmp/skill_fusion_check",
+  "quality": "Pipeline/format smoke check; no metric ground truth claim"
+}
