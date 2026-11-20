@@ -25,7 +25,7 @@ def main():
     p.add_argument('--wrist-lateral-offset',type=float,default=0.)
     p.add_argument('--root-x',type=float,default=3.95);p.add_argument('--root-height',type=float,default=.76)
     p.add_argument('--block-x',type=float,default=3.95);p.add_argument('--block-y',type=float,default=2.03);p.add_argument('--run-name',default='trial')
-    p.add_argument('--scene',type=Path,default=Path('outputs/scene/scene.xml'))
+    p.add_argument('--scene',type=Path,default=Path('outputs/worldlabs_scene/scene.xml'))
     p.add_argument('--navigate-first',action='store_true');p.add_argument('--navigation-speed',type=float,default=.12)
     p.add_argument('--slow-grasp',action='store_true')
     p.add_argument('--pose-servo',action='store_true',help='Integral task-space correction through BFM references, using simulator body state')

@@ -1,0 +1,29 @@
+[
+  {
+    "skill": "navigate",
+    "goal": [
+      2.96,
+      4.8
+    ],
+    "status": "reachable",
+    "length_m": 3.383919189857867
+  },
+  {
+    "skill": "navigate",
+    "goal": [
+      4.2,
+      5.08
+    ],
+    "status": "reachable",
+    "length_m": 2.5410764773832484
+  },
+  {
+    "skill": "navigate",
+    "goal": [
+      3.56,
+      4.64
+    ],
+    "status": "reachable",
+    "length_m": 2.717645019878171
+  }
+]

@@ -1,0 +1,43 @@
+{
+  "scene_fingerprint": "d991e9181b6d9d428171375e2ab7ecdafa795f6f0cabbbd90eeb2581873ee2fa",
+  "checks": {
+    "finite_state": true,
+    "no_initial_penetrations_over_5mm": true,
+    "cube_positive_mass": true,
+    "cube_rest_support": true,
+    "cube_drop_support": true,
+    "cube_no_floor_tunneling": true,
+    "cube_moves_under_horizontal_force": true,
+    "cube_friction_stops_motion": true,
+    "cube_stays_supported": true,
+    "settled_penetration_under_8mm": true
+  },
+  "all_passed": true,
+  "initial_penetrations_m": [],
+  "rest_position_m": [
+    5.92,
+    2.92,
+    0.025970084453895127
+  ],
+  "drop": {
+    "final_position_m": [
+      5.92,
+      2.92,
+      0.02597008445391223
+    ],
+    "support_error_m": 0.0009700844539122302,
+    "minimum_center_height_m": 0.008955509628990123
+  },
+  "push": {
+    "force_n": 0.8,
+    "duration_seconds": 0.15,
+    "displacement_m": 0.06438857744636906,
+    "final_speed_mps": 6.987723534491383e-11
+  },
+  "scale_status": "provisional_assumed_table_height",
+  "limitations": [
+    "The room is static; furniture articulation was not recovered.",
+    "Tests validate assigned parameters and proxy contacts, not true dimensions, mass or friction.",
+    "The red cube is an added benchmark object."
+  ]
+}

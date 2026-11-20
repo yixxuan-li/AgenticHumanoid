@@ -1,0 +1,13 @@
+/outputs/
+/deliverables/
+/worldlabs
+.env
+.env.*
+.venv/
+node_modules/
+__pycache__/
+*.pyc
+*.spz
+*.glb
+*.npz
+*.zip

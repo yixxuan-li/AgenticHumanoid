@@ -58,7 +58,11 @@ for prim in stage.Traverse():
 stage.GetRootLayer().Save()
 for key in ['dimensions','source_geometry_shift_m','main_room_y_range']:
  if key in manifest:manifest[key]=(np.array(manifest[key])*factor).tolist()
-manifest['desk_height']*=factor;manifest['global_scale']=manifest.get('global_scale',1.)*factor
+if manifest.get('desk_height') is not None:manifest['desk_height']*=factor
+manifest['global_scale']=manifest.get('global_scale',1.)*factor
+if 'worldlabs_native_to_sim' in manifest:
+ transform=manifest['worldlabs_native_to_sim'];transform['scale']*=factor
+ transform['translation_xy']=(np.array(transform['translation_xy'])*factor).tolist()
 if 'cameras' in manifest:manifest['cameras']=[[name,(np.array(pos)*factor).tolist(),(np.array(target)*factor).tolist()] for name,pos,target in manifest['cameras']]
 for key in ['start','goals']:
  if key in manifest.get('navigation',{}):manifest['navigation'][key]=(np.array(manifest['navigation'][key])*factor).tolist()

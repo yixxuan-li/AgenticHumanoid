@@ -1,4 +1,4 @@
-"""Compare real video frames excluded from VGGT inference against scene renders.
+"""Compare real video frames excluded from depth inference against scene renders.
 
 PnP uses held-out SIFT correspondences only to estimate review camera poses.
 Appearance agreement does not establish metric scale, dynamics, or unseen detail.
@@ -12,17 +12,17 @@ from PIL import Image,ImageDraw
 from scipy.spatial.transform import Rotation
 from scene_reconstruction.provenance import scene_fingerprint
 
-p=argparse.ArgumentParser();p.add_argument('--scene',type=Path,default=Path('outputs/reconstructed_scene'));p.add_argument('--geometry',type=Path,default=Path('outputs/geometry_full'));p.add_argument('--times',nargs='+',type=float,default=[2.,5.,8.,11.,14.]);p.add_argument('--report',type=Path,default=Path('reports/heldout_appearance_validation.json'));a=p.parse_args()
-out=a.scene/'heldout';out.mkdir(exist_ok=True);archive=np.load(a.geometry/'aligned_geometry.npz');g={key:archive[key] for key in ['points','valid','intrinsic']};archive.close();raw=np.load(a.geometry/'predictions.npz');manifest=json.loads((a.scene/'manifest.json').read_text());shift=np.array(manifest['source_geometry_shift_m'])
+p=argparse.ArgumentParser();p.add_argument('--video',type=Path,default=Path('data/scene/scene.mp4'));p.add_argument('--scene',type=Path,default=Path('outputs/worldlabs_scene'));p.add_argument('--geometry',type=Path,default=Path('outputs/worldlabs_geometry'));p.add_argument('--camera',default='source_000');p.add_argument('--times',nargs='+',type=float,default=[2.,5.,8.,11.,14.]);p.add_argument('--report',type=Path,default=Path('reports/heldout_appearance_validation.json'));a=p.parse_args()
+out=a.scene/'heldout';out.mkdir(exist_ok=True);archive=np.load(a.geometry/'aligned_geometry.npz');g={key:archive[key] for key in ['points','valid','intrinsic']};archive.close();raw=np.load(a.geometry/'predictions.npz');manifest=json.loads((a.scene/'manifest.json').read_text());shift=np.array(manifest.get('source_geometry_shift_m',[0,0,0]))
 training=[np.asarray(Image.open(str(path)).convert('RGB')) for path in raw['frames']];small=np.stack([cv2.resize(im,(32,57)).astype(float) for im in training]);best=np.full(len(training),np.inf);best_index=np.zeros(len(training),int)
-reader=imageio_ffmpeg.read_frames('data/scene/scene.mp4',pix_fmt='rgb24');metadata=next(reader);w,h=metadata['size'];fps=metadata['fps'];wanted=[round(t*fps) for t in a.times];heldout={}
+reader=imageio_ffmpeg.read_frames(str(a.video),pix_fmt='rgb24');metadata=next(reader);w,h=metadata['size'];fps=metadata['fps'];wanted=[round(t*fps) for t in a.times];heldout={}
 for index,buffer in enumerate(reader):
  im=np.frombuffer(buffer,np.uint8).reshape(h,w,3);s=cv2.resize(im,(32,57)).astype(float);errors=np.mean((small-s)**2,axis=(1,2,3));improved=errors<best;best[improved]=errors[improved];best_index[improved]=index
  if index in wanted:heldout[index]=im.copy()
 reader.close()
 if set(wanted)&set(best_index.tolist()):raise RuntimeError('A selected review frame coincides with a model input frame')
 sift=cv2.SIFT_create(nfeatures=5000);features=[sift.detectAndCompute(cv2.cvtColor(im,cv2.COLOR_RGB2GRAY),None) for im in training]
-m=mujoco.MjModel.from_xml_path(str(a.scene/'scene.xml'));d=mujoco.MjData(m);cid=m.camera('entry').id;results=[];tiles=[]
+m=mujoco.MjModel.from_xml_path(str(a.scene/'scene.xml'));d=mujoco.MjData(m);cid=m.camera(a.camera).id;results=[];tiles=[]
 def ssim(x,y):
  x=cv2.cvtColor(x,cv2.COLOR_RGB2GRAY).astype(float);y=cv2.cvtColor(y,cv2.COLOR_RGB2GRAY).astype(float)
  blur=lambda z:cv2.GaussianBlur(z,(11,11),1.5)

@@ -1,0 +1,16 @@
+{
+  "all_passed": true,
+  "checks": {
+    "portable_frame_selection": true,
+    "offline_transport_reuses_job": true,
+    "changed_request_and_frame_rejected": true,
+    "stage_path_traversal_rejected": true,
+    "metric_anchor_and_floor_fit": true,
+    "degenerate_floor_rejected": true,
+    "portable_rescaling_without_desk_prior": true,
+    "portable_textured_mesh_export": true,
+    "portable_mujoco_physics": true,
+    "portable_usd_and_dependencies": true
+  },
+  "paid_api_calls": 0
+}

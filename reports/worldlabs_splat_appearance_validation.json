@@ -1,0 +1,96 @@
+{
+  "method": "Real held-out frames; camera-only SIFT/3D PnP, actual Spark canvas RGB",
+  "results": [
+    {
+      "video_frame": 30,
+      "time_seconds": 1.0,
+      "gray_ssim": 0.8438628741283742,
+      "mean_absolute_rgb_error_0_255": 12.60861942488263
+    },
+    {
+      "video_frame": 120,
+      "time_seconds": 4.0,
+      "gray_ssim": 0.7946832356351642,
+      "mean_absolute_rgb_error_0_255": 16.07336414319249
+    },
+    {
+      "video_frame": 210,
+      "time_seconds": 7.0,
+      "gray_ssim": 0.8048175021596881,
+      "mean_absolute_rgb_error_0_255": 13.41277325410798
+    },
+    {
+      "video_frame": 300,
+      "time_seconds": 10.0,
+      "gray_ssim": 0.6677709507655349,
+      "mean_absolute_rgb_error_0_255": 18.667589128521126
+    },
+    {
+      "video_frame": 390,
+      "time_seconds": 13.0,
+      "gray_ssim": 0.8996357516256185,
+      "mean_absolute_rgb_error_0_255": 9.11444395539906
+    },
+    {
+      "video_frame": 480,
+      "time_seconds": 16.0,
+      "gray_ssim": 0.9124790731309429,
+      "mean_absolute_rgb_error_0_255": 6.955272520539906
+    }
+  ],
+  "limitations": [
+    "Descriptive image agreement, not metric-depth ground truth.",
+    "Camera poses estimated using learned source depth."
+  ],
+  "splat_operation_id": "9bd2eabd410244e180e221fb5094f296",
+  "splat_sha256": "578508d8e7236c4e81fa44602041f9968ec9879e752c20da619b3af6073f153d",
+  "training_video_frame_indices": [
+    7,
+    82,
+    97,
+    157,
+    202,
+    232,
+    277,
+    352,
+    397,
+    412,
+    472,
+    502
+  ],
+  "review_camera_reuse": [
+    {
+      "frame": 30,
+      "position_delta": 0.0,
+      "angle_delta": 2.7755575615628914e-17
+    },
+    {
+      "frame": 120,
+      "position_delta": 0.0,
+      "angle_delta": 0.0
+    },
+    {
+      "frame": 210,
+      "position_delta": 0.0,
+      "angle_delta": 1.3877787807814457e-17
+    },
+    {
+      "frame": 300,
+      "position_delta": 0.0,
+      "angle_delta": 0.0
+    },
+    {
+      "frame": 390,
+      "position_delta": 0.0,
+      "angle_delta": 1.7433755170605406e-17
+    },
+    {
+      "frame": 480,
+      "position_delta": 0.0,
+      "angle_delta": 0.0
+    }
+  ],
+  "mean_gray_ssim": 0.8205415645742203,
+  "model_input": "12 real video frames + 3 curated generated views; all other video frames excluded",
+  "renderer": "Spark 2.4.0 / Three.js 0.187.0 / Chrome headless / NVIDIA RTX 5090 OpenGL"
+}

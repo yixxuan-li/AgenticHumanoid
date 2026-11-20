@@ -1,0 +1,4 @@
+interface:
+  display_name: "World Labs Scene Reconstruction"
+  short_description: "Atlas video reconstruction for MuJoCo and Isaac Lab"
+  default_prompt: "Use $worldlabs-scene-reconstruction to reconstruct this capture and export a calibrated simulator scene with a native splat viewer."

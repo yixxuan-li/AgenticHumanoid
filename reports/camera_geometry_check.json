@@ -1,8 +1,0 @@
-{
-  "test": "camera/depth backprojection compared with independent MuJoCo ray casts",
-  "samples": 89,
-  "median_surface_error_m": 0.005876773156492404,
-  "p95_surface_error_m": 0.006249532072618693,
-  "caveat": "Raster edge pixels and the half-pixel sampling convention can differ. This verifies coordinate handling, not learned depth accuracy.",
-  "passed": true
-}

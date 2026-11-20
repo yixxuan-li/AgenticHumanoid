@@ -9,6 +9,8 @@ def scene_fingerprint(directory):
     files+=sorted((directory/'textures').glob('*.png'))
     files+=sorted((directory/'photo').glob('*.png'))
     files+=sorted((directory/'photo').glob('*.obj'))
+    files+=sorted((directory/'visual').glob('*.png'))
+    files+=sorted((directory/'visual').glob('*.obj'))
     hashes={}
     for path in files:
         with path.open('rb') as f:hashes[str(path.relative_to(directory))]=hashlib.file_digest(f,'sha256').hexdigest()

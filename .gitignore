@@ -1,53 +1,28 @@
+# Environments, downloaded sources and learned weights.
 .venv/
 __pycache__/
 *.pyc
 vendor/
 checkpoints/
-outputs/geometry/raw/
+node_modules/
 
+# Generated geometry, videos, runtime caches, archives and private API responses.
+/outputs/
+/deliverables/
+*.spz
+*.glb
+*.npz
+*.ply
+*.pt
+*.onnx
+*.zip
 MUJOCO_LOG.TXT
-outputs/isaaclab_runtime/
-outputs/**/predictions.npz
-outputs/**/aligned_geometry.npz
-outputs/**/aligned_cloud.ply
-outputs/**/fused_geometry.npz
-outputs/**/fused.ply
-outputs/**/states.npz
-
-# Keep the validated deliverables; intermediate reconstructions are reproducible.
-outputs/*
-!outputs/final_scene/
-!outputs/robots/
-outputs/robots/*
-!outputs/robots/g1_dex3_v4/
-!outputs/controller/
-outputs/controller/*
-!outputs/controller/final_explore/
-!outputs/controller/pick/
-outputs/controller/pick/*
-!outputs/controller/pick/final_pick/
-!outputs/controller/isaac_pick/
-outputs/controller/isaac_pick/*
-!outputs/controller/isaac_pick/final_sequence/
-!outputs/inspection/
-outputs/inspection/*
-!outputs/inspection/frame_*.jpg
-!outputs/inspection/video_analysis.json
-!outputs/geometry_full/
-outputs/geometry_full/*
-!outputs/geometry_full/scene_features.json
-!outputs/geometry_full/geometry_audit.json
-!outputs/geometry_full/inference_report.json
 
 # Local credentials and crash dumps.
+/worldlabs
 .env
 .env.*
 !.env.example
 .aws/
 core
 core.*
-
-# Generated archives and individual assets over 10 MiB stay local.
-/deliverables/
-/outputs/final_scene/scene.usda
-/outputs/robots/g1_dex3_v4/configuration/g1_dex3_base.usd

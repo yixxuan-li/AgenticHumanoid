@@ -15,6 +15,7 @@ def main():
     p.add_argument('--output', type=Path, default=Path('outputs/inspection'))
     p.add_argument('--fps', type=float, default=2)
     args = p.parse_args()
+    if args.fps <= 0:p.error('--fps must be positive')
     args.output.mkdir(parents=True, exist_ok=True)
     import imageio_ffmpeg
     ffmpeg = imageio_ffmpeg.get_ffmpeg_exe()
@@ -22,16 +23,21 @@ def main():
                     '-vf', f'fps={args.fps}', str(args.output/'frame_%04d.jpg')],
                    check=True, capture_output=True)
     files = sorted(args.output.glob('frame_[0-9][0-9][0-9][0-9].jpg'))
+    if not files:raise ValueError('Video produced no sampled frames')
     sift = cv2.SIFT_create(nfeatures=5000)
     features = [sift.detectAndCompute(cv2.imread(str(f), 0), None) for f in files]
     matches = []
     for i in range(len(files)-1):
         k1, d1 = features[i]; k2, d2 = features[i+1]
-        raw = cv2.BFMatcher().knnMatch(d1, d2, k=2)
-        good = [a for a,b in raw if a.distance < .72*b.distance]
+        raw = cv2.BFMatcher().knnMatch(d1, d2, k=2) if d1 is not None and d2 is not None and len(d2)>=2 else []
+        good = [pair[0] for pair in raw if len(pair)==2 and pair[0].distance < .72*pair[1].distance]
+        if len(good)<4:
+            matches.append(dict(frame_a=i+1,frame_b=i+2,matches=len(good),homography_inliers=0,homography_inlier_fraction=0.,median_homography_residual_px=None));continue
         a = np.float32([k1[m.queryIdx].pt for m in good])
         b = np.float32([k2[m.trainIdx].pt for m in good])
         h, mask = cv2.findHomography(a, b, cv2.USAC_MAGSAC, 2.0)
+        if h is None:
+            matches.append(dict(frame_a=i+1,frame_b=i+2,matches=len(good),homography_inliers=0,homography_inlier_fraction=0.,median_homography_residual_px=None));continue
         err = np.linalg.norm(cv2.perspectiveTransform(a[None], h)[0]-b, axis=1)
         matches.append(dict(frame_a=i+1, frame_b=i+2, matches=len(good),
                             homography_inliers=int(mask.sum()),

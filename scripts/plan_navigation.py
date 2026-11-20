@@ -12,7 +12,7 @@ from scene_reconstruction.navigation import collision_grid,plan
 
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--scene',type=Path,default=Path('outputs/scene'));p.add_argument('--radius',type=float,default=.28);args=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--scene',type=Path,default=Path('outputs/worldlabs_scene'));p.add_argument('--radius',type=float,default=.28);args=p.parse_args()
     manifest=json.loads((args.scene/'manifest.json').read_text());m=mujoco.MjModel.from_xml_path(str(args.scene/'scene.xml'));d=mujoco.MjData(m)
     for _ in range(2000):mujoco.mj_step(m,d)
     grid=collision_grid(m,d,manifest['dimensions'],radius=args.radius)

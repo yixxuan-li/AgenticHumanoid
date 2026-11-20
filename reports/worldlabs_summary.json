@@ -1,0 +1,62 @@
+{
+  "updated_local": "2026-11-20T22:59:22+08:00",
+  "scene": "outputs/worldlabs_scene",
+  "scene_fingerprint": "d991e9181b6d9d428171375e2ab7ecdafa795f6f0cabbbd90eeb2581873ee2fa",
+  "all_executed_checks_passed": true,
+  "checks": {
+    "mujoco_physics": true,
+    "physx_physics": true,
+    "generic_export": true,
+    "asset_dependencies": true,
+    "mujoco_navigation": true,
+    "physx_navigation": true,
+    "spark_viewer": true
+  },
+  "native_splat_count": 2000000,
+  "worldlabs_operations": {
+    "pose": "0c69442385da4712a8dea68cf7279965",
+    "round1": "c5de6800acb4462d955c8e795acf11a9",
+    "round2": "7bfb21a430a7425bae6e54e675827779",
+    "splats": "9bd2eabd410244e180e221fb5094f296",
+    "mesh": "e3b5c512ad3d4bc3b20ce1cdd6f0d750"
+  },
+  "additional_mesh_trial": "04311739845e462492c1521ac89489a0",
+  "dimensions_provisional_m": [
+    6.117789701877649,
+    6.872687016691944,
+    3.109161216690035
+  ],
+  "scale_status": "provisional_assumed_table_height",
+  "metric_accuracy_verified": false,
+  "assumed_table_height_m": 0.74,
+  "static_collider_boxes": 890,
+  "movable_bodies": "One added 5 cm / 80 g benchmark cube; original furniture is static",
+  "appearance": {
+    "native_splat_mean_gray_ssim": 0.8205415645742203,
+    "simulator_mesh_mean_gray_ssim": 0.7165425084608242,
+    "review": "Six actual video frames excluded from reconstruction input and textures; learned-depth camera estimation for review only"
+  },
+  "navigation": {
+    "route_length_m": 3.383919189857867,
+    "start_m": [
+      5.12,
+      2.92
+    ],
+    "goal_m": [
+      2.96,
+      4.8
+    ],
+    "mujoco_goal_error_m": 0.03821299451433003,
+    "physx_goal_error_m": 0.07134202609753808,
+    "simulated_seconds": 38,
+    "state_access": "Known estimated collision map and simulator proprioception",
+    "wbc": "Released ScaleBFM medium, mode 0, 50 Hz references and 200 Hz physics"
+  },
+  "remaining_limitations": [
+    "Absolute dimensions need a real measurement.",
+    "Native splats have better appearance than the extracted simulator mesh.",
+    "Glass, thin chairs and occlusion boundaries retain mesh defects.",
+    "Furniture articulation, physical masses and friction were not recovered.",
+    "No new grasp trial is claimed for this static Atlas scene."
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "scene_fingerprint": "d991e9181b6d9d428171375e2ab7ecdafa795f6f0cabbbd90eeb2581873ee2fa",
+  "splat_sha256": "578508d8e7236c4e81fa44602041f9968ec9879e752c20da619b3af6073f153d",
+  "raw_mesh_sha256": "f5c4c210e15c3f51ca3cd08539f4d984777fbe858dbe1d1f5cf9dc81f965ee38",
+  "constrained_mesh_sha256": "328e327c79c0aa90929d4b054b802c9265ad666402d8174392bcb21ddf00f39a",
+  "collider_glb_sha256": "f63a2a503a48feff567f95f264ec70bf984acf6349772ebcf20f91472bb3df9b",
+  "input_video_sha256": "ffb2916a8701f98f5fd3b431b4953b94b86de0a1c05c8eb05097eedf94bc4712",
+  "operations": {
+    "pose": "0c69442385da4712a8dea68cf7279965",
+    "round1": "c5de6800acb4462d955c8e795acf11a9",
+    "round2": "7bfb21a430a7425bae6e54e675827779",
+    "splats": "9bd2eabd410244e180e221fb5094f296",
+    "mesh": "e3b5c512ad3d4bc3b20ce1cdd6f0d750"
+  },
+  "curation": {
+    "real_frames": 12,
+    "generated_frames": 3,
+    "total_frames": 15,
+    "retained_generated": [
+      {
+        "stage": "round1",
+        "index": 0
+      },
+      {
+        "stage": "round1",
+        "index": 2,
+        "inferred": "Unseen entrance door, air conditioner and wall details"
+      },
+      {
+        "stage": "round2",
+        "index": 0,
+        "mask_excludes": "Invented computer cart and surrounding lower-left pixels"
+      }
+    ],
+    "excluded_generated": [
+      {
+        "stage": "round1",
+        "index": 1,
+        "reason": "Conflicting added office chairs"
+      },
+      {
+        "stage": "round2",
+        "index": 1,
+        "reason": "Chair/layout uncertainty and invented floor patch"
+      },
+      {
+        "stage": "round2",
+        "index": 2,
+        "reason": "Conflicting office chair placement"
+      }
+    ],
+    "metric_accuracy_verified": false
+  },
+  "visual_constraints": {
+    "input_mesh": "outputs/worldlabs/mesh/mesh.glb",
+    "output_mesh": "outputs/worldlabs/constrained_mesh.glb",
+    "table_center_unshifted_sim_xy": [
+      -0.2679230868816376,
+      -0.021074235439300537
+    ],
+    "table_size_m": [
+      0.8374294638633728,
+      1.6744638681411743
+    ],
+    "table_yaw_rad": -0.024801209880607914,
+    "table_height_assumed_m": 0.74,
+    "outline_source": "0.5 to 99.5 percentile support of the refined Atlas splat near the table plane",
+    "table_texture_coverage_fraction": 0.7642040252685547,
+    "inpainted_texture_fraction": 0.2357959747314453,
+    "removed_sheet_and_top_triangles": 7280,
+    "floor_vertices_constrained": 28653,
+    "scale_status": "Assumed table height; not measured",
+    "limitations": [
+      "Constraints do not recover hidden mechanisms or exact object dimensions.",
+      "Texture inpainting fills occlusions.",
+      "Unchanged collision boxes remain approximate; this operation changes visual geometry."
+    ]
+  },
+  "reports_sha256": {
+    "worldlabs_skill_validation.json": "61014294797ebbc43a745a5bdeaf87b31434b69dcb3d54120fe6baa56427bd14",
+    "WORLDLABS_RESULTS.md": "02761e72e80febea5a517c03879fd970d56b39f27967320d780d43356e8f4c11",
+    "worldlabs_summary.json": "26b1ba9ab3714969d5cbfedb68dd3657210f046490f4ff223fa8662cd3d90162",
+    "worldlabs_mujoco_validation.json": "8dda0996fbbd765605c133948a336b7e032cb825f3086476cdb78a35f468a674",
+    "worldlabs_isaac_validation.json": "a3b4fb05641079e662d86684fc9ce876ae96d0ad34ad9a0854db0067a20d113e",
+    "worldlabs_export_validation.json": "08f59126ca43184849f54d2225d2cbb8a52de83c57852d109329989057cf257c",
+    "worldlabs_asset_dependencies.json": "118a1b3ebd43c1e9ea515962916236f20cc8100a0a3c6ca0fc42cfaffb9941cc",
+    "worldlabs_appearance_validation.json": "6ae5bc8d4ab672f4c095ddeb0eed6de6c6896439eb148225b88af27c01e5d5ba",
+    "worldlabs_splat_appearance_validation.json": "ab0e4b607c90bb3296dcca07b38c27ca38936b78ea573e5bbe3c9ca2c0c09420",
+    "worldlabs_final_explore_scalebfm_explore_mode0.json": "1f4c2cf197836ae00beaaa1e5bc289e1323fe1b32d3d9be01a6b32d528b5c390",
+    "worldlabs_native_explore_scalebfm_isaac_explore.json": "186449038addb10c74faec77e37bd4d1dd9fb57c138fbc537e1b3fa234821d04",
+    "worldlabs_viewer_validation.json": "1880edb3e7fcc8016fdc9064982ca21a6cf3b30ffde8fb19facbaef75987788a"
+  },
+  "source_sha256": {
+    "scripts/run_pick_isaac.py": "64320d82e8224ea0a81443d014456b3afa1200bb207974680cc889939e2e914c",
+    "scripts/plan_navigation.py": "8cafe38100790c4482c1a196a7bd16371dcc286f046863d59b6757cf1a384b03",
+    "scripts/run_isaac.sh": "5cd33128e0bbcd52ca7c784bd8c7e51ed7711dd225dadba1045e987978c91367",
+    "scripts/calibrate_worldlabs_scene.py": "9224e2bb163c5edef3210c449597935b5839009a46a6600170a6f5f2af5e8cd4",
+    "scripts/rescale_scene.py": "d8edb8a16a1f329ed3e013c41eef6eb3f984334eabc686f5bd0b6091ec090eb2",
+    "scripts/import_dex3_isaac.py": "d0647dfdfb57f6d1ceb428ba0750bb6f14fcf28dbccbc730c968203f7d1f2547",
+    "scripts/validate_heldout_views.py": "4845e9c93b70fdc94482c6d93beb5c9f5934c603e348c998d94a74d0647b5ce4",
+    "scripts/inspect_video.py": "5ca576ad20344be3bd5f0147bbb8bae05b10db85a5e7de117b43a1f88925d088",
+    "scripts/inspect_worldlabs_scene.py": "096231afadea7b370909ccbe07a0ac1d78fdd2aab4b7b5deee3ce5513f2bff09",
+    "scripts/export_worldlabs_scene.py": "efd4cd405cf7796126c36db0d602ac419d02f9304a8d5733e1e3038d0a32bb57",
+    "scripts/select_worldlabs_frames.py": "0a7c28e5c65aa7d3fdd0fc177fdfa3f883067ab5ba51f93892f185f4ca087ffc",
+    "scripts/run_pick.py": "085c20bc254fbe2842cecbbfb6bdd9708de9269c902d932c5037c8d260e4d29e",
+    "scripts/constrain_worldlabs_mesh.py": "5c7a68a390079420a0e0d5f67d5ff596fd6113a5292fb0facd533427858ba9fc",
+    "scripts/extract_worldlabs_splats.mjs": "2691ed82a98014c14976fbab03f1fae744b7446409f6cc18b7b4ca9aa056a408",
+    "scripts/worldlabs_scene.py": "0517825ca5d2c8f0f5e16aa6d65a37b57deb1eff7cb9a3eb831205ce00519f6c",
+    "scripts/view_scene.py": "72aa1a5db2f9ad03235d2fbb965b5d73af8257a56d7db21b7474daeb2df911ad",
+    "scripts/render_worldlabs_scene.py": "b44a0b55d5c674c62516008d87e7c8e57328ec41354b83610e9b09097499eb82",
+    "scripts/download_sources.py": "44a3246451796a83333b4ee3c2842892248ce070dc0da429deb37df2837ec72b",
+    "scripts/prepare_worldlabs_review_geometry.py": "cda6e92f8fbe8a0d9407229f6ddfe3e9e1462625e18b3fa581f076fd2d433e36",
+    "scripts/validate_worldlabs_isaac.py": "02a9b3334313bc15e0557ad4c234ba26132c6344fc83f50a35fd7996a07828c7",
+    "scripts/run_skill_agent.py": "8d0612cec7a2c29d17ecaea58fbaad89cdc91ce097822191e057a149cbef83d8",
+    "scripts/prepare_worldlabs_mesh.py": "c9902b064a3aceb8eab48c182c693f20584ba8a6a343145e850fd82fc66c975f",
+    "scripts/prepare_worldlabs_viewer.py": "779081069cd0b592240afe675034cc95c2aebab0685683fcca90746169f9f6ac",
+    "scripts/validate_worldlabs_mujoco.py": "0eeddecbcbe9835ce944810b2e08b26379ab08e5e387d6eebed81eb176474e28",
+    "scripts/make_worldlabs_demo.py": "868442bacabc07d5b8dac4ac466172adbacc36af595b8e0f1f9be9543368628c",
+    "scripts/run_scalebfm_isaac.py": "545fd814338418f68a34e665496f8970a9869b83d01741f775b90424efc0652c",
+    "scripts/audit_assets.py": "89e13f3155a454627e906b7a327efa54beb63e28845872cce9e56e70eb3584db",
+    "scripts/package_worldlabs_skill.py": "442bd79ff3db2a1f01e2f09ce01b4bdf5bad4a91e459d4078c14f3f3cb726411",
+    "scripts/download_ranges.py": "1d483cb394b4e124cdfa32c5c349495ee7a08d0a6cb5f7131689ff8b61054507",
+    "scripts/report_worldlabs_results.py": "eab62e5ad5178fb19260a3a7656785ad860d53d1bd49d239a9bccac6ebf2e9c2",
+    "scripts/run_scalebfm.py": "324478b2a914129caa5bb554528428e6fefacd0aa3f7acfb7132677e9b9894eb",
+    "scripts/bootstrap_sources.py": "1ea71d75df9e930c65d151dbbe85f479abd8830de2bb6b8920f6d850419f924e",
+    "scripts/verify_worldlabs_skill.py": "fc034aa4e42f970a0f1fd1a09a4364c069b1c4b8d5a2002255529a1b635e6bbb",
+    "scripts/validate_scene_placement.py": "90a554d9ee32c625fdb6657d3402deb956e1a2f4712cbbc03e0ab6886619f89c",
+    "scripts/audit_robot_transfer.py": "2ead9314dcc57b12f63c1b4cc3fcad65b7699249529e10b32c27c668f7154459",
+    "scripts/validate_export.py": "976334cef172a836f72fd76062bf40dbac9fa964b72135808470b981628c3660",
+    "scene_reconstruction/scalebfm.py": "cb6af393313fb6789fab0938c7ad589e0af3384f99eeb5bba4e7733961138900",
+    "scene_reconstruction/atlas_viewer.html": "768edb8cfea3301ea191a14963edea2e6096ac326f73e22346b22e8569554993",
+    "scene_reconstruction/__init__.py": "1d4db147d3642590746c2411402e9d949a18e053dde02698f0e9afe3fb382164",
+    "scene_reconstruction/export.py": "96fd15e6b700905930df0aa07641cc36895543401d5cffbdd4bf024ccc83792f",
+    "scene_reconstruction/navigation.py": "a45d0d082c4f39fbcd4cdcdbc949ae9844de9fb030930746ee810150d3901534",
+    "scene_reconstruction/provenance.py": "014b211bf177d9492d67c92491b21a36214997e9ece6bd21644b6f5c30717526",
+    "scene_reconstruction/layout.py": "0e7106f01eca8cc786686c511ea7ef66c83389629c1ff2da6bb033ba4d35248e",
+    "skills/worldlabs-scene-reconstruction/SKILL.md": "7630d76152129386d0919b8c07c126d38db884bb89c1b4674cadcb8b2283ac0d",
+    "skills/worldlabs-scene-reconstruction/references/workflow.md": "a1e2b61c79ceae94c0933502c82b5c2adca56b5b8d98aa0a9fd7feb7e7109a7b",
+    "skills/worldlabs-scene-reconstruction/references/manifest.md": "6800d05b2f844df2568a1805ab607e0dfb4b7fab2576642d7f57a2898a29a16c",
+    "skills/worldlabs-scene-reconstruction/references/atlas.md": "03dbe5d22a1d6829343b5d4ceaf9f526ee424f5c221e47d4af210817a32fdda7",
+    "skills/worldlabs-scene-reconstruction/agents/openai.yaml": "21a6dec39b7e4975f44e293bc60bf8d0fdb83cc7c7eb7acb3637d0244f1c7d84",
+    "skills/worldlabs-scene-reconstruction/assets/toolbox/.gitignore": "09c4b4ca7b481c57c14a3e8a22ec707697808ea7f4e792aa69d6b81c5bc5db5d",
+    "skills/worldlabs-scene-reconstruction/assets/toolbox/requirements.txt": "9bb4cce3ab0653a3c629d30d98ecb34c11b3f5e02ef449957df7a68d5897d4af",
+    "skills/worldlabs-scene-reconstruction/assets/toolbox/scripts/calibrate_worldlabs_scene.py": "9224e2bb163c5edef3210c449597935b5839009a46a6600170a6f5f2af5e8cd4",
+    "skills/worldlabs-scene-reconstruction/assets/toolbox/scripts/rescale_scene.py": "d8edb8a16a1f329ed3e013c41eef6eb3f984334eabc686f5bd0b6091ec090eb2",
+    "skills/worldlabs-scene-reconstruction/assets/toolbox/scripts/validate_heldout_views.py": "4845e9c93b70fdc94482c6d93beb5c9f5934c603e348c998d94a74d0647b5ce4",
+    "skills/worldlabs-scene-reconstruction/assets/toolbox/scripts/inspect_video.py": "5ca576ad20344be3bd5f0147bbb8bae05b10db85a5e7de117b43a1f88925d088",
+    "skills/worldlabs-scene-reconstruction/assets/toolbox/scripts/inspect_worldlabs_scene.py": "096231afadea7b370909ccbe07a0ac1d78fdd2aab4b7b5deee3ce5513f2bff09",
+    "skills/worldlabs-scene-reconstruction/assets/toolbox/scripts/export_worldlabs_scene.py": "efd4cd405cf7796126c36db0d602ac419d02f9304a8d5733e1e3038d0a32bb57",
+    "skills/worldlabs-scene-reconstruction/assets/toolbox/scripts/select_worldlabs_frames.py": "0a7c28e5c65aa7d3fdd0fc177fdfa3f883067ab5ba51f93892f185f4ca087ffc",
+    "skills/worldlabs-scene-reconstruction/assets/toolbox/scripts/worldlabs_scene.py": "0517825ca5d2c8f0f5e16aa6d65a37b57deb1eff7cb9a3eb831205ce00519f6c",
+    "skills/worldlabs-scene-reconstruction/assets/toolbox/scripts/render_worldlabs_scene.py": "b44a0b55d5c674c62516008d87e7c8e57328ec41354b83610e9b09097499eb82",
+    "skills/worldlabs-scene-reconstruction/assets/toolbox/scripts/prepare_worldlabs_review_geometry.py": "cda6e92f8fbe8a0d9407229f6ddfe3e9e1462625e18b3fa581f076fd2d433e36",
+    "skills/worldlabs-scene-reconstruction/assets/toolbox/scripts/validate_worldlabs_isaac.py": "02a9b3334313bc15e0557ad4c234ba26132c6344fc83f50a35fd7996a07828c7",
+    "skills/worldlabs-scene-reconstruction/assets/toolbox/scripts/prepare_worldlabs_mesh.py": "c9902b064a3aceb8eab48c182c693f20584ba8a6a343145e850fd82fc66c975f",
+    "skills/worldlabs-scene-reconstruction/assets/toolbox/scripts/prepare_worldlabs_viewer.py": "779081069cd0b592240afe675034cc95c2aebab0685683fcca90746169f9f6ac",
+    "skills/worldlabs-scene-reconstruction/assets/toolbox/scripts/validate_worldlabs_mujoco.py": "0eeddecbcbe9835ce944810b2e08b26379ab08e5e387d6eebed81eb176474e28",
+    "skills/worldlabs-scene-reconstruction/assets/toolbox/scripts/audit_assets.py": "89e13f3155a454627e906b7a327efa54beb63e28845872cce9e56e70eb3584db",
+    "skills/worldlabs-scene-reconstruction/assets/toolbox/scripts/validate_export.py": "976334cef172a836f72fd76062bf40dbac9fa964b72135808470b981628c3660",
+    "skills/worldlabs-scene-reconstruction/assets/toolbox/scene_reconstruction/atlas_viewer.html": "768edb8cfea3301ea191a14963edea2e6096ac326f73e22346b22e8569554993",
+    "skills/worldlabs-scene-reconstruction/assets/toolbox/scene_reconstruction/__init__.py": "1d4db147d3642590746c2411402e9d949a18e053dde02698f0e9afe3fb382164",
+    "skills/worldlabs-scene-reconstruction/assets/toolbox/scene_reconstruction/export.py": "96fd15e6b700905930df0aa07641cc36895543401d5cffbdd4bf024ccc83792f",
+    "skills/worldlabs-scene-reconstruction/assets/toolbox/scene_reconstruction/navigation.py": "a45d0d082c4f39fbcd4cdcdbc949ae9844de9fb030930746ee810150d3901534",
+    "skills/worldlabs-scene-reconstruction/assets/toolbox/scene_reconstruction/provenance.py": "014b211bf177d9492d67c92491b21a36214997e9ece6bd21644b6f5c30717526",
+    "skills/worldlabs-scene-reconstruction/assets/toolbox/scene_reconstruction/layout.py": "0e7106f01eca8cc786686c511ea7ef66c83389629c1ff2da6bb033ba4d35248e"
+  }
+}

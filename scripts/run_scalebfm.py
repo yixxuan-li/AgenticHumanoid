@@ -26,7 +26,7 @@ def main():
     p=argparse.ArgumentParser();p.add_argument('--task',choices=['squat','navigate','explore','reach'],default='squat')
     p.add_argument('--mode',type=int,default=None);p.add_argument('--device',default='cpu')
     p.add_argument('--seconds',type=float,default=8.0);p.add_argument('--video',action='store_true');p.add_argument('--speed',type=float,default=.12)
-    p.add_argument('--run-name',default='');p.add_argument('--source',type=Path,default=Path('vendor/ScaleBFM'));p.add_argument('--scene',type=Path,default=Path('outputs/scene/scene.xml'))
+    p.add_argument('--run-name',default='');p.add_argument('--source',type=Path,default=Path('vendor/ScaleBFM'));p.add_argument('--scene',type=Path,default=Path('outputs/worldlabs_scene/scene.xml'))
     args=p.parse_args();torch.set_num_threads(2)
     output=Path('outputs/controller')/args.run_name;output.mkdir(parents=True,exist_ok=True)
     robot=args.source/'ScaleBridge/scalebridge/data/robot/g1_29dof/g1_29dof.xml'

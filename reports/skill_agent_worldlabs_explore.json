@@ -1,0 +1,32 @@
+{
+  "agent": "map-based skill router + A* approach + BFM task tracking",
+  "task": "navigate",
+  "scene": "outputs/worldlabs_scene",
+  "scene_fingerprint": "057ee436dffdb9a2b6811e7208df4a09462d30e922a45c87fc06084e3e601e38",
+  "state_access": "Scene manifest and simulator object/root/wrist state",
+  "steps": [
+    {
+      "skill": "navigate",
+      "selection": "Screen manifest viewpoints and choose the longest collision-free route at radius 0.32 m"
+    }
+  ],
+  "status": "error",
+  "command": [
+    "/home/lhy/Yixuan/AgenticHumanoid/.venv/bin/python",
+    "scripts/run_scalebfm.py",
+    "--scene",
+    "outputs/worldlabs_scene/scene.xml",
+    "--run-name",
+    "worldlabs_explore",
+    "--device",
+    "cuda",
+    "--task",
+    "explore",
+    "--seconds",
+    "38",
+    "--speed",
+    ".12",
+    "--video"
+  ],
+  "reason": "Command '['/home/lhy/Yixuan/AgenticHumanoid/.venv/bin/python', 'scripts/run_scalebfm.py', '--scene', 'outputs/worldlabs_scene/scene.xml', '--run-name', 'worldlabs_explore', '--device', 'cuda', '--task', 'explore', '--seconds', '38', '--speed', '.12', '--video']' returned non-zero exit status 1."
+}

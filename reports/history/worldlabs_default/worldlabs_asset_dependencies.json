@@ -1,0 +1,26 @@
+{
+  "scene_fingerprint": "057ee436dffdb9a2b6811e7208df4a09462d30e922a45c87fc06084e3e601e38",
+  "checks": {
+    "mujoco_model_loads": true,
+    "mujoco_files_local": true,
+    "mujoco_files_exist": true,
+    "usd_dependencies_resolved_except_declared_runtime_modules": true,
+    "usd_files_local": true
+  },
+  "all_passed": true,
+  "mujoco_meshes": 3,
+  "mujoco_external_files": 6,
+  "usd": [
+    {
+      "asset": "/home/lhy/Yixuan/AgenticHumanoid/outputs/worldlabs_scene/scene.usda",
+      "layers": 1,
+      "non_layer_assets": 3,
+      "runtime_provided_material_modules": [],
+      "unresolved_non_runtime_assets": [],
+      "outside_assets": [],
+      "outside_layers": []
+    }
+  ],
+  "resolution_context": "usd-core outside Isaac Kit; OmniPBR.mdl is supplied by the tested Isaac runtime",
+  "scope": "File locality and resolver dependencies; runtime/physics validation is separate"
+}

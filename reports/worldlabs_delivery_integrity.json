@@ -1,0 +1,15 @@
+{
+  "scene_fingerprint": "d991e9181b6d9d428171375e2ab7ecdafa795f6f0cabbbd90eeb2581873ee2fa",
+  "archive": "deliverables/worldlabs_scene_bundle.zip",
+  "bytes": 79970046,
+  "sha256": "07db3e6f2c8fd8576ac935928c7bcc42de23b727edce4f4358a9e933e1b93118",
+  "zip_crc_passed": true,
+  "relocated_mujoco_load": true,
+  "relocated_usd_load": true,
+  "relocated_dependencies_resolved": true,
+  "relocated_scene_identity": true,
+  "relocated_splat_identity": true,
+  "contains_api_key": false,
+  "contains_signed_download_urls": false,
+  "metric_accuracy_verified": false
+}

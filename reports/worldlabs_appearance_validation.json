@@ -1,0 +1,354 @@
+{
+  "scene_fingerprint": "d991e9181b6d9d428171375e2ab7ecdafa795f6f0cabbbd90eeb2581873ee2fa",
+  "method": "Unseen video frames; pose-only SIFT/3D PnP against learned input depth; no held-out pixels used as reconstruction texture",
+  "training_video_frame_indices": [
+    7,
+    82,
+    97,
+    157,
+    202,
+    232,
+    277,
+    352,
+    397,
+    412,
+    472,
+    502
+  ],
+  "results": [
+    {
+      "video_frame": 30,
+      "time_seconds": 1.0,
+      "status": "rendered",
+      "pose_reference_training_frame": "frame_0006.jpg",
+      "correspondences": 98,
+      "pnp_inliers": 90,
+      "median_reprojection_error_px": 0.827091874228065,
+      "mean_absolute_rgb_error_0_255": 16.25326621185446,
+      "gray_ssim": 0.748673772460704,
+      "camera_center_provisional_m": [
+        5.1696585604401974,
+        2.9398551046733328,
+        1.5309042745401575
+      ],
+      "camera_rotation_cv": [
+        [
+          0.9985896600877828,
+          0.017531101576954394,
+          -0.05011338387362083
+        ],
+        [
+          -0.046604694517655476,
+          -0.16266850157641913,
+          -0.9855795051865672
+        ],
+        [
+          -0.025430163481235953,
+          0.9865250220204154,
+          -0.1616220520626334
+        ]
+      ],
+      "intrinsic": [
+        [
+          476.36490885416663,
+          0.0,
+          160.0
+        ],
+        [
+          0.0,
+          475.620588684082,
+          284.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "visible_primitive_pixels": {
+        "atlas_001": 163510,
+        "atlas_002": 17894
+      }
+    },
+    {
+      "video_frame": 120,
+      "time_seconds": 4.0,
+      "status": "rendered",
+      "pose_reference_training_frame": "frame_0007.jpg",
+      "correspondences": 150,
+      "pnp_inliers": 139,
+      "median_reprojection_error_px": 0.676031679325176,
+      "mean_absolute_rgb_error_0_255": 19.429095143779342,
+      "gray_ssim": 0.7258403648697399,
+      "camera_center_provisional_m": [
+        4.995894473047115,
+        3.2396197161952167,
+        1.5361246682487053
+      ],
+      "camera_rotation_cv": [
+        [
+          0.7823552251256816,
+          0.6201180913524023,
+          -0.05808489042770554
+        ],
+        [
+          0.05190948474242618,
+          -0.1578553954219845,
+          -0.9860968915527242
+        ],
+        [
+          -0.6206655356247202,
+          0.7684628988530435,
+          -0.15568900402423003
+        ]
+      ],
+      "intrinsic": [
+        [
+          475.6316731770833,
+          0.0,
+          160.0
+        ],
+        [
+          0.0,
+          474.8884986877441,
+          284.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "visible_primitive_pixels": {
+        "atlas_000": 6833,
+        "atlas_001": 144852,
+        "atlas_002": 29949
+      }
+    },
+    {
+      "video_frame": 210,
+      "time_seconds": 7.0,
+      "status": "rendered",
+      "pose_reference_training_frame": "frame_0014.jpg",
+      "correspondences": 303,
+      "pnp_inliers": 284,
+      "median_reprojection_error_px": 0.5057690992184157,
+      "mean_absolute_rgb_error_0_255": 21.1284404342723,
+      "gray_ssim": 0.6059948048477551,
+      "camera_center_provisional_m": [
+        5.132900764697753,
+        3.2953695472003286,
+        1.515644072038002
+      ],
+      "camera_rotation_cv": [
+        [
+          0.29418866917130904,
+          0.9550527716666417,
+          -0.03643117158532194
+        ],
+        [
+          0.12994077520031205,
+          -0.07773206823377427,
+          -0.9884700908517372
+        ],
+        [
+          -0.9468729702930355,
+          0.2860628058660634,
+          -0.1469681912131976
+        ]
+      ],
+      "intrinsic": [
+        [
+          473.9138997395833,
+          0.0,
+          160.0
+        ],
+        [
+          0.0,
+          473.1734092712402,
+          284.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "visible_primitive_pixels": {
+        "atlas_000": 35045,
+        "atlas_001": 110881,
+        "atlas_002": 35767
+      }
+    },
+    {
+      "video_frame": 300,
+      "time_seconds": 10.0,
+      "status": "rendered",
+      "pose_reference_training_frame": "frame_0016.jpg",
+      "correspondences": 54,
+      "pnp_inliers": 39,
+      "median_reprojection_error_px": 0.6637866216802345,
+      "mean_absolute_rgb_error_0_255": 24.785601892605634,
+      "gray_ssim": 0.5803699923170998,
+      "camera_center_provisional_m": [
+        5.2363895628102455,
+        3.4098341888202057,
+        1.4297597475846882
+      ],
+      "camera_rotation_cv": [
+        [
+          -0.23071827355901842,
+          0.9714593227532222,
+          -0.055098661343055744
+        ],
+        [
+          0.3379853256113537,
+          0.026912516640849593,
+          -0.9407665151988793
+        ],
+        [
+          -0.9124335580837287,
+          -0.23567456520360192,
+          -0.334548204895438
+        ]
+      ],
+      "intrinsic": [
+        [
+          472.58441840277777,
+          0.0,
+          160.0
+        ],
+        [
+          0.0,
+          471.8458969116211,
+          284.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "visible_primitive_pixels": {
+        "atlas_000": 27729,
+        "atlas_001": 153806,
+        "atlas_002": 149
+      }
+    },
+    {
+      "video_frame": 390,
+      "time_seconds": 13.0,
+      "status": "rendered",
+      "pose_reference_training_frame": "frame_0027.jpg",
+      "correspondences": 189,
+      "pnp_inliers": 168,
+      "median_reprojection_error_px": 0.5725017201056387,
+      "mean_absolute_rgb_error_0_255": 12.074013350938968,
+      "gray_ssim": 0.8015038257365977,
+      "camera_center_provisional_m": [
+        5.013881383922072,
+        3.482608678647376,
+        1.5161640310759665
+      ],
+      "camera_rotation_cv": [
+        [
+          -0.9162020804423412,
+          0.3964851997577337,
+          -0.0580795503270789
+        ],
+        [
+          0.10288597690899981,
+          0.09267509912352101,
+          -0.9903664987053662
+        ],
+        [
+          -0.38728313098895295,
+          -0.9133514177880906,
+          -0.12570188572920482
+        ]
+      ],
+      "intrinsic": [
+        [
+          475.4865993923611,
+          0.0,
+          160.0
+        ],
+        [
+          0.0,
+          474.74365158081054,
+          284.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "visible_primitive_pixels": {
+        "atlas_001": 80317,
+        "test_block__block": 2,
+        "atlas_002": 26760,
+        "atlas_003": 74543
+      }
+    },
+    {
+      "video_frame": 480,
+      "time_seconds": 16.0,
+      "status": "rendered",
+      "pose_reference_training_frame": "frame_0032.jpg",
+      "correspondences": 154,
+      "pnp_inliers": 148,
+      "median_reprojection_error_px": 0.5134179362638279,
+      "mean_absolute_rgb_error_0_255": 8.146731954225352,
+      "gray_ssim": 0.8368722905330496,
+      "camera_center_provisional_m": [
+        4.63017679031261,
+        3.9339365102818014,
+        1.531622907451801
+      ],
+      "camera_rotation_cv": [
+        [
+          -0.764446602171269,
+          -0.64299190132163,
+          -0.04672052293796397
+        ],
+        [
+          -0.09511557998615483,
+          0.18416506069300764,
+          -0.9782822991671873
+        ],
+        [
+          0.6376318835132846,
+          -0.7434007299261525,
+          -0.2019429025060423
+        ]
+      ],
+      "intrinsic": [
+        [
+          474.2356228298611,
+          0.0,
+          160.0
+        ],
+        [
+          0.0,
+          473.4946296691894,
+          284.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "visible_primitive_pixels": {
+        "atlas_001": 181740
+      }
+    }
+  ],
+  "limitations": [
+    "Review poses are estimated using learned geometry.",
+    "RGB/SSIM agreement is descriptive and does not verify metric scale or physical parameters.",
+    "Views are intermediate positions along the recorded path, not unseen backsides.",
+    "Input frames were matched back to decoded source frames by minimum thumbnail RGB error."
+  ]
+}

@@ -8,7 +8,7 @@ from pathlib import Path
 import mujoco
 import mujoco.viewer
 
-p=argparse.ArgumentParser();p.add_argument('--fast-exit',action='store_true',help='Skip interpreter graphics teardown after the viewer closes');p.add_argument('--collision',action='store_true');p.add_argument('--scene',type=Path,default=Path('outputs/scene/scene.xml'));args=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('--fast-exit',action='store_true',help='Skip interpreter graphics teardown after the viewer closes');p.add_argument('--collision',action='store_true');p.add_argument('--scene',type=Path,default=Path('outputs/worldlabs_scene/scene.xml'));args=p.parse_args()
 m=mujoco.MjModel.from_xml_path(str(args.scene));d=mujoco.MjData(m);events=queue.SimpleQueue()
 paused=False;door_target=None;cutaway=False;collision_view=False
 original_rgba=m.geom_rgba.copy();original_matid=m.geom_matid.copy()

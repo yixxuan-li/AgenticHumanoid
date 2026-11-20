@@ -8,7 +8,7 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 import mujoco,numpy as np
 from scene_reconstruction.navigation import collision_grid,plan
 from scene_reconstruction.provenance import scene_fingerprint
-p=argparse.ArgumentParser();p.add_argument('--scene',type=Path,default=Path('outputs/final_scene'));p.add_argument('--task',choices=['navigate','pick'],required=True);p.add_argument('--target',default='test_block');p.add_argument('--run-name',default='agent');p.add_argument('--device',default='cpu');p.add_argument('--video',action='store_true');p.add_argument('--dry-run',action='store_true');a=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('--scene',type=Path,default=Path('outputs/worldlabs_scene'));p.add_argument('--task',choices=['navigate','pick'],required=True);p.add_argument('--target',default='test_block');p.add_argument('--run-name',default='agent');p.add_argument('--device',default='cpu');p.add_argument('--video',action='store_true');p.add_argument('--dry-run',action='store_true');a=p.parse_args()
 mf=json.loads((a.scene/'manifest.json').read_text());identity=scene_fingerprint(a.scene)['sha256'];report=dict(agent='map-based skill router + A* approach + BFM task tracking',task=a.task,scene=str(a.scene),scene_fingerprint=identity,state_access='Scene manifest and simulator object/root/wrist state',steps=[],status='planning')
 try:
  if a.task=='pick':

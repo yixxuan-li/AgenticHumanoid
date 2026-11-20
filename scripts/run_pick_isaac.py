@@ -7,7 +7,7 @@ import argparse,ast,json,math,os,sys
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from isaaclab.app import AppLauncher
-p=argparse.ArgumentParser();p.add_argument('--scene',type=Path,default=Path('outputs/final_scene/scene.usda'));p.add_argument('--robot-usd',type=Path,default=Path('outputs/robots/g1_dex3_v4/g1_dex3.usd'));p.add_argument('--run-name',default='trial');p.add_argument('--seconds',type=float,default=20.);p.add_argument('--navigate-first',action='store_true');p.add_argument('--navigation-speed',type=float,default=.12);p.add_argument('--plan',type=Path,default=Path('reports/skill_agent_final_plan.json'));p.add_argument('--video',action='store_true');p.add_argument('--fast-exit',action='store_true');AppLauncher.add_app_launcher_args(p);a=p.parse_args();launcher=AppLauncher(a);app=launcher.app
+p=argparse.ArgumentParser();p.add_argument('--scene',type=Path,default=Path('outputs/worldlabs_scene/scene.usda'));p.add_argument('--robot-usd',type=Path,default=Path('outputs/robots/g1_dex3_v4/g1_dex3.usd'));p.add_argument('--run-name',default='trial');p.add_argument('--seconds',type=float,default=20.);p.add_argument('--navigate-first',action='store_true');p.add_argument('--navigation-speed',type=float,default=.12);p.add_argument('--plan',type=Path,default=Path('reports/skill_agent_final_plan.json'));p.add_argument('--video',action='store_true');p.add_argument('--fast-exit',action='store_true');AppLauncher.add_app_launcher_args(p);a=p.parse_args();launcher=AppLauncher(a);app=launcher.app
 import numpy as np,torch
 from scipy.spatial.transform import Rotation,Slerp
 import omni.usd

@@ -3,7 +3,7 @@ import argparse,json,os,sys
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from isaaclab.app import AppLauncher
-p=argparse.ArgumentParser();p.add_argument('--scene',type=Path,default=Path('outputs/final_scene/scene.usda'));p.add_argument('--report',type=Path,default=Path('reports/final_placement_validation.json'));p.add_argument('--fast-exit',action='store_true');AppLauncher.add_app_launcher_args(p);a=p.parse_args();launcher=AppLauncher(a);app=launcher.app
+p=argparse.ArgumentParser();p.add_argument('--scene',type=Path,default=Path('outputs/worldlabs_scene/scene.usda'));p.add_argument('--report',type=Path,default=Path('reports/final_placement_validation.json'));p.add_argument('--fast-exit',action='store_true');AppLauncher.add_app_launcher_args(p);a=p.parse_args();launcher=AppLauncher(a);app=launcher.app
 import numpy as np,omni.usd
 from pxr import UsdGeom,UsdPhysics,Gf
 from isaacsim.core.utils.prims import create_prim

@@ -1,0 +1,37 @@
+{
+  "runtime": "Isaac Lab 0.47.2 / Isaac Sim 5.1 / PhysX",
+  "scene_fingerprint": "057ee436dffdb9a2b6811e7208df4a09462d30e922a45c87fc06084e3e601e38",
+  "checks": {
+    "finite_states": true,
+    "assigned_masses": true,
+    "cube_rest_support": true,
+    "cube_drop_support": true,
+    "cube_no_floor_tunneling": true
+  },
+  "all_passed": true,
+  "settled_positions_m": {
+    "test_block": [
+      5.28000020980835,
+      3.640000104904175,
+      0.02500000037252903
+    ]
+  },
+  "masses_kg": {
+    "test_block": 0.07999999821186066
+  },
+  "drop": {
+    "height_above_settled_m": 0.5,
+    "final_position_m": [
+      5.279552459716797,
+      3.6393918991088867,
+      0.02500000037252903
+    ],
+    "expected_center_height_m": 0.025,
+    "minimum_center_height_m": 0.014879988506436348
+  },
+  "scale_status": "provisional_assumed_table_height",
+  "limitations": [
+    "Static scene loading and benchmark cube tests do not validate articulated furniture or true metric scale.",
+    "Collision boxes and continuous floor are approximations."
+  ]
+}

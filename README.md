@@ -1,123 +1,79 @@
-# Video reconstruction for MuJoCo and Isaac Lab
+# AgenticHumanoid
 
-The delivered scene is **`outputs/final_scene/`**. It combines geometry recovered
-from `data/scene/scene.mp4`, captured source appearance, fitted collision bodies,
-12 free objects, and an inferred cabinet hinge. Released ScaleBFM weights drive
-navigation followed by a physical Dex3 grasp in both MuJoCo and Isaac Lab/PhysX.
+Video-to-scene reconstruction with **World Labs Atlas**, followed by calibrated
+MJCF/USD export and ScaleBFM whole-body control in MuJoCo and Isaac Lab.
+The World Labs workflow replaces the earlier VGGT reconstruction.
 
-**Metric calibration is pending.** The video supplies no verified length. The
-scene assumes a **0.74 m table height**; the resulting approximate envelope is
-**6.17 × 5.66 × 2.74 m**, including an inferred entry landing. These are provisional
-model dimensions, not measurements. Mass, friction, hidden geometry, and the
-cabinet mechanism are estimates. See [the measured results](reports/RESULTS.md).
+The current local scene is `outputs/worldlabs_scene/`, and the native Gaussian
+splat viewer is `outputs/worldlabs_viewer/`. Generated assets, model weights,
+vendor sources, API responses, credentials and delivery archives are ignored by
+Git. A fresh checkout contains source, the input video, the reusable skill and
+sanitized validation reports; reconstruct or restore the local bundle to obtain
+scene assets.
 
-## Review and interact
+See [the reconstruction results](reports/WORLDLABS_RESULTS.md) for the actual
+pipeline, metrics and limitations. Absolute scale currently assumes a **0.74 m
+table height**, pending a real measurement. Original furniture is static;
+one added free cube supports physics checks. Navigation succeeded in both
+engines. Picking in this Atlas room, symbolic skill discovery and real-robot
+transfer have not been validated.
 
-Git excludes generated delivery archives and individual assets larger than
-10 MiB. The full scene USD and converted robot base USD remain in the local
-workspace, along with the ZIP bundles. A fresh clone needs the reconstruction
-and robot-import commands below to regenerate these files before running Isaac
-Lab. Some links in the original results report refer to these local artifacts.
-The original validation/provenance reports describe the complete local bundle.
+## Reusable reconstruction skill
 
-- [MuJoCo environment](outputs/final_scene/scene.xml) and [matching USD](outputs/final_scene/scene.usda).
-- [Editable manifest](outputs/final_scene/manifest.json): inventory, poses, dimensions, assumptions, and benchmark profile.
-- [Source/render comparison](outputs/final_scene/photo_comparison.png) and [independent review frames](outputs/final_scene/heldout_comparison.jpg).
-- [Side-by-side two-engine demo](outputs/final_scene/navigation_pick_both_engines.mp4).
-- [MuJoCo navigation-to-pick video](outputs/controller/pick/final_pick/dex3_pick_trial.mp4).
-- [PhysX navigation-to-pick video](outputs/controller/isaac_pick/final_sequence/pick.mp4).
-- [MuJoCo exploration video](outputs/controller/final_explore/explore_mode0.mp4).
-- [Force-driven furniture interaction](outputs/final_scene/interaction.mp4).
-- [Trajectory/height plots](outputs/final_scene/benchmark_results.png).
+Use [worldlabs-scene-reconstruction](skills/worldlabs-scene-reconstruction/SKILL.md)
+for another capture. It includes portable tools for frame selection, resumable
+API stages, floor/scale calibration, simulator export, local splat viewing and
+physics checks. Follow [its workflow](skills/worldlabs-scene-reconstruction/references/workflow.md)
+for installation and commands. Copy the skill folder to `~/.codex/skills/` to
+install, or use the locally installed skill as `$worldlabs-scene-reconstruction`.
+The official `worldlabs` CLI handles Atlas jobs. The API does not provide the
+simulator physical parameters, articulation or downstream robot control.
 
-The scene contains one central folding table, four green chairs, one gray chair,
-two black office chairs, perimeter workstations, a wall cupboard, a vertical
-storage stack, and movable props. The red `test_block` is an **added benchmark
-object**, absent from the source video. The grasp tests target it. The small
-observed black table object remains movable but has no validated grasp profile.
-Papers, cables, cloth clutter, and some small details remain visual-only.
-
-Open the native MuJoCo viewer from the project root:
+Build a standalone skill archive after editing maintained tools:
 
 ```bash
-.venv/bin/python scripts/view_scene.py --scene outputs/final_scene/scene.xml --fast-exit
+python scripts/package_worldlabs_skill.py
+# Offline portability and simulator checks; no paid API calls.
+.venv/bin/python scripts/verify_worldlabs_skill.py
 ```
 
-Controls: **P** pause, **R** reset, **O/C** cabinet open/close, **1–4** camera
-presets, **[ / ]** recorded-camera views, **V** cutaway, **F** collision view,
-plus MuJoCo mouse navigation/physical perturbations. A desktop display is needed.
-`--collision` opens with collision proxies visible. The photos on movable objects
-follow their rigid-body transforms; their captured shadows and lighting remain
-baked into the images. `--fast-exit` avoids an interpreter graphics-shutdown
-crash observed after the native window closed on this runtime.
+The archive is `deliverables/worldlabs-scene-reconstruction.zip`. Office-specific
+mesh corrections remain separate from the generic toolbox.
 
-For a fresh machine, use Python 3.12 and `requirements.txt`. The local `.venv`
-currently shares installed scientific packages with a neighboring environment;
-it is not a distributable environment. The exported scene itself uses relative
-asset paths. Tested runtimes are MuJoCo 3.11.0 and Isaac Sim 5.1 / Isaac Lab 0.47.2.
-
-## Run the controller and simulator checks
-
-The agent uses the known scene map and simulator state, A* approach planning,
-ScaleBFM body references, task-space feedback, and separate Dex3 finger control.
-It is a **map-based scripted skill agent**, with no learned visual perception.
-Neither robot root nor object pose is forced during an episode. No object weld
-or external object force is used in the grasp trials.
+## Open the local scene
 
 ```bash
-.venv/bin/python scripts/validate_scene.py \
-  --scene outputs/final_scene --report reports/final_scene_physics.json
-.venv/bin/python scripts/run_skill_agent.py --scene outputs/final_scene \
-  --task navigate --run-name my_explore --device cuda --video
-.venv/bin/python scripts/run_skill_agent.py --scene outputs/final_scene \
-  --task pick --run-name my_pick --device cuda --video
+python3 -m http.server 8870 --bind 127.0.0.1 --directory outputs/worldlabs_viewer
+.venv/bin/python scripts/view_scene.py --scene outputs/worldlabs_scene/scene.xml --fast-exit
+.venv/bin/python scripts/worldlabs_scene.py status --stage splats
+.venv/bin/python scripts/validate_worldlabs_mujoco.py
+scripts/run_isaac.sh scripts/validate_worldlabs_isaac.py \
+  --scene outputs/worldlabs_scene/scene.usda --headless --fast-exit
 ```
 
-The pick router checks a target's affordance, a tested hand profile, its support
-pose, and a collision-free approach. A declared affordance alone is insufficient.
-`--target pick_box` currently rejects the unvalidated observed object; this is
-not counted as a grasp failure or success. Use `--dry-run` to inspect a plan.
+The splat viewer needs no API key after download. For API work, use CLI login,
+`WLT_API_KEY`, or an authorized ignored first-line `worldlabs` credential file.
+Raw operation responses can include private signed URLs; keep them local.
 
-For Isaac Lab, `scripts/run_isaac.sh` selects the installed runtime and its needed
-`libstdc++` preload. Set `ISAAC_PYTHON` / `ISAAC_LIBSTDCXX` on another installation.
-`--fast-exit` flushes artifacts and avoids a Kit shutdown hang observed here.
+## ScaleBFM control
 
-```bash
-scripts/run_isaac.sh scripts/isaaclab_smoke.py --headless --fast-exit \
-  --scene outputs/final_scene/scene.usda --report reports/final_isaaclab_validation.json
+The shared controller tools use the released medium checkpoint from
+[ScaleBFM](https://github.com/zengweishuai/ScaleBFM), with pinned source revision,
+checkpoint and deployment metadata. The adapter supplies task mode, three
+history states and six future reference states at 50 Hz; physics/PD run at
+200 Hz. Supported adapter tasks are `squat`, `navigate`, `explore` and `reach` in
+MuJoCo; Isaac Lab supports `squat`, `navigate` and `explore`. Exploration uses a
+known collision map and simulator state. Raw upstream mode indices are model
+conditioning labels, not independently validated skills.
 
-.venv/bin/python scripts/run_skill_agent.py --scene outputs/final_scene \
-  --task pick --run-name final_plan --dry-run
-scripts/run_isaac.sh scripts/run_pick_isaac.py --headless --fast-exit \
-  --scene outputs/final_scene/scene.usda --navigate-first \
-  --plan reports/skill_agent_final_plan.json --run-name my_pick
-```
-
-Add `--enable_cameras --video` to the PhysX grasp command to record it. The
-converted G1/Dex3 USD is at `outputs/robots/g1_dex3_v4/`; on a fresh setup, import it
-with `scripts/import_dex3_isaac.py --output outputs/robots/g1_dex3_v4 --headless
---fast-exit` through the same Isaac wrapper. The importer preserves source
-inertias, removes empty sensor/extra articulation artifacts, and sets small
-contact offsets. [Robot transfer checks](reports/robot_transfer_audit.json)
-compare source masses, rest transforms, all 43 joint ranges, and signed axes.
-
-For a source-camera RTX image, add `--enable_cameras --screenshot --camera
-source_016` to the scene smoke command. [The recorded view](outputs/final_scene/isaaclab_source_016.png)
-uses the matching camera pose, roll, and vertical field of view.
-
-## Reproduce this recording's reconstruction
-
-Fetch pinned official sources and checkpoints when absent. Both model loaders
-verify their checkpoint hashes; the BFM adapter also pins deployment metadata.
-Weights/vendor sources are separate from the reusable skill and code bundle.
+Set up reconstruction dependencies with `pip install -r requirements.txt` in a
+Python environment. Isaac Lab requires its own compatible installation;
+`scripts/run_isaac.sh` accepts `ISAAC_PYTHON` and `ISAAC_LIBSTDCXX` for local paths.
+Fetch the pinned WBC source and weights separately:
 
 ```bash
-.venv/bin/python scripts/bootstrap_sources.py --isaac
-.venv/bin/python scripts/download_ranges.py \
-  https://huggingface.co/facebook/VGGT-1B/resolve/main/model.pt \
-  checkpoints/vggt_model_ranges.pt --workers 8 \
-  --sha256 d15bf50a8615c8225ed48b51ea5cac673d82442ec0309036df555a053253afe0
-.venv/bin/python scripts/download_ranges.py \
+python scripts/bootstrap_sources.py --isaac
+python scripts/download_ranges.py \
   https://huggingface.co/WeishuaiZeng/ScaleBFM/resolve/main/checkpoint/humanoid_transformer_m/model_22200.pt \
   checkpoints/scalebfm_m.pt --workers 8 --chunk-mb 4 \
   --sha256 88d5a79946c03ed25503f48b2af71d16290844ef066ca9b6c8fa8dc3837422e3
@@ -125,73 +81,22 @@ curl -fL https://huggingface.co/WeishuaiZeng/ScaleBFM/resolve/main/compiled_chec
   -o checkpoints/scalebfm_m_metadata.json
 ```
 
-Expected BFM metadata SHA-256:
+Expected metadata SHA-256:
 `3024f18136314fade2676e22d6eafb1a8b2befa388da55b0885a53fcb1368d16`.
-Existing hash-verified files are reused without a network request.
+Robot USD layers can be regenerated with `scripts/import_dex3_isaac.py` when
+needed; inspect that script's options for the local Isaac runtime.
 
 ```bash
-.venv/bin/python scripts/inspect_video.py data/scene/scene.mp4
-.venv/bin/python scripts/run_vggt.py --stride 1 --max-frames 34 --output outputs/geometry_full
-.venv/bin/python scripts/process_geometry.py --input outputs/geometry_full/predictions.npz \
-  --report reports/dense_geometry_full.json
-.venv/bin/python scripts/fit_room_planes.py
-.venv/bin/python scripts/fit_scene_features.py --geometry outputs/geometry_full \
-  --room-envelope reports/room_plane_fit.json
-.venv/bin/python scripts/fuse_geometry.py --geometry outputs/geometry_full --output outputs/fusion
-.venv/bin/python scripts/texture_fused_geometry.py --geometry outputs/geometry_full \
-  --fusion outputs/fusion --bounds -.35 -.75 -.06 6.35 5.55 3.0 --overwrite
-.venv/bin/python scripts/build_dense_scene.py --geometry outputs/fusion \
-  --dynamic-geometry outputs/geometry_full --output outputs/final_scene --hide-front-wall-visual
+.venv/bin/python scripts/run_skill_agent.py --task navigate \
+  --scene outputs/worldlabs_scene --run-name atlas_explore --device cuda --video
+scripts/run_isaac.sh scripts/run_scalebfm_isaac.py --task explore \
+  --scene outputs/worldlabs_scene/scene.usda \
+  --plan outputs/worldlabs/final_navigation_plan.json --seconds 38 \
+  --run-name atlas_native --headless --fast-exit --device cuda:0
 ```
 
-Use a fresh output directory or the explicit overwrite option when retexturing
-existing fusion output. These object ROIs, room bounds, colors, and table-height
-assumptions describe **this recording**. For another video, use the reusable skill,
-configure its own floor/anchor regions, review object identities across the pan,
-and fit a new semantic manifest.
-
-`run_colmap.py` optionally provides an independent sparse reconstruction.
-`process_geometry.py --sfm outputs/colmap/sparse/0` compares camera orientations
-for that exact video. Good reprojection or learned-depth agreement does not
-establish ground-truth depth or metric scale. Original and fused surfaces remain
-in `outputs/geometry_full/` and `outputs/fusion/`; thin movable-object surfaces
-use the original captures where fusion loses detail.
-
-## Calibrate and reuse
-
-Copy `data/scene/calibration.example.json`, replace its null value with a real
-measurement of the corresponding physical segment, then run:
-
-```bash
-.venv/bin/python scripts/rescale_scene.py --scene outputs/final_scene \
-  --output outputs/calibrated_scene --calibration my_measurement.json
-```
-
-The output must be a new directory. Geometry, photographic meshes, cameras,
-planning coordinates, and support heights rescale together; assumed masses
-follow volume. The robot's radius, stance height, hand geometry, and gains stay
-at their published metric size. Re-run physics and controller tests. One anchor
-sets global scale; it does not verify each inferred furniture dimension.
-
-The [±5% sensitivity run](reports/scale_sensitivity.json) is hypothetical, not a
-confidence interval: both variants pass physics checks, the smaller variant's
-pick approach is rejected at 0.32 m planner clearance, and the larger variant
-completes a pick. This makes a measured anchor important before relying on fit
-or reachability.
-
-The reusable [reconstruct-video-scene skill](skills/reconstruct-video-scene/SKILL.md)
-contains a portable geometry/export toolbox and explicit scale, appearance,
-physics, ownership, and controller acceptance gates. It excludes private source
-frames, this office's layout, and model weights. Its validation covers actual
-source-frame ROI alignment/fusion and independent export/settling checks; it
-does not certify arbitrary future videos.
-
-Remaining appearance limits include low source resolution, reflective-window
-holes, thin/occluded surfaces, approximate backsides, and baked shadows. The
-entry closure and cabinet hinge are inferred. Additional translated views and
-measurements would improve fidelity. Earlier primitive prototypes and failed
-trials remain for audit; `outputs/scene/` is **not** the delivered reconstruction.
-
-Upstream sources: [VGGT](https://github.com/facebookresearch/vggt) and
-[ScaleBFM](https://github.com/zengweishuai/ScaleBFM), pinned in `vendor/` provenance
-files. Their code, models, and robot-asset licenses remain applicable.
+The saved native-engine route is scene-bound and included in the local delivery
+bundle. MuJoCo exploration also writes its route into its decision report.
+Generic Dex3 grasp tools are retained for future configured targets; the skill
+router rejects picking without a declared affordance and a validated controller
+profile. Static Atlas furniture is not automatically a manipulation target.

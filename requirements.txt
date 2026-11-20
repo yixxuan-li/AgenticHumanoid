@@ -1,18 +1,15 @@
-# Tested workspace versions are recorded in reports/runtime_versions.json.
+# Reconstruction/export; Atlas itself runs through the official worldlabs CLI.
 numpy>=2.0
 scipy>=1.14
 Pillow>=11
 opencv-python-headless>=4.10
 mujoco==3.11.0
 usd-core>=25.5
-torch>=2.8
-torchvision>=0.23
-einops
-huggingface-hub
-safetensors
+trimesh>=4.0
 imageio
 imageio-ffmpeg
-pycolmap>=4.0
 matplotlib>=3.9
 requests
+# Optional ScaleBFM execution and local floor-plane fitting.
+torch>=2.8
 open3d==0.19.0

@@ -1,0 +1,31 @@
+{
+  "scene": "outputs/worldlabs_scene",
+  "scene_fingerprint": "057ee436dffdb9a2b6811e7208df4a09462d30e922a45c87fc06084e3e601e38",
+  "checks": {
+    "finite_state": true,
+    "no_initial_penetrations_over_5mm": true,
+    "settled_penetration_under_8mm": true,
+    "free_bodies_drift_under_6cm": true,
+    "positive_dynamic_masses": true,
+    "mass_consistency": true,
+    "usd_meters": true,
+    "usd_z_up": true,
+    "usd_rigid_count": true
+  },
+  "all_passed": true,
+  "scale_status": "provisional_assumed_table_height",
+  "free_bodies": {
+    "test_block": {
+      "displacement_m": 2.991554610638769e-05,
+      "mass_kg": 0.08
+    }
+  },
+  "initial_penetrations": [],
+  "max_settled_penetration_m": 0.0,
+  "simulated_seconds": 3.999999999999781,
+  "limitations": [
+    "Settling is not task/affordance validation.",
+    "USD structure checks are not an Isaac Lab runtime test.",
+    "Scale and mass/friction provenance must be assessed separately."
+  ]
+}

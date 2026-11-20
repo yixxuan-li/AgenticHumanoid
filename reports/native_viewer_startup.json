@@ -1,8 +1,0 @@
-{
-  "viewer_running": true,
-  "steps": 243,
-  "scope": "Native GLFW window startup and simulation sync, not automated keyboard/mouse interaction",
-  "initial_interpreter_shutdown_exitcode": 139,
-  "workaround": "--fast-exit flushes output after the window closes and skips interpreter graphics teardown",
-  "workaround_process_exitcode": 0
-}
