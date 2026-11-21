@@ -1,0 +1,53 @@
+{
+  "passed": true,
+  "tests_passed": 36,
+  "new_api_calls": 0,
+  "scene_fingerprint": "d991e9181b6d9d428171375e2ab7ecdafa795f6f0cabbbd90eeb2581873ee2fa",
+  "source_scene_unchanged": true,
+  "online_probes_and_tabletop": {
+    "atlas_reach": {
+      "success": true,
+      "metrics_sha256": "331b70e76b6fa8d8859bc0879a531a8bbe4870316dfda8d39f9dca16afeb9261",
+      "manifest_sha256": "3cac11085b7a53aedfce3fc4caae1788832852b4e65016deddd00d3083f7f3d9",
+      "right_hand_tracking_mean_m": 0.03042109195394807,
+      "probe_diagnostics": {
+        "final_hand_error_m": 0.034567179105559495,
+        "hand_displacement_m": 0.25776441076942724,
+        "root_height_range_m": 0.034331924680457204,
+        "root_reference_height_range_m": 0.0,
+        "final_root_error_m": 0.03343981272097737
+      },
+      "final_target_distance_m": null
+    },
+    "atlas_height": {
+      "success": true,
+      "metrics_sha256": "ca40e477ca90787ba45ade26dbc4539e2673d5e01339c936fbaeed8fd9bc21a1",
+      "manifest_sha256": "b4ad5e9d9955eb995d132f866aeec5ec2c3e63b75594c449c263562e34bf1990",
+      "right_hand_tracking_mean_m": 0.032510133873005095,
+      "probe_diagnostics": {
+        "final_hand_error_m": 0.03259940988717229,
+        "hand_displacement_m": 0.03259953021826572,
+        "root_height_range_m": 0.06782499306850664,
+        "root_reference_height_range_m": 0.07999998331069946,
+        "final_root_error_m": 0.030523373840519896
+      },
+      "final_target_distance_m": null
+    },
+    "tabletop_regression": {
+      "success": true,
+      "metrics_sha256": "617a067aa151e602e2dc443bda7cfadc5407ce8fdbea626b436cee7e01b31e62",
+      "manifest_sha256": "0518d895fb3d2c1943059f8fee525f6e84ad3f7a335e41e2f43d7e1acaa35baa",
+      "right_hand_tracking_mean_m": 0.05211242477241854,
+      "probe_diagnostics": null,
+      "final_target_distance_m": 0.005681951901436332
+    }
+  },
+  "previous_navigation": {
+    "success": true,
+    "goal_error_m": 0.03821299451433003,
+    "report_sha256": "1f4c2cf197836ae00beaaa1e5bc289e1323fe1b32d3d9be01a6b32d528b5c390"
+  },
+  "scene_manipulation_claimed": false,
+  "isaac_rerun": false,
+  "scope": "Merged source and CLI; real navigation and online probes in the previous scene, plus tabletop regression"
+}

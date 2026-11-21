@@ -1,5 +1,35 @@
 # AgenticHumanoid
 
+One system combines **World Labs Atlas scene reconstruction**, shared frozen
+**ScaleBFM control**, and **editable humanoid skill exploration**. The previous
+reconstruction, splat viewer, MuJoCo/Isaac exports and navigation workflows are
+retained. The skill layer adds online ScaleBridge references, onboard RGB-D,
+GPT proposals, symbolic knowledge and independent validation.
+
+See [the merged system and version comparison](docs/MERGED_SYSTEM.md),
+[the skill guide](docs/SKILL_LAB.md), and
+[the development record](docs/DEVELOPMENT_RECORD.md). `agentic-humanoid` is the
+combined command; `humanoid-lab` remains a compatible alias.
+
+```bash
+UV_PROJECT_ENVIRONMENT=.venv-skill-lab uv sync --frozen --extra test
+.venv-skill-lab/bin/agentic-humanoid doctor
+.venv-skill-lab/bin/agentic-humanoid scene --scene outputs/worldlabs_scene
+.venv-skill-lab/bin/agentic-humanoid navigate --scene outputs/worldlabs_scene \
+  --run-name my_atlas_navigation --device cuda --video
+.venv-skill-lab/bin/agentic-humanoid probe --task reach \
+  --scene outputs/worldlabs_scene --output outputs/merged_system/my_atlas_reach
+```
+
+Online controller probes now run directly in the previous reconstructed room,
+with its original spawn point and scene fingerprint. Push learning still uses
+the explicitly modeled tabletop benchmark; reconstructed static furniture has
+no inferred manipulation affordances. For reconstruction/export dependencies,
+install the optional locked group with
+`UV_PROJECT_ENVIRONMENT=.venv-skill-lab uv sync --frozen --extra test --extra reconstruction`.
+Isaac Lab retains its separate runtime installation. The commands below remain
+available for reconstruction and engine-specific operations.
+
 Video-to-scene reconstruction with **World Labs Atlas**, followed by calibrated
 MJCF/USD export and ScaleBFM whole-body control in MuJoCo and Isaac Lab.
 The World Labs workflow replaces the earlier VGGT reconstruction.

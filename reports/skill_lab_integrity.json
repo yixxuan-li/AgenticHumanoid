@@ -1,0 +1,74 @@
+{
+  "passed": true,
+  "scope": "Artifact completeness, finite arrays, source identity, 50Hz timing, actual recorded frame transforms and selection integrity",
+  "episodes": [
+    {
+      "episode": "outputs/skill_lab/final_audit_cycle_v2/initial_validation_00",
+      "policy_steps": 610,
+      "observations": 122,
+      "success": false,
+      "metrics_sha256": "f24de1dd0a0ad0e1c759d4b442eac9217c1e35fdefbde0b6574eba87d0bd01de"
+    },
+    {
+      "episode": "outputs/skill_lab/final_audit_cycle_v2/initial_validation_01",
+      "policy_steps": 610,
+      "observations": 122,
+      "success": false,
+      "metrics_sha256": "17510d5f33bb5765427d7c14f96bcd1a1cd39ee6bcf8e4bba04c2f86d6680f9a"
+    },
+    {
+      "episode": "outputs/skill_lab/final_audit_cycle_v2/initial_validation_02",
+      "policy_steps": 610,
+      "observations": 122,
+      "success": false,
+      "metrics_sha256": "cd0535e91ee93c1b50b827a234ea4d85311cc549f0035f8529584120019b9032"
+    },
+    {
+      "episode": "outputs/skill_lab/final_audit_cycle_v2/round_00_baseline_development_00",
+      "policy_steps": 610,
+      "observations": 122,
+      "success": false,
+      "metrics_sha256": "c9c722db1deed09bdbf1b61d98146efe0028013191c880b1283085ac4404d80a"
+    },
+    {
+      "episode": "outputs/skill_lab/final_audit_cycle_v2/round_00_candidate_development_00",
+      "policy_steps": 836,
+      "observations": 168,
+      "success": false,
+      "metrics_sha256": "2dc4d2126507b91878f727ec1f95389976751d842e60069fe9f53928b08ab056"
+    },
+    {
+      "episode": "outputs/skill_lab/final_audit_cycle_v2/round_00_candidate_validation_00",
+      "policy_steps": 836,
+      "observations": 168,
+      "success": false,
+      "metrics_sha256": "ae702acf95f364eb5226e0360692459047b2337bd10b674fdd4c51a92aeb6fe4"
+    },
+    {
+      "episode": "outputs/skill_lab/final_audit_cycle_v2/round_00_candidate_validation_01",
+      "policy_steps": 836,
+      "observations": 168,
+      "success": false,
+      "metrics_sha256": "dc1e1efaa5f834efac920d011c0b73c56d766231d74115e3cc02935268665c1c"
+    },
+    {
+      "episode": "outputs/skill_lab/final_audit_cycle_v2/round_00_candidate_validation_02",
+      "policy_steps": 836,
+      "observations": 168,
+      "success": false,
+      "metrics_sha256": "753e20e72c6b15b71db0f77d9020c4e952bb54c64d95ec61646410355e7dd842"
+    },
+    {
+      "episode": "outputs/skill_lab/isolated_calibrated_push_final",
+      "policy_steps": 762,
+      "observations": 153,
+      "success": true,
+      "metrics_sha256": "78d512ccf10ea4e415336727db51c8acbe65385e5608e6b4873173a9f75a50c7"
+    }
+  ],
+  "physics_episodes": 9,
+  "source_files": 51,
+  "controller_backend": "upstream eager ScaleBFM through official ScaleBridge methods",
+  "new_api_calls_in_audit": 0,
+  "task_generalization_claimed": false
+}

@@ -1,0 +1,9 @@
+{
+  "name": "push_to_region", "version": 1, "max_transitions": 8,
+  "stages": [
+    {"id": "settle", "primitive": "wait", "parameters": {"duration": 2.0}, "next": "approach"},
+    {"id": "approach", "primitive": "move_hand_relative", "parameters": {"reference": "object", "offset": [-0.10, 0.0, 0.03], "duration": 3.0}, "next": "push"},
+    {"id": "push", "primitive": "move_hand_relative", "parameters": {"reference": "target", "offset": [0.0, 0.0, 0.04], "duration": 4.0}, "next": "retreat"},
+    {"id": "retreat", "primitive": "retract_hand", "parameters": {"offset": [-0.12, 0.0, 0.10], "duration": 2.0}}
+  ]
+}

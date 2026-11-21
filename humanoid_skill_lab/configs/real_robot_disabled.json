@@ -1,0 +1,13 @@
+{
+  "enabled": false,
+  "transport": null,
+  "robot_model": "Unitree G1",
+  "joint_and_hand_variant": null,
+  "camera_driver": null,
+  "camera_intrinsics_file": null,
+  "camera_to_body_calibration_file": null,
+  "root_localization_source": null,
+  "operator_start_required": true,
+  "simulation_validation_required": true,
+  "automatic_hardware_launch_supported": false
+}

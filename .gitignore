@@ -1,5 +1,10 @@
 # Environments, downloaded sources and learned weights.
 .venv/
+.venv-skill-lab/
+*.egg-info/
+build/
+dist/
+.pytest_cache/
 __pycache__/
 *.pyc
 vendor/

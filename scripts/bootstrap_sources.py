@@ -8,7 +8,7 @@ p=argparse.ArgumentParser();p.add_argument('--isaac',action='store_true',help='A
 cache=Path('outputs/inspection/sources');cache.mkdir(parents=True,exist_ok=True)
 sources=[('zengweishuai/ScaleBFM','abd6f17c02fe0baabc14709feb8d9ea4959aa621','vendor/ScaleBFM',[
         'LICENSE','README.md',
-        'ScaleBridge/scalebridge/data/robot/g1_29dof/','ScaleBridge/scalebridge/data/motion/g1_29dof/squat.npz',
+        'ScaleBridge/scalebridge/',
         'ScaleTrack/source/my_rsl_rl/my_rsl_rl/networks/humanoid_transformer.py',
         'ScaleTrack/scripts/pretrain/rsl_rl/play_export_check_humanoid_transformer.py',
         'ScaleTrack/source/scaletrack/scaletrack/tasks/tracking/config/g1_29dof/flat_env_cfg.py'])]

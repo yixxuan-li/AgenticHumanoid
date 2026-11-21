@@ -1,0 +1,36 @@
+{
+  "name": "reach",
+  "version": 2,
+  "max_transitions": 3,
+  "stages": [
+    {
+      "id": "settle",
+      "primitive": "wait",
+      "parameters": {
+        "duration": 2.0
+      },
+      "next": "reach"
+    },
+    {
+      "id": "reach",
+      "primitive": "move_hand_world",
+      "parameters": {
+        "position": [
+          0.32,
+          -0.24,
+          0.85
+        ],
+        "duration": 3.0
+      },
+      "next": "hold"
+    },
+    {
+      "id": "hold",
+      "primitive": "wait",
+      "parameters": {
+        "duration": 2.0
+      }
+    }
+  ],
+  "frame": "episode"
+}

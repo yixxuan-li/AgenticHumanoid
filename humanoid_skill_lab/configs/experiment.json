@@ -1,0 +1,82 @@
+{
+  "ablation": "joint",
+  "rounds": 3,
+  "max_api_calls": 3,
+  "max_tokens": 60000,
+  "max_episodes": 24,
+  "minimum_validation_episodes": 3,
+  "observation_mode": "oracle_debug",
+  "episode_seconds": 22,
+  "development": [
+    {
+      "seed": 101,
+      "object_xy": [
+        0.45,
+        -0.18
+      ],
+      "target_xy": [
+        0.58,
+        -0.18
+      ]
+    }
+  ],
+  "validation": [
+    {
+      "seed": 201,
+      "object_xy": [
+        0.44,
+        -0.17
+      ],
+      "target_xy": [
+        0.58,
+        -0.17
+      ]
+    },
+    {
+      "seed": 202,
+      "object_xy": [
+        0.46,
+        -0.2
+      ],
+      "target_xy": [
+        0.6,
+        -0.2
+      ]
+    },
+    {
+      "seed": 203,
+      "object_xy": [
+        0.45,
+        -0.15
+      ],
+      "target_xy": [
+        0.59,
+        -0.15
+      ]
+    }
+  ],
+  "test": [
+    {
+      "seed": 301,
+      "object_xy": [
+        0.43,
+        -0.19
+      ],
+      "target_xy": [
+        0.57,
+        -0.19
+      ]
+    },
+    {
+      "seed": 302,
+      "object_xy": [
+        0.47,
+        -0.16
+      ],
+      "target_xy": [
+        0.61,
+        -0.16
+      ]
+    }
+  ]
+}

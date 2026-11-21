@@ -1,0 +1,9 @@
+{
+  "model": "gpt-5.4",
+  "key_env": "OPENAI_API_KEY",
+  "trust_env": false,
+  "timeout_seconds": 90,
+  "retries": 0,
+  "max_output_tokens": 5000,
+  "reasoning_effort": "low"
+}

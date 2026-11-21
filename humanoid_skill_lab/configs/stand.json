@@ -1,0 +1,1 @@
+{"name":"stand","version":1,"max_transitions":1,"stages":[{"id":"hold","primitive":"wait","parameters":{"duration":6.0}}]}
