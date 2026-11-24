@@ -7,6 +7,7 @@ class ReferenceProvider:
     def __init__(self, metadata):
         self.names = metadata["selected_body_names"]
         self.frame_origin = np.zeros(3)
+        self.frame_rotation = np.eye(3)
         self.positions = np.zeros((len(self.names), 3))
         self.rotations = np.tile([1., 0, 0, 0], (len(self.names), 1))
         self.start = self.positions.copy()

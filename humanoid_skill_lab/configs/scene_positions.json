@@ -1,0 +1,100 @@
+{
+  "skill": "skill_library/push_camera_20261124/skill.json",
+  "reconstructed_scene": "outputs/worldlabs_scene",
+  "seconds": 22,
+  "positions": [
+    {
+      "id": "nominal",
+      "object_xy": [
+        0.455,
+        -0.185
+      ]
+    },
+    {
+      "id": "near_left",
+      "object_xy": [
+        0.435,
+        -0.155
+      ]
+    },
+    {
+      "id": "far_right",
+      "object_xy": [
+        0.475,
+        -0.215
+      ]
+    }
+  ],
+  "workcells": [
+    {
+      "id": "open",
+      "reconstructed": false,
+      "task": {
+        "robot_position": [
+          0,
+          0,
+          0.76
+        ],
+        "yaw": 0,
+        "support_height": 0.575,
+        "support": "added_table"
+      }
+    },
+    {
+      "id": "open_yaw90",
+      "reconstructed": false,
+      "task": {
+        "robot_position": [
+          0,
+          0,
+          0.76
+        ],
+        "yaw": 1.5707963267948966,
+        "support_height": 0.575,
+        "support": "added_table"
+      }
+    },
+    {
+      "id": "office_east",
+      "reconstructed": true,
+      "task": {
+        "robot_position": [
+          5.12,
+          2.92,
+          0.76
+        ],
+        "yaw": 1.5707963267948966,
+        "support_height": 0.575,
+        "support": "added_table"
+      }
+    },
+    {
+      "id": "office_west",
+      "reconstructed": true,
+      "task": {
+        "robot_position": [
+          2.5,
+          2.05,
+          0.76
+        ],
+        "yaw": 1.5707963267948966,
+        "support_height": 0.575,
+        "support": "added_table"
+      }
+    },
+    {
+      "id": "office_original_table",
+      "reconstructed": true,
+      "task": {
+        "robot_position": [
+          2.8,
+          2.85,
+          0.76
+        ],
+        "yaw": 0,
+        "support_height": 0.74,
+        "support": "existing_table"
+      }
+    }
+  ]
+}

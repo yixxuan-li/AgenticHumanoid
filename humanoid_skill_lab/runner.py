@@ -28,9 +28,12 @@ def make_scene(output, config):
         source_scene = Path(load_scene(imported)["xml"])
     else:
         source_scene = ROOT / "humanoid_skill_lab/scenes/tabletop.xml"
+    if config.get("task_scene"):
+        from .integrations.task_scene import compose
+        source_scene = compose(source_scene if imported else None, config["task_scene"], output/"task_environment.xml")
     build_robot_scene(robot, source_scene, path)
     spec = mujoco.MjSpec.from_file(str(path))
-    if not imported:
+    if not imported and not config.get("task_scene"):
         spec.body("env_cube").pos[:2] = config.get("object_xy", [.45, -.18])
         spec.body("env_target").pos[:2] = config.get("target_xy", [.60, -.18])
     # Calibrated simulation camera: optical forward +x/down relative to torso.
@@ -53,10 +56,14 @@ def run_episode(program, config, output, device="cuda", video=True, baseline=Non
     import imageio.v2 as imageio
     from PIL import Image
     scene_context = None
+    task_scene = config.get("task_scene")
+    if task_scene:
+        from .integrations.task_scene import validate_task
+        validate_task(task_scene)
     if config.get("scene_directory"):
         from .integrations.reconstructed_scene import load_scene
         scene_context = load_scene(config["scene_directory"])
-        if probe is None:
+        if probe is None and not task_scene:
             raise ValueError("Imported scenes support controller probes and the existing navigation workflow. Push exploration needs declared task bindings and an independent scene evaluator; static reconstructed furniture is not a validated manipulation target.")
     output = Path(output)
     output.mkdir(parents=True, exist_ok=False)
@@ -72,7 +79,8 @@ def run_episode(program, config, output, device="cuda", video=True, baseline=Non
     provider = (ReplayProvider(agent.get_meta_data(), SOURCE / "ScaleBridge/scalebridge/data/motion/g1_29dof/squat.npz")
                 if baseline == "replay" else ReferenceProvider(agent.get_meta_data()))
     env = OnlineEnv(agent.get_meta_data(), scene, provider, device,
-                    scene_context["robot_start"] if scene_context else None)
+                    task_scene["robot_position"] if task_scene else (scene_context["robot_start"] if scene_context else None),
+                    task_scene["yaw"] if task_scene else 0.)
     obs_dict = env.reset()
     simulator = env.simulator
     m, d, s = simulator.mujoco_model, simulator.mujoco_data, simulator.state
@@ -88,12 +96,17 @@ def run_episode(program, config, output, device="cuda", video=True, baseline=Non
             env.state_buffer[key+"_buffer"][:] = value.to(device)
         obs_dict = env.refresh_reference()
     runtime = SkillRuntime(program, provider)
-    estimator = StateEstimator(config.get("observation_mode", "oracle_debug"), enabled_objects=scene_context is None)
-    if scene_context:
+    from .integrations.task_scene import perception_workspace
+    estimator = StateEstimator(config.get("observation_mode", "oracle_debug"), enabled_objects=scene_context is None or bool(task_scene),
+                               workspace=perception_workspace(task_scene) if task_scene else None)
+    if scene_context and not task_scene:
         from .evaluation.control import ControlEvaluator
         evaluator = ControlEvaluator(m,d)
     else:
-        evaluator = Evaluator(m, d, minimum_height=.20 if baseline == "replay" else .4)
+        evaluator = Evaluator(m, d, minimum_height=.20 if baseline == "replay" else .4,
+                              **({"support_height":task_scene["support_height"],
+                                  "floor_geoms":["env_floor", "env_floor_main__slab"],
+                                  "distractors":["env_distractor_0", "env_distractor_1"]} if task_scene else {}))
     manifest = {"schema_version": 1, "implementation": "ScaleBridge BaseEnv + BFMAgent.get_action + upstream eager export wrapper",
                 "upstream_commit": UPSTREAM_COMMIT, "project_commit": revision(), "source_hashes": source_hashes(),
                 "checkpoint_sha256": agent.loader.checkpoint_sha256, "metadata_sha256": agent.loader.metadata_sha256,
@@ -108,6 +121,7 @@ def run_episode(program, config, output, device="cuda", video=True, baseline=Non
                 "probe": probe,
                 "source_scene": scene_context,
                 "program_frame_origin_world_m": provider.frame_origin.tolist(),
+                "program_frame_rotation": provider.frame_rotation.tolist(),
                 "result_status": "running"}
     write_json(output / "manifest.json", manifest)
     refs, local_refs, ref_quat, states, actions, times, errors, events, body_positions, local_quats, policy_actions = ([] for _ in range(11))
@@ -118,7 +132,7 @@ def run_episode(program, config, output, device="cuda", video=True, baseline=Non
     observations = (output / "observations.jsonl").open("w")
     (output / "frames").mkdir()
     try:
-        camera = OnboardCamera(m, object_bodies={} if scene_context else None)
+        camera = OnboardCamera(m, object_bodies={} if scene_context and not task_scene else None)
         if video:
             onboard_writer = imageio.get_writer(output / "onboard.mp4", fps=10)
             review_writer = imageio.get_writer(output / "overview.mp4", fps=10)
@@ -142,8 +156,8 @@ def run_episode(program, config, output, device="cuda", video=True, baseline=Non
                 if onboard_writer:
                     onboard_writer.append_data(observation.rgb)
                     cam = mujoco.MjvCamera()
-                    cam.lookat[:] = provider.frame_origin + [.35, -.02, .70]
-                    cam.distance, cam.azimuth, cam.elevation = 2.2, 135, -20
+                    cam.lookat[:] = provider.frame_origin + provider.frame_rotation @ np.array([.35, -.02, .70])
+                    cam.distance, cam.azimuth, cam.elevation = 2.2, 135+np.degrees(task_scene["yaw"] if task_scene else 0.), -20
                     renderer.update_scene(d, camera=cam)
                     review_writer.append_data(renderer.render())
             if not baseline:

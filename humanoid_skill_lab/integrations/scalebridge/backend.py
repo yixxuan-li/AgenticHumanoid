@@ -72,7 +72,8 @@ class HeadlessSimulator(MujocoSimulator):
     def calibrate(self, init_state_dict=None):
         m, d, s = self.mujoco_model, self.mujoco_data, self.state
         mujoco.mj_resetData(m, d)
-        d.qpos[s.root_qadr:s.root_qadr+7] = [*self.cfg.get("initial_root_position", [0, 0, .76]), 1, 0, 0, 0]
+        d.qpos[s.root_qadr:s.root_qadr+7] = [*self.cfg.get("initial_root_position", [0, 0, .76]),
+                                           *self.cfg.get("initial_root_quaternion", [1, 0, 0, 0])]
         d.qpos[s.qadr] = self.metadata_dict["default_dof_pos"]
         if init_state_dict:
             d.qpos[s.root_qadr:s.root_qadr+3] = init_state_dict["root_pos"]
@@ -124,11 +125,14 @@ class HeadlessSimulator(MujocoSimulator):
 
 class OnlineEnv(BaseEnv):
     """Official buffer management plus a synchronous local reference provider."""
-    def __init__(self, metadata, scene, provider, device="cuda", initial_root_position=None):
+    def __init__(self, metadata, scene, provider, device="cuda", initial_root_position=None, initial_root_yaw=0.):
         self.provider = provider
         self.scene = str(scene)
         self.initial_root_position = initial_root_position or [0,0,.76]
+        from scipy.spatial.transform import Rotation
+        self.initial_root_quaternion = Rotation.from_euler("z", initial_root_yaw).as_quat(scalar_first=True).tolist()
         self.provider.frame_origin = np.array([*self.initial_root_position[:2], 0.], dtype=float)
+        self.provider.frame_rotation = Rotation.from_euler("z", initial_root_yaw).as_matrix()
         names = ["root_quat_buffer", "base_ang_vel_buffer", "dof_pos_buffer", "dof_vel_buffer",
                  "actions_buffer", "body_pos_w_future", "body_quat_w_future",
                  "target_body_pos_future_to_robot_base", "target_body_rot_future_to_robot_base", "future_time_offsets"]
@@ -138,7 +142,8 @@ class OnlineEnv(BaseEnv):
 
     def _setup_simulator(self):
         cfg = OmegaConf.create({"asset": {"xml_path": self.scene}, "low_dt": .005,
-                                "decimation": 4, "joystick": False, "initial_root_position": self.initial_root_position})
+                                "decimation": 4, "joystick": False, "initial_root_position": self.initial_root_position,
+                                "initial_root_quaternion": self.initial_root_quaternion})
         self.simulator = HeadlessSimulator(cfg, self.metadata_dict)
         self.dt = self.simulator.high_dt
 

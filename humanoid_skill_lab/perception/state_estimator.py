@@ -6,11 +6,12 @@ from humanoid_skill_lab.types import BeliefState, Pose, Truth
 
 
 class StateEstimator:
-    def __init__(self, mode, enabled_objects=True):
+    def __init__(self, mode, enabled_objects=True, workspace=None):
         if mode not in {"oracle_debug", "onboard_vision"}:
             raise ValueError("Unknown observation mode")
         self.mode = mode
         self.enabled_objects = enabled_objects
+        self.workspace = workspace
 
     def update(self, obs):
         if self.mode == "onboard_vision" and obs.oracle_poses:
@@ -36,6 +37,16 @@ class StateEstimator:
                 points = np.stack([(x-obs.intrinsics[0,2])*z/obs.intrinsics[0,0],
                                    (y-obs.intrinsics[1,2])*z/obs.intrinsics[1,1], z], axis=1)
                 world = points @ obs.world_from_camera[:3,:3].T + obs.world_from_camera[:3,3]
+                if self.workspace:
+                    area = self.workspace
+                    local = (world-np.asarray(area["origin"])) @ Rotation.from_euler("z", area["yaw"]).as_matrix()
+                    keep = np.all((local >= area["lower"]) & (local <= area["upper"]), axis=1)
+                    world = world[keep]
+                    mask[:] = False
+                    mask[y[keep], x[keep]] = True
+                    confidence[name] = min(1., len(world)/100.)
+                    if len(world) < 15:
+                        continue
                 position = np.median(world, axis=0)
                 quaternion = (1., 0, 0, 0)
                 # A surface median is biased toward the visible front face.
