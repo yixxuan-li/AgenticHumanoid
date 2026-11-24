@@ -37,6 +37,29 @@ version only after strict paired validation improvement without safety failure
 or regression. A saved candidate is not an acquired or validated skill. Frozen
 test results must not be fed into further tuning.
 
+The first run completed 18 physical episodes and three live GPT calls without
+promoting a new program. `experiment_onboard_occlusion.json` defines a separate
+two-proposal follow-up, using only development feedback from that run. It tests
+camera-initialized approach followed by phase-relative motion while the hand
+occludes the targets. Its maximum is 14 exploration episodes; the same frozen
+test layouts remain unused until final selection. Phase-relative motion is a
+bounded stroke within this task domain, not continuous visual servoing or broad
+goal generalization.
+
+Use the follow-up configuration with `explore` and a fresh output directory.
+Save the selected program and separately labeled rejected candidates with:
+
+```bash
+.venv-skill-lab/bin/python scripts/save_explored_skill.py \
+  --run outputs/skill_lab/onboard_20261124_occlusion \
+  --test outputs/skill_lab/onboard_20261124_frozen_test \
+  --output skill_library/push_camera_20261124
+```
+
+The `--test` argument is optional and must identify a frozen evaluation of the
+same selected snapshot. Exporting an initial baseline or a rejected proposal
+does not label it as validated.
+
 ## Source cleanup
 
 The obsolete version 1–4 figure drafts, their prompts, and version 3–4 figure
