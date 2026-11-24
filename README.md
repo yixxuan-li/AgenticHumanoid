@@ -130,3 +130,15 @@ bundle. MuJoCo exploration also writes its route into its decision report.
 Generic Dex3 grasp tools are retained for future configured targets; the skill
 router rejects picking without a declared affordance and a validated controller
 profile. Static Atlas furniture is not automatically a manipulation target.
+
+The [version 5 figure notes](docs/FIGURES_V5.md) document the native MuJoCo
+teaser and system diagram, using the reconstructed office and official G1 URDF.
+The figure poses are authored illustrations; they do not change the experimental
+results or controller validation status.
+
+The [version 6 figure notes](docs/FIGURES_V6.md) describe native Isaac Sim
+Gaussian rendering of the same office, including source splat conversion,
+URDF-derived visual poses, and the approximate tabletop occlusion proxy.
+
+See [onboard exploration](docs/ONBOARD_EXPERIMENT.md) for the bounded RGB-D
+skill experiment and the source cleanup record.

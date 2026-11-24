@@ -1,0 +1,82 @@
+{
+  "ablation": "joint",
+  "rounds": 3,
+  "max_api_calls": 3,
+  "max_tokens": 150000,
+  "max_episodes": 24,
+  "minimum_validation_episodes": 3,
+  "observation_mode": "onboard_vision",
+  "episode_seconds": 22,
+  "development": [
+    {
+      "seed": 1101,
+      "object_xy": [
+        0.455,
+        -0.185
+      ],
+      "target_xy": [
+        0.585,
+        -0.185
+      ]
+    }
+  ],
+  "validation": [
+    {
+      "seed": 1201,
+      "object_xy": [
+        0.445,
+        -0.175
+      ],
+      "target_xy": [
+        0.585,
+        -0.175
+      ]
+    },
+    {
+      "seed": 1202,
+      "object_xy": [
+        0.465,
+        -0.205
+      ],
+      "target_xy": [
+        0.605,
+        -0.205
+      ]
+    },
+    {
+      "seed": 1203,
+      "object_xy": [
+        0.455,
+        -0.155
+      ],
+      "target_xy": [
+        0.595,
+        -0.155
+      ]
+    }
+  ],
+  "test": [
+    {
+      "seed": 1301,
+      "object_xy": [
+        0.435,
+        -0.195
+      ],
+      "target_xy": [
+        0.575,
+        -0.195
+      ]
+    },
+    {
+      "seed": 1302,
+      "object_xy": [
+        0.475,
+        -0.165
+      ],
+      "target_xy": [
+        0.615,
+        -0.165
+      ]
+    }
+  ]
+}

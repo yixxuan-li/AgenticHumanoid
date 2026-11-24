@@ -1,0 +1,4 @@
+-r requirements-figures.txt
+usd-core==26.11
+msgpack==1.2.4
+# Native rendering runs separately in the existing Isaac Sim 5.1 environment.

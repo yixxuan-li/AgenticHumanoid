@@ -255,3 +255,41 @@ identified. `skill_lab_results.json` flags excluded episodes explicitly.
    manipulation and grasp/place/close experiments using transparent primitives.
 6. Obtain real G1 camera/hand/localization configuration and physical calibration.
    Hardware execution remains an operator action after simulation acceptance.
+
+## Native figure revision — November 23, 2026
+
+Version 5 replaces the generated teaser artwork with actual MuJoCo renders of
+the existing office reconstruction and a directly imported official Unitree G1
+URDF. The robot source is pinned to Unitree's `unitree_ros` commit
+`157ff950351e5f535e03c5d85a16b7d594b3dbcc`; the referenced 49 STL meshes and
+upstream license are retained with the local delivery.
+
+The deliverable includes four temporal robot exposures, two torso-camera views,
+six skill close-ups, and a revised system diagram, with PNG/PDF/SVG exports.
+The existing source room is unchanged. Cube/target/drawer props, inverse
+kinematics poses, and the narrative route are authored for figure production.
+The rendering scripts do not execute ScaleBFM, modify the skill library, or
+establish successful contact behavior. Prior experimental results and milestone
+status above remain unchanged.
+
+Source and asset hashes, saved MJCF models, pose arrays, reproducible rendering
+commands, validation checks, and English captions are documented in
+[FIGURES_V5.md](FIGURES_V5.md). Versions 3 and 4 are preserved.
+
+## Gaussian figure revision — November 24, 2026
+
+Version 6 renders the original two-million-Gaussian Atlas room natively in
+Isaac Sim 5.1 RTX / NuRec. The SPZ was converted to a NuRec Volume and Gaussian
+payload using NVIDIA's pinned 3DGRUT template functions. The original splat file
+and source reconstruction remain unchanged; no reconstruction service was called.
+
+Ten native views cover the hero sequence, six skill close-ups, two onboard
+insets, and a room-only view. G1 visual triangles come from the existing official
+URDF-derived authored poses. One approximate tabletop matte proxy supplies an
+occlusion boundary. Full mesh matte proxies were rejected because their geometry
+mismatch created artifacts. This changes figure appearance, not physics,
+controller validation, symbolic evidence, or measured task outcomes.
+
+The teaser/system PNG, PDF, and SVG exports, native stages, rendering records,
+validation, and English reproduction notes are documented in
+[FIGURES_V6.md](FIGURES_V6.md).

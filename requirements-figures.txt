@@ -1,0 +1,6 @@
+# Versions used for the native MuJoCo figure revision (Python 3.12).
+mujoco==3.11.0
+numpy==2.5.1
+scipy==1.17.0
+Pillow==12.3.0
+matplotlib==3.10.8
