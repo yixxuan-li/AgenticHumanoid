@@ -1,0 +1,1430 @@
+{
+  "status": "completed",
+  "frozen_original_skill_sha256": "92fefd6e8407bd5ac2fe566bf6b90a44a29ba465ddf79b884a42f257afe8cb78",
+  "executed_skill_sha256": "894ce5c3c692ababd9fc71ab68288db55872f9badcd77daedaa67daffa37d4f2",
+  "frame_port": "Same stages and parameters; explicit episode-frame translation/yaw",
+  "source_scene_fingerprint": "d991e9181b6d9d428171375e2ab7ecdafa795f6f0cabbbd90eeb2581873ee2fa",
+  "source_scene_unchanged": true,
+  "observation_mode": "onboard_vision",
+  "parameter_tuning": false,
+  "gpt_calls": 0,
+  "environment_count": 2,
+  "note": "One open workcell and one captured room; placements are not independent reconstructed rooms",
+  "cases": 15,
+  "physics_episodes": 12,
+  "successes": 4,
+  "groups": {
+    "open": {
+      "cases": 3,
+      "executed": 3,
+      "successes": 1,
+      "blocked": 0
+    },
+    "open_yaw90": {
+      "cases": 3,
+      "executed": 3,
+      "successes": 1,
+      "blocked": 0
+    },
+    "office_east": {
+      "cases": 3,
+      "executed": 3,
+      "successes": 1,
+      "blocked": 0
+    },
+    "office_west": {
+      "cases": 3,
+      "executed": 3,
+      "successes": 1,
+      "blocked": 0
+    },
+    "office_original_table": {
+      "cases": 3,
+      "executed": 0,
+      "successes": 0,
+      "blocked": 3
+    }
+  },
+  "results": [
+    {
+      "case": "open_nominal",
+      "workcell": "open",
+      "position": "nominal",
+      "reconstructed": false,
+      "support_height": 0.575,
+      "yaw": 0,
+      "preflight": {
+        "status": "ready",
+        "initial_penetrations": [],
+        "threshold_m": 0.008,
+        "task_objects": [
+          "env_cube",
+          "env_target",
+          "env_distractor_0",
+          "env_distractor_1"
+        ],
+        "physics_executed": false
+      },
+      "success": true,
+      "physics_executed": true,
+      "metrics": {
+        "success": true,
+        "physics_executed": true,
+        "evaluator": "declared_workcell_v1",
+        "support_height_m": 0.575,
+        "distractor_max_displacement_m": 0.006155943829180721,
+        "fallen": false,
+        "timeout": false,
+        "forbidden_contacts": 0,
+        "goal_held": true,
+        "final_inside": true,
+        "hand_clear": true,
+        "final_target_distance_m": 0.008435940170623381,
+        "object_displacement_m": 0.12229154765682014,
+        "runtime_outcome": "completed",
+        "runtime_reason": null,
+        "elapsed_sim_seconds": 15.240000000000983,
+        "wall_seconds": 12.416144512128085,
+        "tracking_mean_m": [
+          0.036057819155929545,
+          0.04068121697944644,
+          0.04092701676963188,
+          0.012470636344570574,
+          0.04353133253811882,
+          0.04361989352821947,
+          0.011375279959466321,
+          0.03276245831492526,
+          0.07109899720204868,
+          0.038093748596207865,
+          0.03281307868308996,
+          0.11015700684522171,
+          0.16417793091794392,
+          0.04707080710416114
+        ],
+        "tracking_max_m": [
+          0.057089427314539115,
+          0.07127360796399945,
+          0.07974682494931888,
+          0.02304571107342778,
+          0.06992053970626917,
+          0.07520510544224761,
+          0.018235036780627763,
+          0.04913757851808707,
+          0.1300374203762982,
+          0.05290433122952092,
+          0.05422351059818705,
+          0.20055929532349454,
+          0.2928402371085158,
+          0.08995416536940919
+        ],
+        "body_names": [
+          "pelvis",
+          "left_hip_roll_link",
+          "left_knee_link",
+          "left_ankle_roll_link",
+          "right_hip_roll_link",
+          "right_knee_link",
+          "right_ankle_roll_link",
+          "torso_link",
+          "left_shoulder_roll_link",
+          "left_elbow_link",
+          "left_wrist_yaw_link",
+          "right_shoulder_roll_link",
+          "right_elbow_link",
+          "right_wrist_yaw_link"
+        ],
+        "root_tracking_mean_m": 0.03605781915592952,
+        "right_hand_tracking_mean_m": 0.04707080710416118,
+        "max_torque_nm": 22.64282230444256,
+        "minimum_root_height_m": 0.7325484800643434,
+        "baseline": null,
+        "agent_pose_sources": [
+          "camera"
+        ]
+      },
+      "status": "executed"
+    },
+    {
+      "case": "open_near_left",
+      "workcell": "open",
+      "position": "near_left",
+      "reconstructed": false,
+      "support_height": 0.575,
+      "yaw": 0,
+      "preflight": {
+        "status": "ready",
+        "initial_penetrations": [],
+        "threshold_m": 0.008,
+        "task_objects": [
+          "env_cube",
+          "env_target",
+          "env_distractor_0",
+          "env_distractor_1"
+        ],
+        "physics_executed": false
+      },
+      "success": false,
+      "physics_executed": true,
+      "metrics": {
+        "success": false,
+        "physics_executed": true,
+        "evaluator": "declared_workcell_v1",
+        "support_height_m": 0.575,
+        "distractor_max_displacement_m": 0.006155943829180721,
+        "fallen": false,
+        "timeout": false,
+        "forbidden_contacts": 0,
+        "goal_held": false,
+        "final_inside": false,
+        "hand_clear": true,
+        "final_target_distance_m": 0.02206655863915351,
+        "object_displacement_m": 0.15213738415821115,
+        "runtime_outcome": "completed",
+        "runtime_reason": null,
+        "elapsed_sim_seconds": 15.240000000000983,
+        "wall_seconds": 12.2375614780467,
+        "tracking_mean_m": [
+          0.03624279069139834,
+          0.04050337680585771,
+          0.04052521872087883,
+          0.01250704725310127,
+          0.043203384021933224,
+          0.043957472405265985,
+          0.011538944869531734,
+          0.03311726840560474,
+          0.06879773975440207,
+          0.03676127483385094,
+          0.03331027835397678,
+          0.1083144023948893,
+          0.16076381273709975,
+          0.048864681007640666
+        ],
+        "tracking_max_m": [
+          0.05735136658942191,
+          0.071262928024525,
+          0.07974682494931888,
+          0.023156578785127866,
+          0.06973584028362013,
+          0.07520510544224761,
+          0.01837525269624665,
+          0.04956507169084078,
+          0.1261368655162144,
+          0.05290433122952092,
+          0.05536349873386307,
+          0.2003807671389624,
+          0.29341208970918536,
+          0.09117470921477981
+        ],
+        "body_names": [
+          "pelvis",
+          "left_hip_roll_link",
+          "left_knee_link",
+          "left_ankle_roll_link",
+          "right_hip_roll_link",
+          "right_knee_link",
+          "right_ankle_roll_link",
+          "torso_link",
+          "left_shoulder_roll_link",
+          "left_elbow_link",
+          "left_wrist_yaw_link",
+          "right_shoulder_roll_link",
+          "right_elbow_link",
+          "right_wrist_yaw_link"
+        ],
+        "root_tracking_mean_m": 0.036242790691398304,
+        "right_hand_tracking_mean_m": 0.048864681007640694,
+        "max_torque_nm": 22.64282230444256,
+        "minimum_root_height_m": 0.7304507143002912,
+        "baseline": null,
+        "agent_pose_sources": [
+          "camera"
+        ]
+      },
+      "status": "executed"
+    },
+    {
+      "case": "open_far_right",
+      "workcell": "open",
+      "position": "far_right",
+      "reconstructed": false,
+      "support_height": 0.575,
+      "yaw": 0,
+      "preflight": {
+        "status": "ready",
+        "initial_penetrations": [],
+        "threshold_m": 0.008,
+        "task_objects": [
+          "env_cube",
+          "env_target",
+          "env_distractor_0",
+          "env_distractor_1"
+        ],
+        "physics_executed": false
+      },
+      "success": false,
+      "physics_executed": true,
+      "metrics": {
+        "success": false,
+        "physics_executed": true,
+        "evaluator": "declared_workcell_v1",
+        "support_height_m": 0.575,
+        "distractor_max_displacement_m": 0.006155943829180721,
+        "fallen": false,
+        "timeout": false,
+        "forbidden_contacts": 0,
+        "goal_held": false,
+        "final_inside": false,
+        "hand_clear": true,
+        "final_target_distance_m": 0.13000013862369153,
+        "object_displacement_m": 0.005107755422097244,
+        "runtime_outcome": "failure",
+        "runtime_reason": "Target pose is absent, stale, or in an unsupported frame",
+        "elapsed_sim_seconds": 8.179999999999879,
+        "wall_seconds": 6.720185410929844,
+        "tracking_mean_m": [
+          0.027857695109235213,
+          0.028963547239063497,
+          0.0479828347265811,
+          0.008451580664344765,
+          0.032417963379217984,
+          0.05261344207652388,
+          0.008380075740255606,
+          0.026300275116920232,
+          0.05811669920947904,
+          0.0488459554003711,
+          0.025735544270507074,
+          0.06987978544340842,
+          0.09864152310446049,
+          0.035333019041952435
+        ],
+        "tracking_max_m": [
+          0.037232905409857554,
+          0.04311929640967566,
+          0.07974682494931888,
+          0.012327073314505058,
+          0.04916687772689391,
+          0.07521585298549657,
+          0.012149249004244127,
+          0.031989485570534604,
+          0.12659850125573233,
+          0.05353418153593028,
+          0.03499915147533134,
+          0.15691299781866358,
+          0.16727603227091659,
+          0.04813288745266201
+        ],
+        "body_names": [
+          "pelvis",
+          "left_hip_roll_link",
+          "left_knee_link",
+          "left_ankle_roll_link",
+          "right_hip_roll_link",
+          "right_knee_link",
+          "right_ankle_roll_link",
+          "torso_link",
+          "left_shoulder_roll_link",
+          "left_elbow_link",
+          "left_wrist_yaw_link",
+          "right_shoulder_roll_link",
+          "right_elbow_link",
+          "right_wrist_yaw_link"
+        ],
+        "root_tracking_mean_m": 0.027857695109235237,
+        "right_hand_tracking_mean_m": 0.03533301904195244,
+        "max_torque_nm": 22.64282230444256,
+        "minimum_root_height_m": 0.7394635976222472,
+        "baseline": null,
+        "agent_pose_sources": []
+      },
+      "status": "executed"
+    },
+    {
+      "case": "open_yaw90_nominal",
+      "workcell": "open_yaw90",
+      "position": "nominal",
+      "reconstructed": false,
+      "support_height": 0.575,
+      "yaw": 1.5707963267948966,
+      "preflight": {
+        "status": "ready",
+        "initial_penetrations": [],
+        "threshold_m": 0.008,
+        "task_objects": [
+          "env_cube",
+          "env_target",
+          "env_distractor_0",
+          "env_distractor_1"
+        ],
+        "physics_executed": false
+      },
+      "success": true,
+      "physics_executed": true,
+      "metrics": {
+        "success": true,
+        "physics_executed": true,
+        "evaluator": "declared_workcell_v1",
+        "support_height_m": 0.575,
+        "distractor_max_displacement_m": 0.006155943829180721,
+        "fallen": false,
+        "timeout": false,
+        "forbidden_contacts": 0,
+        "goal_held": true,
+        "final_inside": true,
+        "hand_clear": true,
+        "final_target_distance_m": 0.00942794947597953,
+        "object_displacement_m": 0.12122032206358109,
+        "runtime_outcome": "completed",
+        "runtime_reason": null,
+        "elapsed_sim_seconds": 15.240000000000983,
+        "wall_seconds": 12.237452893983573,
+        "tracking_mean_m": [
+          0.036056615802946286,
+          0.04067895753394172,
+          0.04092613602797527,
+          0.012470501385597377,
+          0.04353076922471362,
+          0.04362238885663501,
+          0.011375086179050652,
+          0.032761440378152644,
+          0.0710984089734668,
+          0.03809309637143858,
+          0.03280984644093799,
+          0.11014864841135615,
+          0.16416145891272574,
+          0.04706644651098345
+        ],
+        "tracking_max_m": [
+          0.05708042678982193,
+          0.07126585695405825,
+          0.07974682908194901,
+          0.02304484324617321,
+          0.06991539314505377,
+          0.07520510534803797,
+          0.0182345555418162,
+          0.04912828710941084,
+          0.1300369713026952,
+          0.05290435145588847,
+          0.05422449931470928,
+          0.2005618669242021,
+          0.292845647863835,
+          0.08992839913867753
+        ],
+        "body_names": [
+          "pelvis",
+          "left_hip_roll_link",
+          "left_knee_link",
+          "left_ankle_roll_link",
+          "right_hip_roll_link",
+          "right_knee_link",
+          "right_ankle_roll_link",
+          "torso_link",
+          "left_shoulder_roll_link",
+          "left_elbow_link",
+          "left_wrist_yaw_link",
+          "right_shoulder_roll_link",
+          "right_elbow_link",
+          "right_wrist_yaw_link"
+        ],
+        "root_tracking_mean_m": 0.0360566158029463,
+        "right_hand_tracking_mean_m": 0.04706644651098345,
+        "max_torque_nm": 22.64282360946573,
+        "minimum_root_height_m": 0.7325636448480579,
+        "baseline": null,
+        "agent_pose_sources": [
+          "camera"
+        ]
+      },
+      "status": "executed"
+    },
+    {
+      "case": "open_yaw90_near_left",
+      "workcell": "open_yaw90",
+      "position": "near_left",
+      "reconstructed": false,
+      "support_height": 0.575,
+      "yaw": 1.5707963267948966,
+      "preflight": {
+        "status": "ready",
+        "initial_penetrations": [],
+        "threshold_m": 0.008,
+        "task_objects": [
+          "env_cube",
+          "env_target",
+          "env_distractor_0",
+          "env_distractor_1"
+        ],
+        "physics_executed": false
+      },
+      "success": false,
+      "physics_executed": true,
+      "metrics": {
+        "success": false,
+        "physics_executed": true,
+        "evaluator": "declared_workcell_v1",
+        "support_height_m": 0.575,
+        "distractor_max_displacement_m": 0.006155943829180721,
+        "fallen": false,
+        "timeout": false,
+        "forbidden_contacts": 0,
+        "goal_held": false,
+        "final_inside": false,
+        "hand_clear": true,
+        "final_target_distance_m": 0.022066757900132915,
+        "object_displacement_m": 0.15213757828838875,
+        "runtime_outcome": "completed",
+        "runtime_reason": null,
+        "elapsed_sim_seconds": 15.240000000000983,
+        "wall_seconds": 12.207069837953895,
+        "tracking_mean_m": [
+          0.03624279003061501,
+          0.040503377809409734,
+          0.040525218470839446,
+          0.01250704568974312,
+          0.043203383630577956,
+          0.04395747872374999,
+          0.01153894756848953,
+          0.03311726736068119,
+          0.06879774173452263,
+          0.036761277306591386,
+          0.033310274148760886,
+          0.10831440208629364,
+          0.1607638170819386,
+          0.04886467922448496
+        ],
+        "tracking_max_m": [
+          0.057351363762659244,
+          0.0712629292655369,
+          0.07974682908194901,
+          0.023156573865229783,
+          0.06973583817956636,
+          0.07520510534803797,
+          0.018375257966122934,
+          0.04956506847507933,
+          0.12613685804635427,
+          0.05290435145588847,
+          0.05536352348116521,
+          0.2003807831697896,
+          0.29341210105772975,
+          0.09117468371627353
+        ],
+        "body_names": [
+          "pelvis",
+          "left_hip_roll_link",
+          "left_knee_link",
+          "left_ankle_roll_link",
+          "right_hip_roll_link",
+          "right_knee_link",
+          "right_ankle_roll_link",
+          "torso_link",
+          "left_shoulder_roll_link",
+          "left_elbow_link",
+          "left_wrist_yaw_link",
+          "right_shoulder_roll_link",
+          "right_elbow_link",
+          "right_wrist_yaw_link"
+        ],
+        "root_tracking_mean_m": 0.036242790030615,
+        "right_hand_tracking_mean_m": 0.04886467922448496,
+        "max_torque_nm": 22.64282360946573,
+        "minimum_root_height_m": 0.7304507373104587,
+        "baseline": null,
+        "agent_pose_sources": [
+          "camera"
+        ]
+      },
+      "status": "executed"
+    },
+    {
+      "case": "open_yaw90_far_right",
+      "workcell": "open_yaw90",
+      "position": "far_right",
+      "reconstructed": false,
+      "support_height": 0.575,
+      "yaw": 1.5707963267948966,
+      "preflight": {
+        "status": "ready",
+        "initial_penetrations": [],
+        "threshold_m": 0.008,
+        "task_objects": [
+          "env_cube",
+          "env_target",
+          "env_distractor_0",
+          "env_distractor_1"
+        ],
+        "physics_executed": false
+      },
+      "success": false,
+      "physics_executed": true,
+      "metrics": {
+        "success": false,
+        "physics_executed": true,
+        "evaluator": "declared_workcell_v1",
+        "support_height_m": 0.575,
+        "distractor_max_displacement_m": 0.006155943829180721,
+        "fallen": false,
+        "timeout": false,
+        "forbidden_contacts": 0,
+        "goal_held": false,
+        "final_inside": false,
+        "hand_clear": true,
+        "final_target_distance_m": 0.13000013191199783,
+        "object_displacement_m": 0.005107755422499804,
+        "runtime_outcome": "failure",
+        "runtime_reason": "Target pose is absent, stale, or in an unsupported frame",
+        "elapsed_sim_seconds": 8.179999999999879,
+        "wall_seconds": 6.691911892965436,
+        "tracking_mean_m": [
+          0.02785768546606066,
+          0.02896353650413439,
+          0.047982837596480685,
+          0.008451580498756139,
+          0.03241795203769791,
+          0.052613453405725756,
+          0.008380076357868764,
+          0.026300266816911295,
+          0.05811669458198273,
+          0.04884596833931632,
+          0.025735534699163436,
+          0.06987976536122191,
+          0.09864149058778787,
+          0.035333006817169034
+        ],
+        "tracking_max_m": [
+          0.03723285204884964,
+          0.043119242083634775,
+          0.07974682908194901,
+          0.012327069834069275,
+          0.04916681763678013,
+          0.07521586844334703,
+          0.012149250075298292,
+          0.031989484856681606,
+          0.1265984688933084,
+          0.053534186501996255,
+          0.034999140157187386,
+          0.15691291273723465,
+          0.16727588731444393,
+          0.04813288400728495
+        ],
+        "body_names": [
+          "pelvis",
+          "left_hip_roll_link",
+          "left_knee_link",
+          "left_ankle_roll_link",
+          "right_hip_roll_link",
+          "right_knee_link",
+          "right_ankle_roll_link",
+          "torso_link",
+          "left_shoulder_roll_link",
+          "left_elbow_link",
+          "left_wrist_yaw_link",
+          "right_shoulder_roll_link",
+          "right_elbow_link",
+          "right_wrist_yaw_link"
+        ],
+        "root_tracking_mean_m": 0.027857685466060628,
+        "right_hand_tracking_mean_m": 0.035333006817169034,
+        "max_torque_nm": 22.64282360946573,
+        "minimum_root_height_m": 0.7394636312360671,
+        "baseline": null,
+        "agent_pose_sources": []
+      },
+      "status": "executed"
+    },
+    {
+      "case": "office_east_nominal",
+      "workcell": "office_east",
+      "position": "nominal",
+      "reconstructed": true,
+      "support_height": 0.575,
+      "yaw": 1.5707963267948966,
+      "preflight": {
+        "status": "ready",
+        "initial_penetrations": [],
+        "threshold_m": 0.008,
+        "task_objects": [
+          "env_cube",
+          "env_target",
+          "env_distractor_0",
+          "env_distractor_1"
+        ],
+        "physics_executed": false
+      },
+      "success": true,
+      "physics_executed": true,
+      "metrics": {
+        "success": true,
+        "physics_executed": true,
+        "evaluator": "declared_workcell_v1",
+        "support_height_m": 0.575,
+        "distractor_max_displacement_m": 0.0054538177178419245,
+        "fallen": false,
+        "timeout": false,
+        "forbidden_contacts": 0,
+        "goal_held": true,
+        "final_inside": true,
+        "hand_clear": true,
+        "final_target_distance_m": 0.007456577906419766,
+        "object_displacement_m": 0.1237038813189416,
+        "runtime_outcome": "completed",
+        "runtime_reason": null,
+        "elapsed_sim_seconds": 15.240000000000983,
+        "wall_seconds": 13.952338559087366,
+        "tracking_mean_m": [
+          0.03605023126873575,
+          0.040686219936170935,
+          0.03932159864980459,
+          0.009720787623963719,
+          0.04350174344092101,
+          0.04207624676929973,
+          0.009038744309996233,
+          0.03273869848487621,
+          0.07156887246875143,
+          0.038241488939584935,
+          0.03266759976218031,
+          0.11041577631660467,
+          0.16454558034257247,
+          0.04677995683738728
+        ],
+        "tracking_max_m": [
+          0.056990694141563665,
+          0.07119283745237029,
+          0.0794559205277922,
+          0.01800180511820314,
+          0.06967228486450104,
+          0.07518488817446355,
+          0.014480922615973117,
+          0.04902503727465138,
+          0.13020712955870345,
+          0.05330821172593368,
+          0.053899227050684555,
+          0.20054263186577873,
+          0.2929085827310494,
+          0.08969424751641679
+        ],
+        "body_names": [
+          "pelvis",
+          "left_hip_roll_link",
+          "left_knee_link",
+          "left_ankle_roll_link",
+          "right_hip_roll_link",
+          "right_knee_link",
+          "right_ankle_roll_link",
+          "torso_link",
+          "left_shoulder_roll_link",
+          "left_elbow_link",
+          "left_wrist_yaw_link",
+          "right_shoulder_roll_link",
+          "right_elbow_link",
+          "right_wrist_yaw_link"
+        ],
+        "root_tracking_mean_m": 0.03605023126873575,
+        "right_hand_tracking_mean_m": 0.046779956837387254,
+        "max_torque_nm": 23.282379616413543,
+        "minimum_root_height_m": 0.7324802633859211,
+        "baseline": null,
+        "agent_pose_sources": [
+          "camera"
+        ]
+      },
+      "status": "executed"
+    },
+    {
+      "case": "office_east_near_left",
+      "workcell": "office_east",
+      "position": "near_left",
+      "reconstructed": true,
+      "support_height": 0.575,
+      "yaw": 1.5707963267948966,
+      "preflight": {
+        "status": "ready",
+        "initial_penetrations": [],
+        "threshold_m": 0.008,
+        "task_objects": [
+          "env_cube",
+          "env_target",
+          "env_distractor_0",
+          "env_distractor_1"
+        ],
+        "physics_executed": false
+      },
+      "success": false,
+      "physics_executed": true,
+      "metrics": {
+        "success": false,
+        "physics_executed": true,
+        "evaluator": "declared_workcell_v1",
+        "support_height_m": 0.575,
+        "distractor_max_displacement_m": 0.0054538177178419245,
+        "fallen": false,
+        "timeout": false,
+        "forbidden_contacts": 0,
+        "goal_held": false,
+        "final_inside": false,
+        "hand_clear": true,
+        "final_target_distance_m": 0.030483159223104656,
+        "object_displacement_m": 0.1604491149946496,
+        "runtime_outcome": "completed",
+        "runtime_reason": null,
+        "elapsed_sim_seconds": 15.240000000000983,
+        "wall_seconds": 13.910894787870347,
+        "tracking_mean_m": [
+          0.03621937666689929,
+          0.040476134924506316,
+          0.03888001178339122,
+          0.00973529887809263,
+          0.043116059874857254,
+          0.04240316573861195,
+          0.00917087733905844,
+          0.033091844377570054,
+          0.0692106015979317,
+          0.03686986186880781,
+          0.033180896910919154,
+          0.10845575506387074,
+          0.16085682566300133,
+          0.048625980475998934
+        ],
+        "tracking_max_m": [
+          0.05714708607291699,
+          0.07110220748627992,
+          0.0794559205277922,
+          0.018058182066665648,
+          0.06930270860961277,
+          0.07518488817446355,
+          0.014589478508874822,
+          0.04936702279063361,
+          0.126415097042584,
+          0.05330821172593368,
+          0.05505902594732065,
+          0.20056229439091597,
+          0.293647859709701,
+          0.09074300739921637
+        ],
+        "body_names": [
+          "pelvis",
+          "left_hip_roll_link",
+          "left_knee_link",
+          "left_ankle_roll_link",
+          "right_hip_roll_link",
+          "right_knee_link",
+          "right_ankle_roll_link",
+          "torso_link",
+          "left_shoulder_roll_link",
+          "left_elbow_link",
+          "left_wrist_yaw_link",
+          "right_shoulder_roll_link",
+          "right_elbow_link",
+          "right_wrist_yaw_link"
+        ],
+        "root_tracking_mean_m": 0.03621937666689934,
+        "right_hand_tracking_mean_m": 0.04862598047599896,
+        "max_torque_nm": 23.282379616413543,
+        "minimum_root_height_m": 0.7302506492341702,
+        "baseline": null,
+        "agent_pose_sources": [
+          "camera"
+        ]
+      },
+      "status": "executed"
+    },
+    {
+      "case": "office_east_far_right",
+      "workcell": "office_east",
+      "position": "far_right",
+      "reconstructed": true,
+      "support_height": 0.575,
+      "yaw": 1.5707963267948966,
+      "preflight": {
+        "status": "ready",
+        "initial_penetrations": [],
+        "threshold_m": 0.008,
+        "task_objects": [
+          "env_cube",
+          "env_target",
+          "env_distractor_0",
+          "env_distractor_1"
+        ],
+        "physics_executed": false
+      },
+      "success": false,
+      "physics_executed": true,
+      "metrics": {
+        "success": false,
+        "physics_executed": true,
+        "evaluator": "declared_workcell_v1",
+        "support_height_m": 0.575,
+        "distractor_max_displacement_m": 0.0054538177178419245,
+        "fallen": false,
+        "timeout": false,
+        "forbidden_contacts": 0,
+        "goal_held": false,
+        "final_inside": false,
+        "hand_clear": true,
+        "final_target_distance_m": 0.1299999999999999,
+        "object_displacement_m": 0.004029915546416518,
+        "runtime_outcome": "failure",
+        "runtime_reason": "Target pose is absent, stale, or in an unsupported frame",
+        "elapsed_sim_seconds": 8.179999999999879,
+        "wall_seconds": 7.864178811898455,
+        "tracking_mean_m": [
+          0.02763007338883325,
+          0.02863626457853683,
+          0.0465636023087763,
+          0.006690194625995513,
+          0.03210769128615136,
+          0.05152552695594111,
+          0.006697830018667278,
+          0.026131293602643806,
+          0.05850919090867838,
+          0.04974028813765799,
+          0.025474251625139506,
+          0.06940100738121946,
+          0.09715938285013587,
+          0.034845595025504425
+        ],
+        "tracking_max_m": [
+          0.035807462118668615,
+          0.041292815952620195,
+          0.0794559205277922,
+          0.00945173743386792,
+          0.04710313274566028,
+          0.07518488817446355,
+          0.009553269033687374,
+          0.032546457502168995,
+          0.127593636755405,
+          0.05382312789645463,
+          0.03529050820604805,
+          0.1549131074407498,
+          0.16014728728615363,
+          0.04802389636242742
+        ],
+        "body_names": [
+          "pelvis",
+          "left_hip_roll_link",
+          "left_knee_link",
+          "left_ankle_roll_link",
+          "right_hip_roll_link",
+          "right_knee_link",
+          "right_ankle_roll_link",
+          "torso_link",
+          "left_shoulder_roll_link",
+          "left_elbow_link",
+          "left_wrist_yaw_link",
+          "right_shoulder_roll_link",
+          "right_elbow_link",
+          "right_wrist_yaw_link"
+        ],
+        "root_tracking_mean_m": 0.02763007338883325,
+        "right_hand_tracking_mean_m": 0.034845595025504376,
+        "max_torque_nm": 23.282379616413543,
+        "minimum_root_height_m": 0.739078073457279,
+        "baseline": null,
+        "agent_pose_sources": []
+      },
+      "status": "executed"
+    },
+    {
+      "case": "office_west_nominal",
+      "workcell": "office_west",
+      "position": "nominal",
+      "reconstructed": true,
+      "support_height": 0.575,
+      "yaw": 1.5707963267948966,
+      "preflight": {
+        "status": "ready",
+        "initial_penetrations": [],
+        "threshold_m": 0.008,
+        "task_objects": [
+          "env_cube",
+          "env_target",
+          "env_distractor_0",
+          "env_distractor_1"
+        ],
+        "physics_executed": false
+      },
+      "success": true,
+      "physics_executed": true,
+      "metrics": {
+        "success": true,
+        "physics_executed": true,
+        "evaluator": "declared_workcell_v1",
+        "support_height_m": 0.575,
+        "distractor_max_displacement_m": 0.0054538177178419245,
+        "fallen": false,
+        "timeout": false,
+        "forbidden_contacts": 0,
+        "goal_held": true,
+        "final_inside": true,
+        "hand_clear": true,
+        "final_target_distance_m": 0.007866753118058746,
+        "object_displacement_m": 0.12288932577753246,
+        "runtime_outcome": "completed",
+        "runtime_reason": null,
+        "elapsed_sim_seconds": 15.240000000000983,
+        "wall_seconds": 13.981844026129693,
+        "tracking_mean_m": [
+          0.036053374759672546,
+          0.040689623888601124,
+          0.03932223341027577,
+          0.009720552928947003,
+          0.043505209535262795,
+          0.04207333755229931,
+          0.009038922735979994,
+          0.03274144926726532,
+          0.07157547522356786,
+          0.03825092166994641,
+          0.03266896725012659,
+          0.11041751707165494,
+          0.1645475761357139,
+          0.04679328902187179
+        ],
+        "tracking_max_m": [
+          0.05693026026651413,
+          0.07115800728916762,
+          0.07945584156779083,
+          0.01800099050121708,
+          0.06961882440367345,
+          0.0751847962090965,
+          0.014480412705897045,
+          0.048960901110764773,
+          0.13022320228750456,
+          0.05330845102225786,
+          0.05384014546355007,
+          0.2006952971321445,
+          0.29308801367637305,
+          0.089577638962834
+        ],
+        "body_names": [
+          "pelvis",
+          "left_hip_roll_link",
+          "left_knee_link",
+          "left_ankle_roll_link",
+          "right_hip_roll_link",
+          "right_knee_link",
+          "right_ankle_roll_link",
+          "torso_link",
+          "left_shoulder_roll_link",
+          "left_elbow_link",
+          "left_wrist_yaw_link",
+          "right_shoulder_roll_link",
+          "right_elbow_link",
+          "right_wrist_yaw_link"
+        ],
+        "root_tracking_mean_m": 0.036053374759672546,
+        "right_hand_tracking_mean_m": 0.04679328902187179,
+        "max_torque_nm": 23.282357793647844,
+        "minimum_root_height_m": 0.7324647331070417,
+        "baseline": null,
+        "agent_pose_sources": [
+          "camera"
+        ]
+      },
+      "status": "executed"
+    },
+    {
+      "case": "office_west_near_left",
+      "workcell": "office_west",
+      "position": "near_left",
+      "reconstructed": true,
+      "support_height": 0.575,
+      "yaw": 1.5707963267948966,
+      "preflight": {
+        "status": "ready",
+        "initial_penetrations": [],
+        "threshold_m": 0.008,
+        "task_objects": [
+          "env_cube",
+          "env_target",
+          "env_distractor_0",
+          "env_distractor_1"
+        ],
+        "physics_executed": false
+      },
+      "success": false,
+      "physics_executed": true,
+      "metrics": {
+        "success": false,
+        "physics_executed": true,
+        "evaluator": "declared_workcell_v1",
+        "support_height_m": 0.575,
+        "distractor_max_displacement_m": 0.0054538177178419245,
+        "fallen": false,
+        "timeout": false,
+        "forbidden_contacts": 0,
+        "goal_held": false,
+        "final_inside": false,
+        "hand_clear": true,
+        "final_target_distance_m": 0.030486390270090192,
+        "object_displacement_m": 0.16045227670241222,
+        "runtime_outcome": "completed",
+        "runtime_reason": null,
+        "elapsed_sim_seconds": 15.240000000000983,
+        "wall_seconds": 13.828114992007613,
+        "tracking_mean_m": [
+          0.03621932584868986,
+          0.040476262508670535,
+          0.03887996067238951,
+          0.009735416855585006,
+          0.04311618384946356,
+          0.04240307745090907,
+          0.009170765215661953,
+          0.03309179460238163,
+          0.06921058786802571,
+          0.036869987988118504,
+          0.033180867370727785,
+          0.10845564469664828,
+          0.16085688684404026,
+          0.04862594452435064
+        ],
+        "tracking_max_m": [
+          0.05714707225032332,
+          0.0711023416571988,
+          0.07945584156779083,
+          0.01805831530616314,
+          0.06930300238801594,
+          0.0751847962090965,
+          0.014589340683996336,
+          0.04936702134420494,
+          0.12641514842463186,
+          0.05330845102225786,
+          0.0550591029609454,
+          0.2005619392657629,
+          0.2936478737739957,
+          0.09074327513281023
+        ],
+        "body_names": [
+          "pelvis",
+          "left_hip_roll_link",
+          "left_knee_link",
+          "left_ankle_roll_link",
+          "right_hip_roll_link",
+          "right_knee_link",
+          "right_ankle_roll_link",
+          "torso_link",
+          "left_shoulder_roll_link",
+          "left_elbow_link",
+          "left_wrist_yaw_link",
+          "right_shoulder_roll_link",
+          "right_elbow_link",
+          "right_wrist_yaw_link"
+        ],
+        "root_tracking_mean_m": 0.03621932584868983,
+        "right_hand_tracking_mean_m": 0.04862594452435065,
+        "max_torque_nm": 23.282357793647844,
+        "minimum_root_height_m": 0.7302508552204929,
+        "baseline": null,
+        "agent_pose_sources": [
+          "camera"
+        ]
+      },
+      "status": "executed"
+    },
+    {
+      "case": "office_west_far_right",
+      "workcell": "office_west",
+      "position": "far_right",
+      "reconstructed": true,
+      "support_height": 0.575,
+      "yaw": 1.5707963267948966,
+      "preflight": {
+        "status": "ready",
+        "initial_penetrations": [],
+        "threshold_m": 0.008,
+        "task_objects": [
+          "env_cube",
+          "env_target",
+          "env_distractor_0",
+          "env_distractor_1"
+        ],
+        "physics_executed": false
+      },
+      "success": false,
+      "physics_executed": true,
+      "metrics": {
+        "success": false,
+        "physics_executed": true,
+        "evaluator": "declared_workcell_v1",
+        "support_height_m": 0.575,
+        "distractor_max_displacement_m": 0.0054538177178419245,
+        "fallen": false,
+        "timeout": false,
+        "forbidden_contacts": 0,
+        "goal_held": false,
+        "final_inside": false,
+        "hand_clear": true,
+        "final_target_distance_m": 0.1299999999999999,
+        "object_displacement_m": 0.004029915546416518,
+        "runtime_outcome": "failure",
+        "runtime_reason": "Target pose is absent, stale, or in an unsupported frame",
+        "elapsed_sim_seconds": 8.179999999999879,
+        "wall_seconds": 7.746352373156697,
+        "tracking_mean_m": [
+          0.02763005623906438,
+          0.028636370647766248,
+          0.046563491509693127,
+          0.006690299264802696,
+          0.0321077901900855,
+          0.05152536535084581,
+          0.006697725807750124,
+          0.026131279527794385,
+          0.05850927127210049,
+          0.04974049000236356,
+          0.02547428148978232,
+          0.06940108450623483,
+          0.09715947300196534,
+          0.03484557102139027
+        ],
+        "tracking_max_m": [
+          0.035807509467179935,
+          0.04129305232296355,
+          0.07945584156779083,
+          0.009451835319421469,
+          0.04710336268261833,
+          0.0751847962090965,
+          0.009553141791506112,
+          0.032546470445813436,
+          0.12759384684665737,
+          0.05382331039903961,
+          0.03529060274863251,
+          0.15491327024417034,
+          0.16014712116861202,
+          0.04802391373974086
+        ],
+        "body_names": [
+          "pelvis",
+          "left_hip_roll_link",
+          "left_knee_link",
+          "left_ankle_roll_link",
+          "right_hip_roll_link",
+          "right_knee_link",
+          "right_ankle_roll_link",
+          "torso_link",
+          "left_shoulder_roll_link",
+          "left_elbow_link",
+          "left_wrist_yaw_link",
+          "right_shoulder_roll_link",
+          "right_elbow_link",
+          "right_wrist_yaw_link"
+        ],
+        "root_tracking_mean_m": 0.027630056239064393,
+        "right_hand_tracking_mean_m": 0.034845571021390284,
+        "max_torque_nm": 23.282357793647844,
+        "minimum_root_height_m": 0.7390778666393512,
+        "baseline": null,
+        "agent_pose_sources": []
+      },
+      "status": "executed"
+    },
+    {
+      "case": "office_original_table_nominal",
+      "workcell": "office_original_table",
+      "position": "nominal",
+      "reconstructed": true,
+      "support_height": 0.74,
+      "yaw": 0,
+      "preflight": {
+        "status": "blocked_initial_penetration",
+        "initial_penetrations": [
+          {
+            "bodies": [
+              "env_atlas_collider_0123",
+              "env_cube"
+            ],
+            "depth_m": 0.018426783004336887
+          },
+          {
+            "bodies": [
+              "env_atlas_collider_0123",
+              "env_cube"
+            ],
+            "depth_m": 0.016376204705068814
+          },
+          {
+            "bodies": [
+              "env_atlas_collider_0123",
+              "env_cube"
+            ],
+            "depth_m": 0.01905035729136156
+          },
+          {
+            "bodies": [
+              "env_atlas_collider_0123",
+              "env_cube"
+            ],
+            "depth_m": 0.017016269155864815
+          },
+          {
+            "bodies": [
+              "env_atlas_collider_0729",
+              "env_cube"
+            ],
+            "depth_m": 0.026680823093874047
+          },
+          {
+            "bodies": [
+              "env_atlas_collider_0729",
+              "env_cube"
+            ],
+            "depth_m": 0.024904540689426744
+          },
+          {
+            "bodies": [
+              "env_atlas_collider_0729",
+              "env_cube"
+            ],
+            "depth_m": 0.025945878986222956
+          },
+          {
+            "bodies": [
+              "env_atlas_collider_0729",
+              "env_cube"
+            ],
+            "depth_m": 0.024169596581775653
+          }
+        ],
+        "threshold_m": 0.008,
+        "task_objects": [
+          "env_cube",
+          "env_target",
+          "env_distractor_0",
+          "env_distractor_1"
+        ],
+        "physics_executed": false
+      },
+      "success": false,
+      "physics_executed": false,
+      "status": "blocked_initial_penetration"
+    },
+    {
+      "case": "office_original_table_near_left",
+      "workcell": "office_original_table",
+      "position": "near_left",
+      "reconstructed": true,
+      "support_height": 0.74,
+      "yaw": 0,
+      "preflight": {
+        "status": "blocked_initial_penetration",
+        "initial_penetrations": [
+          {
+            "bodies": [
+              "env_atlas_collider_0123",
+              "env_cube"
+            ],
+            "depth_m": 0.029156301623972807
+          },
+          {
+            "bodies": [
+              "env_atlas_collider_0123",
+              "env_cube"
+            ],
+            "depth_m": 0.028466717592644273
+          },
+          {
+            "bodies": [
+              "env_atlas_collider_0123",
+              "env_cube"
+            ],
+            "depth_m": 0.0283653304651752
+          },
+          {
+            "bodies": [
+              "env_atlas_collider_0123",
+              "env_cube"
+            ],
+            "depth_m": 0.027630205008861704
+          },
+          {
+            "bodies": [
+              "env_atlas_collider_0729",
+              "env_cube"
+            ],
+            "depth_m": 0.02651235653313138
+          },
+          {
+            "bodies": [
+              "env_atlas_collider_0729",
+              "env_cube"
+            ],
+            "depth_m": 0.024736074128684078
+          },
+          {
+            "bodies": [
+              "env_atlas_collider_0729",
+              "env_cube"
+            ],
+            "depth_m": 0.02577741242548029
+          },
+          {
+            "bodies": [
+              "env_atlas_collider_0729",
+              "env_cube"
+            ],
+            "depth_m": 0.024001130021032987
+          }
+        ],
+        "threshold_m": 0.008,
+        "task_objects": [
+          "env_cube",
+          "env_target",
+          "env_distractor_0",
+          "env_distractor_1"
+        ],
+        "physics_executed": false
+      },
+      "success": false,
+      "physics_executed": false,
+      "status": "blocked_initial_penetration"
+    },
+    {
+      "case": "office_original_table_far_right",
+      "workcell": "office_original_table",
+      "position": "far_right",
+      "reconstructed": true,
+      "support_height": 0.74,
+      "yaw": 0,
+      "preflight": {
+        "status": "blocked_initial_penetration",
+        "initial_penetrations": [
+          {
+            "bodies": [
+              "env_atlas_collider_0729",
+              "env_cube"
+            ],
+            "depth_m": 0.026849289654616713
+          },
+          {
+            "bodies": [
+              "env_atlas_collider_0729",
+              "env_cube"
+            ],
+            "depth_m": 0.02507300725016941
+          },
+          {
+            "bodies": [
+              "env_atlas_collider_0729",
+              "env_cube"
+            ],
+            "depth_m": 0.026114345546965623
+          },
+          {
+            "bodies": [
+              "env_atlas_collider_0729",
+              "env_cube"
+            ],
+            "depth_m": 0.02433806314251832
+          }
+        ],
+        "threshold_m": 0.008,
+        "task_objects": [
+          "env_cube",
+          "env_target",
+          "env_distractor_0",
+          "env_distractor_1"
+        ],
+        "physics_executed": false
+      },
+      "success": false,
+      "physics_executed": false,
+      "status": "blocked_initial_penetration"
+    }
+  ]
+}

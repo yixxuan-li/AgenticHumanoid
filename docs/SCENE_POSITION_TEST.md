@@ -63,3 +63,40 @@ video, trajectories, references, contacts, metrics, and source/checkpoint hashes
 The suite summary separates the scene/workcell groups, executed episodes, blocked
 initializations, and errors. These are MuJoCo contact trials; the Gaussian Isaac
 Sim figure stages are not used as physical execution evidence.
+
+## Actual results
+
+The frozen sweep completed 12 physical episodes. Four succeeded. Three further
+cases were blocked by the initialization audit and were not executed.
+
+| Workcell | Successful / executed | Blocked |
+|---|---|---|
+| Open comparison | 1/3 | 0 |
+| Open, rotated 90 degrees | 1/3 | 0 |
+| Captured office, east aisle | 1/3 | 0 |
+| Captured office, west aisle | 1/3 | 0 |
+| Captured office, original table | Not executed | 3 |
+
+The nominal position succeeded in all four executed workcells. All near/left
+positions missed full-footprint containment. All far/right positions failed
+because a fresh camera pose was unavailable. No executed episode fell, timed
+out, or registered a forbidden contact. Distractor motion stayed below the
+declared 2 cm threshold; approximately 5–6 mm came from initial settling.
+
+The original-table object placements intersected collision boxes
+`atlas_collider_0123` / `atlas_collider_0729` by approximately 16–29 mm. These
+blocked cases do not measure policy performance at the higher surface. The
+existing table needs collision-geometry review before such manipulation trials;
+the suite did not edit the source furniture or move the blocked objects after
+seeing outcomes.
+
+The source reconstruction fingerprint remains
+`d991e9181b6d9d428171375e2ab7ecdafa795f6f0cabbbd90eeb2581873ee2fa`.
+All available agent object poses were labeled `camera`; the skill parameters
+were frozen and no GPT calls or symbolic updates occurred.
+
+See the [case matrix](../reports/scene_positions_20261124.png) and
+[complete machine-readable result](../reports/scene_positions_20261124.json).
+Local `outputs/skill_lab/scene_positions_20261124/scene_examples.png` combines
+actual recorded final physics states rendered from the room overview with
+the original onboard RGB observations. It uses no generated robot poses.

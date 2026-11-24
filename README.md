@@ -142,3 +142,7 @@ URDF-derived visual poses, and the approximate tabletop occlusion proxy.
 
 See [onboard exploration](docs/ONBOARD_EXPERIMENT.md) for the bounded RGB-D
 skill experiment and the source cleanup record.
+
+The [scene and position sweep](docs/SCENE_POSITION_TEST.md) adds movable task
+objects to the captured room and evaluates the frozen skill at multiple
+placements and headings, with actual results and blocked cases recorded.

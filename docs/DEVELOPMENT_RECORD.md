@@ -313,3 +313,22 @@ The reusable program/knowledge pair, rejected proposals, replay configuration,
 and evidence digests are saved under `skill_library/push_camera_20261124/`.
 See [ONBOARD_EXPERIMENT.md](ONBOARD_EXPERIMENT.md) and
 `reports/onboard_20261124_results.json` for the precise scope and results.
+
+## Added scene objects and position sweep — November 24, 2026
+
+Added explicit workcell/task bindings for the existing reconstructed scene,
+including a free red cube, target region, and two free colored distractors.
+Added tables in two clear room aisles without changing the captured room. An
+explicit episode frame handles translation/yaw of the frozen skill, and a
+camera-only calibrated workspace filter separates task markers from room clutter.
+The evaluator now supports declared support heights and rotated target regions,
+and checks distractor disturbance. The original unbound-scene rejection remains.
+
+All 41 software checks passed. The predeclared 15-case sweep executed 12 physical
+episodes and succeeded in four: the nominal position in both open controls and
+both office aisle placements. Shifted positions remain unreliable. Three
+original-table cases were blocked before execution by 16–29 mm object/collider
+penetration; no higher-table policy result is claimed. Source reconstruction
+identity is unchanged. No GPT calls, skill tuning, or knowledge promotion were
+performed during this evaluation. Details are in
+[SCENE_POSITION_TEST.md](SCENE_POSITION_TEST.md).

@@ -1,0 +1,9 @@
+{
+  "archive": "deliverables/scene_positions_20261124.zip",
+  "bytes": 442601769,
+  "sha256": "1a90631c1f4375b430e309261c92d0a639a914c380ea3904feb41ce8e97748b3",
+  "zip_crc": "passed",
+  "full_executed_episodes": 12,
+  "blocked_cases": 3,
+  "requires_existing_project_assets": true
+}
