@@ -1,0 +1,14 @@
+{
+  "archive": "deliverables/onboard_skill_20261124.zip",
+  "bytes": 153301074,
+  "sha256": "8a307542d8e62e5c8ef65fdf7b81e855c43f483db843705d8702e077223ab2b4",
+  "crc_check": "passed",
+  "full_episode_records": [
+    "outputs/skill_lab/onboard_20261124_occlusion/round_00_candidate_development_00",
+    "outputs/skill_lab/onboard_20261124_occlusion/round_00_candidate_validation_00",
+    "outputs/skill_lab/onboard_20261124_frozen_test/test_00",
+    "outputs/skill_lab/onboard_20261124_frozen_test/test_01"
+  ],
+  "all_episode_scores_included": true,
+  "credentials_or_raw_api_context_included": false
+}

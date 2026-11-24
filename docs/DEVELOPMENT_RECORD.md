@@ -293,3 +293,23 @@ controller validation, symbolic evidence, or measured task outcomes.
 The teaser/system PNG, PDF, and SVG exports, native stages, rendering records,
 validation, and English reproduction notes are documented in
 [FIGURES_V6.md](FIGURES_V6.md).
+
+## Onboard skill experiment — November 24, 2026
+
+Cleaned and pushed the maintained code, archived ten obsolete figure drafts,
+and consolidated shared figure layout code. The 36 software tests and both
+native figure artifact checks passed.
+
+Executed two bounded RGB-D exploration runs and one frozen evaluation in the
+MuJoCo tabletop benchmark: 33 physical episodes, five live GPT calls, and
+56,781 reported tokens. Version 2 of the push program improved paired validation
+from 0/3 to 1/3 successes and passed 1/2 frozen held-out layouts. Its accepted
+change is a 3 cm forward push-reference adjustment; this is parameter refinement.
+Remaining failures include loss of fresh camera poses during occlusion. The
+saved symbolic rule remains a candidate, and no task-composition, Gaussian-stage
+contact, finger-grasp, or hardware success is established.
+
+The reusable program/knowledge pair, rejected proposals, replay configuration,
+and evidence digests are saved under `skill_library/push_camera_20261124/`.
+See [ONBOARD_EXPERIMENT.md](ONBOARD_EXPERIMENT.md) and
+`reports/onboard_20261124_results.json` for the precise scope and results.

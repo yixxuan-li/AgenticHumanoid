@@ -1,0 +1,7 @@
+{
+  "accepted": false,
+  "reason": "no_success_improvement",
+  "baseline_successes": 1,
+  "candidate_successes": 1,
+  "episodes": 3
+}

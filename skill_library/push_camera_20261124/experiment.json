@@ -1,0 +1,134 @@
+{
+  "ablation": "joint",
+  "rounds": 2,
+  "max_api_calls": 2,
+  "max_tokens": 150000,
+  "max_episodes": 14,
+  "minimum_validation_episodes": 3,
+  "observation_mode": "onboard_vision",
+  "episode_seconds": 22,
+  "development": [
+    {
+      "seed": 1101,
+      "object_xy": [
+        0.455,
+        -0.185
+      ],
+      "target_xy": [
+        0.585,
+        -0.185
+      ]
+    }
+  ],
+  "validation": [
+    {
+      "seed": 1201,
+      "object_xy": [
+        0.445,
+        -0.175
+      ],
+      "target_xy": [
+        0.585,
+        -0.175
+      ]
+    },
+    {
+      "seed": 1202,
+      "object_xy": [
+        0.465,
+        -0.205
+      ],
+      "target_xy": [
+        0.605,
+        -0.205
+      ]
+    },
+    {
+      "seed": 1203,
+      "object_xy": [
+        0.455,
+        -0.155
+      ],
+      "target_xy": [
+        0.595,
+        -0.155
+      ]
+    }
+  ],
+  "test": [
+    {
+      "seed": 1301,
+      "object_xy": [
+        0.435,
+        -0.195
+      ],
+      "target_xy": [
+        0.575,
+        -0.195
+      ]
+    },
+    {
+      "seed": 1302,
+      "object_xy": [
+        0.475,
+        -0.165
+      ],
+      "target_xy": [
+        0.615,
+        -0.165
+      ]
+    }
+  ],
+  "prior_development_feedback": [
+    {
+      "source_run": "onboard_20261124",
+      "split": "development",
+      "finding": "The hand occludes camera targets during the approach/contact/push. Re-reading object or target poses at later stages causes failure; these poses must not be treated as fresh or replaced by oracle truth. Absolute world motions avoided missing-pose failures but remained under-pushed.",
+      "next_hypothesis": "Use a fresh onboard camera object pose for approach, then finite phase-relative wrist offsets for lowering and forward pushing (retract_hand is a generic offset primitive, not restricted to backward motion). The task domain has a fixed +x target displacement of approximately 0.13-0.14m; do not claim wider goal generalization. Consider single slow pushing stroke and adjust its endpoint to compensate measured wrist lag; preserve lift and retreat.",
+      "development_results": [
+        {
+          "label": "onboard_20261124",
+          "success": false,
+          "runtime_reason": null,
+          "final_target_distance_m": 0.027903911047558374,
+          "object_displacement_m": 0.10327535953661673
+        },
+        {
+          "label": "onboard_20261124",
+          "success": false,
+          "runtime_reason": "Target pose is absent, stale, or in an unsupported frame",
+          "final_target_distance_m": 0.032707098958373704,
+          "object_displacement_m": 0.09781487992311659
+        },
+        {
+          "label": "onboard_20261124",
+          "success": false,
+          "runtime_reason": null,
+          "final_target_distance_m": 0.027903911047558374,
+          "object_displacement_m": 0.10327535953661673
+        },
+        {
+          "label": "onboard_20261124",
+          "success": false,
+          "runtime_reason": null,
+          "final_target_distance_m": 0.03859320812868358,
+          "object_displacement_m": 0.09162468476688276
+        },
+        {
+          "label": "onboard_20261124",
+          "success": false,
+          "runtime_reason": null,
+          "final_target_distance_m": 0.027903911047558374,
+          "object_displacement_m": 0.10327535953661673
+        },
+        {
+          "label": "onboard_20261124",
+          "success": false,
+          "runtime_reason": "Target pose is absent, stale, or in an unsupported frame",
+          "final_target_distance_m": 0.12999999997097297,
+          "object_displacement_m": 0.005107755420802784
+        }
+      ]
+    }
+  ]
+}

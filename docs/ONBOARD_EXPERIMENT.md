@@ -60,6 +60,48 @@ The `--test` argument is optional and must identify a frozen evaluation of the
 same selected snapshot. Exporting an initial baseline or a rejected proposal
 does not label it as validated.
 
+## Executed result — November 24, 2026
+
+The two runs completed 31 exploration episodes and five live GPT proposals.
+Two further episodes evaluated the frozen selected program, for **33 actual
+MuJoCo physics episodes** in total. All recorded agent object poses came from
+the camera estimator; no oracle object poses entered the skill execution path.
+The reported API usage was 56,781 tokens.
+
+Version 2 of `push_to_region_calibrated` was selected. GPT changed the push
+endpoint by 3 cm in +x: the target-relative
+wrist offset changed from `[-0.085, -0.015, 0.055]` to
+`[-0.055, -0.015, 0.055]`. The stage structure stayed the same, so this is
+**parameter refinement**, not acquisition of a new program structure.
+
+| Check | Result |
+|---|---|
+| Baseline paired validation | 0/3 successes |
+| Selected version 2 paired validation | 1/3 successes |
+| Frozen held-out layouts | 1/2 successes |
+| Symbolic preconditions/effects | Candidate evidence only; not validated |
+
+The successful episodes placed the full cube footprint inside the target,
+cleared the hand, and held the outcome. Remaining layouts failed because fresh
+visual poses became unavailable. These small samples do not establish broad
+reliability, unseen task composition, or real-world transfer. No tuning followed
+the frozen test results.
+
+The saved reusable pair is in
+[`skill_library/push_camera_20261124`](../skill_library/push_camera_20261124/README.md).
+Its immutable snapshot is
+`97e63e484bb7fe17345fd910883eccf3f8238b686ec09c378559afe8c9b45fc0`.
+The replay configuration uses the successful development layout; it does not
+silently switch to the CLI's default layout.
+
+The compact per-episode result table is
+[`reports/onboard_20261124_results.json`](../reports/onboard_20261124_results.json).
+Local RGB-D frames, trajectories, onboard videos, and evaluation records remain
+under `outputs/skill_lab/`. The local delivery
+`deliverables/onboard_skill_20261124.zip` contains all episode scores and full
+records for the selected development success, selected validation success, and
+both frozen tests. Bulk recordings are excluded from Git.
+
 ## Source cleanup
 
 The obsolete version 1–4 figure drafts, their prompts, and version 3–4 figure

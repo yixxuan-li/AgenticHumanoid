@@ -1,0 +1,379 @@
+{
+  "status": "completed",
+  "api_calls": 2,
+  "tokens": 22257,
+  "api_request_attempts": 2,
+  "replayed_proposals": 0,
+  "usage_status": "known",
+  "episodes": 13,
+  "current_snapshot": "97e63e484bb7fe17345fd910883eccf3f8238b686ec09c378559afe8c9b45fc0",
+  "accepted_skill_version": 2,
+  "rules_status": [
+    "candidate"
+  ],
+  "history": [
+    {
+      "source_run": "onboard_20261124",
+      "split": "development",
+      "finding": "The hand occludes camera targets during the approach/contact/push. Re-reading object or target poses at later stages causes failure; these poses must not be treated as fresh or replaced by oracle truth. Absolute world motions avoided missing-pose failures but remained under-pushed.",
+      "next_hypothesis": "Use a fresh onboard camera object pose for approach, then finite phase-relative wrist offsets for lowering and forward pushing (retract_hand is a generic offset primitive, not restricted to backward motion). The task domain has a fixed +x target displacement of approximately 0.13-0.14m; do not claim wider goal generalization. Consider single slow pushing stroke and adjust its endpoint to compensate measured wrist lag; preserve lift and retreat.",
+      "development_results": [
+        {
+          "label": "onboard_20261124",
+          "success": false,
+          "runtime_reason": null,
+          "final_target_distance_m": 0.027903911047558374,
+          "object_displacement_m": 0.10327535953661673
+        },
+        {
+          "label": "onboard_20261124",
+          "success": false,
+          "runtime_reason": "Target pose is absent, stale, or in an unsupported frame",
+          "final_target_distance_m": 0.032707098958373704,
+          "object_displacement_m": 0.09781487992311659
+        },
+        {
+          "label": "onboard_20261124",
+          "success": false,
+          "runtime_reason": null,
+          "final_target_distance_m": 0.027903911047558374,
+          "object_displacement_m": 0.10327535953661673
+        },
+        {
+          "label": "onboard_20261124",
+          "success": false,
+          "runtime_reason": null,
+          "final_target_distance_m": 0.03859320812868358,
+          "object_displacement_m": 0.09162468476688276
+        },
+        {
+          "label": "onboard_20261124",
+          "success": false,
+          "runtime_reason": null,
+          "final_target_distance_m": 0.027903911047558374,
+          "object_displacement_m": 0.10327535953661673
+        },
+        {
+          "label": "onboard_20261124",
+          "success": false,
+          "runtime_reason": "Target pose is absent, stale, or in an unsupported frame",
+          "final_target_distance_m": 0.12999999997097297,
+          "object_displacement_m": 0.005107755420802784
+        }
+      ]
+    },
+    {
+      "round": 0,
+      "candidate_version": 2,
+      "hypothesis": "The cube was under-pushed by about 2.8 cm because the push endpoint did not compensate enough for measured wrist lag during the forward stroke. Tracking shows the right hand trailed the reference by 6.8-8.0 cm near the end of push, while the object still moved 10.3 cm toward a required displacement of about 13 cm. The contact height appears usable because the cube moved substantially and the robot did not fall, but the final push target was too conservative. A slightly farther +x push while keeping the same single-stroke strategy should increase final penetration into the green region without changing sensing assumptions.",
+      "candidate_skill": {
+        "name": "push_to_region_calibrated",
+        "version": 2,
+        "max_transitions": 8,
+        "stages": [
+          {
+            "id": "settle",
+            "primitive": "wait",
+            "parameters": {
+              "duration": 2.0
+            },
+            "next": "above"
+          },
+          {
+            "id": "above",
+            "primitive": "move_hand_relative",
+            "parameters": {
+              "reference": "object",
+              "offset": [
+                -0.22,
+                -0.015,
+                0.14
+              ],
+              "quaternion_wxyz": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "duration": 3.0,
+              "hand": "right"
+            },
+            "next": "contact"
+          },
+          {
+            "id": "contact",
+            "primitive": "move_hand_relative",
+            "parameters": {
+              "reference": "object",
+              "offset": [
+                -0.22,
+                -0.015,
+                0.03
+              ],
+              "quaternion_wxyz": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "duration": 2.0,
+              "hand": "right"
+            },
+            "next": "push"
+          },
+          {
+            "id": "push",
+            "primitive": "move_hand_relative",
+            "parameters": {
+              "reference": "target",
+              "offset": [
+                -0.055,
+                -0.015,
+                0.055
+              ],
+              "quaternion_wxyz": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "duration": 4.0,
+              "hand": "right"
+            },
+            "next": "lift"
+          },
+          {
+            "id": "lift",
+            "primitive": "retract_hand",
+            "parameters": {
+              "offset": [
+                0,
+                0,
+                0.12
+              ],
+              "duration": 1.5,
+              "hand": "right"
+            },
+            "next": "retreat"
+          },
+          {
+            "id": "retreat",
+            "primitive": "retract_hand",
+            "parameters": {
+              "offset": [
+                -0.1,
+                0,
+                0
+              ],
+              "duration": 1.5,
+              "hand": "right"
+            }
+          }
+        ]
+      },
+      "candidate_rule": {
+        "skill": "push_to_region_calibrated",
+        "skill_version": 2,
+        "preconditions": [
+          "visible(?object)"
+        ],
+        "add_effects": [
+          "object_in_region(?object,?target)"
+        ],
+        "delete_effects": [],
+        "status": "candidate",
+        "evidence": {}
+      },
+      "proposed_distinguishing_experiment": "Run version 2 with the only change being a farther forward push endpoint in target-relative coordinates, then inspect whether final_target_distance decreases from 0.0279 m to near zero while preserving hand_clear and no-fall behavior.",
+      "development": [
+        {
+          "success": true,
+          "fallen": false,
+          "timeout": false,
+          "forbidden_contacts": 0,
+          "goal_held": true,
+          "final_inside": true,
+          "hand_clear": true,
+          "final_target_distance_m": 0.009380613110605623,
+          "object_displacement_m": 0.1212174809833649,
+          "runtime_outcome": "completed",
+          "runtime_reason": null,
+          "right_hand_tracking_mean_m": 0.04706666603830495,
+          "root_tracking_mean_m": 0.03605681748404379
+        }
+      ],
+      "validation_summary": {
+        "successes": 1,
+        "episodes": 3
+      },
+      "decision": {
+        "accepted": true,
+        "reason": "strict_success_improvement",
+        "baseline_successes": 0,
+        "candidate_successes": 1,
+        "episodes": 3
+      }
+    },
+    {
+      "round": 1,
+      "candidate_version": 3,
+      "hypothesis": "Version 2 can succeed, but it remains brittle because the hand increasingly occludes the scene during contact and push, and the program ends immediately after retreat rather than explicitly holding the cleared configuration. A short terminal hold should better preserve the required 1 second post-retraction condition without changing the successful contact geometry.",
+      "candidate_skill": {
+        "name": "push_to_region_calibrated",
+        "version": 3,
+        "max_transitions": 9,
+        "stages": [
+          {
+            "id": "settle",
+            "primitive": "wait",
+            "parameters": {
+              "duration": 2.0
+            },
+            "next": "above"
+          },
+          {
+            "id": "above",
+            "primitive": "move_hand_relative",
+            "parameters": {
+              "reference": "object",
+              "offset": [
+                -0.22,
+                -0.015,
+                0.14
+              ],
+              "quaternion_wxyz": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "duration": 3.0,
+              "hand": "right"
+            },
+            "next": "contact"
+          },
+          {
+            "id": "contact",
+            "primitive": "move_hand_relative",
+            "parameters": {
+              "reference": "object",
+              "offset": [
+                -0.22,
+                -0.015,
+                0.03
+              ],
+              "quaternion_wxyz": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "duration": 2.0,
+              "hand": "right"
+            },
+            "next": "push"
+          },
+          {
+            "id": "push",
+            "primitive": "move_hand_relative",
+            "parameters": {
+              "reference": "target",
+              "offset": [
+                -0.055,
+                -0.015,
+                0.055
+              ],
+              "quaternion_wxyz": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "duration": 4.0,
+              "hand": "right"
+            },
+            "next": "lift"
+          },
+          {
+            "id": "lift",
+            "primitive": "retract_hand",
+            "parameters": {
+              "offset": [
+                0,
+                0,
+                0.12
+              ],
+              "duration": 1.5,
+              "hand": "right"
+            },
+            "next": "retreat"
+          },
+          {
+            "id": "retreat",
+            "primitive": "retract_hand",
+            "parameters": {
+              "offset": [
+                -0.1,
+                0,
+                0
+              ],
+              "duration": 1.5,
+              "hand": "right"
+            },
+            "next": "hold_clear"
+          },
+          {
+            "id": "hold_clear",
+            "primitive": "wait",
+            "parameters": {
+              "duration": 1.0
+            }
+          }
+        ]
+      },
+      "candidate_rule": {
+        "skill": "push_to_region_calibrated",
+        "skill_version": 3,
+        "preconditions": [
+          "visible(?object)"
+        ],
+        "add_effects": [
+          "object_in_region(?object,?target)"
+        ],
+        "delete_effects": [],
+        "status": "candidate",
+        "evidence": {}
+      },
+      "proposed_distinguishing_experiment": "Run version 3 with the added 1.0 second terminal wait after the successful retreat, and compare whether final_inside, hand_clear, and goal_held remain true while avoiding regressions in object placement.",
+      "development": [
+        {
+          "success": true,
+          "fallen": false,
+          "timeout": false,
+          "forbidden_contacts": 0,
+          "goal_held": true,
+          "final_inside": true,
+          "hand_clear": true,
+          "final_target_distance_m": 0.009380613194790019,
+          "object_displacement_m": 0.12121748093648038,
+          "runtime_outcome": "completed",
+          "runtime_reason": null,
+          "right_hand_tracking_mean_m": 0.04664341391031129,
+          "root_tracking_mean_m": 0.036220540847863844
+        }
+      ],
+      "validation_summary": {
+        "successes": 1,
+        "episodes": 3
+      },
+      "decision": {
+        "accepted": false,
+        "reason": "no_success_improvement",
+        "baseline_successes": 1,
+        "candidate_successes": 1,
+        "episodes": 3
+      }
+    }
+  ],
+  "test_feedback_used": false
+}

@@ -1,0 +1,26 @@
+{
+  "rules": [
+    {
+      "skill": "push_to_region_calibrated",
+      "skill_version": 2,
+      "preconditions": [
+        "visible(?object)"
+      ],
+      "add_effects": [
+        "object_in_region(?object,?target)"
+      ],
+      "delete_effects": [],
+      "status": "candidate",
+      "evidence": {
+        "validation_success": [
+          "round_00_candidate_validation_00"
+        ],
+        "validation_failure": [
+          "round_00_candidate_validation_01",
+          "round_00_candidate_validation_02"
+        ]
+      }
+    }
+  ],
+  "sha256": "516d5861950c233345638e65bc236b670e99ddabe99e50158ba7c285ec97d785"
+}

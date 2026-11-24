@@ -1,0 +1,49 @@
+{
+  "status": "validation_selected",
+  "observation_mode": "onboard_vision",
+  "task": "Controlled tabletop cube push with hand retreat",
+  "simulator": "MuJoCo / ScaleBridge / frozen ScaleBFM",
+  "reconstruction_scene": false,
+  "perception_assumptions": "Known 8cm cube and colored markers; simulated RGB-D camera",
+  "selected_snapshot": "97e63e484bb7fe17345fd910883eccf3f8238b686ec09c378559afe8c9b45fc0",
+  "skill_sha256": "92fefd6e8407bd5ac2fe566bf6b90a44a29ba465ddf79b884a42f257afe8cb78",
+  "initial_skill_sha256": "ea5156d7fccbf7e4480a02c8148bbbab2d9c1728059ca28db47446b7e7bc84da",
+  "acquisition_type": "parameter_refinement",
+  "experiment_directory": "outputs/skill_lab/onboard_20261124_occlusion",
+  "episodes": 13,
+  "new_skill_selected": true,
+  "api_calls": 2,
+  "tokens": 22257,
+  "uses_online_pose_targets": true,
+  "frozen_test": {
+    "frozen_snapshot": "97e63e484bb7fe17345fd910883eccf3f8238b686ec09c378559afe8c9b45fc0",
+    "successes": 1,
+    "episodes": 2,
+    "used_for_tuning": false
+  },
+  "candidates": [
+    {
+      "proposal": "proposal_00",
+      "program_sha256": "92fefd6e8407bd5ac2fe566bf6b90a44a29ba465ddf79b884a42f257afe8cb78",
+      "decision": {
+        "accepted": true,
+        "reason": "strict_success_improvement",
+        "baseline_successes": 0,
+        "candidate_successes": 1,
+        "episodes": 3
+      }
+    },
+    {
+      "proposal": "proposal_01",
+      "program_sha256": "a6c9c9dfefa7cf57883c8be8387a9d535b9d28e439d4b8fc12348c91342ca371",
+      "decision": {
+        "accepted": false,
+        "reason": "no_success_improvement",
+        "baseline_successes": 1,
+        "candidate_successes": 1,
+        "episodes": 3
+      }
+    }
+  ],
+  "symbolic_rules_validated": false
+}

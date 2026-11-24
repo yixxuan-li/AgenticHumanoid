@@ -1,0 +1,700 @@
+{
+  "status": "completed",
+  "source_commit": "c080b08",
+  "simulator": "MuJoCo / ScaleBridge / frozen ScaleBFM",
+  "scene": "Controlled tabletop benchmark; not the Gaussian figure stage",
+  "observation_mode": "onboard_vision",
+  "camera": "Simulated torso RGB-D, 320x240 at 10 Hz, known color/geometry perception",
+  "physics_episodes": 33,
+  "live_gpt_calls": 5,
+  "reported_tokens": 56781,
+  "initial_run": {
+    "episodes": 18,
+    "accepted_new_skill": false
+  },
+  "followup_run": {
+    "episodes": 13,
+    "accepted_skill_version": 2
+  },
+  "paired_validation": {
+    "baseline_successes": 0,
+    "selected_successes": 1,
+    "episodes": 3
+  },
+  "frozen_test": {
+    "successes": 1,
+    "episodes": 2,
+    "used_for_tuning": false
+  },
+  "saved_skill": "skill_library/push_camera_20261124",
+  "selected_snapshot": "97e63e484bb7fe17345fd910883eccf3f8238b686ec09c378559afe8c9b45fc0",
+  "acquisition_type": "parameter_refinement",
+  "symbolic_rules_validated": false,
+  "limitations": [
+    "Only one of three validation layouts succeeds.",
+    "One of two held-out layouts succeeds; this is not a broad reliability estimate.",
+    "Known marked cube/target and simulated depth are required.",
+    "Remaining failures include pose loss during visual occlusion.",
+    "No Gaussian-stage manipulation, finger grasp, or real robot execution was tested."
+  ],
+  "episodes": [
+    {
+      "run": "onboard_20261124",
+      "episode": "initial_validation_00",
+      "split": "validation",
+      "skill_sha256": "ea5156d7fccbf7e4480a02c8148bbbab2d9c1728059ca28db47446b7e7bc84da",
+      "success": false,
+      "runtime_reason": null,
+      "physics_executed": true,
+      "fallen": false,
+      "timeout": false,
+      "forbidden_contacts": 0,
+      "goal_held": false,
+      "final_inside": false,
+      "hand_clear": true,
+      "agent_pose_sources": [
+        "camera"
+      ],
+      "final_target_distance_m": 0.020963364408846476,
+      "metrics_sha256": "9c26e8402ade13a0a29ee391b14f725c629d7cf88db9fb292789df7f36ae1743"
+    },
+    {
+      "run": "onboard_20261124",
+      "episode": "initial_validation_01",
+      "split": "validation",
+      "skill_sha256": "ea5156d7fccbf7e4480a02c8148bbbab2d9c1728059ca28db47446b7e7bc84da",
+      "success": false,
+      "runtime_reason": "Target pose is absent, stale, or in an unsupported frame",
+      "physics_executed": true,
+      "fallen": false,
+      "timeout": false,
+      "forbidden_contacts": 0,
+      "goal_held": false,
+      "final_inside": false,
+      "hand_clear": true,
+      "agent_pose_sources": [
+        "camera"
+      ],
+      "final_target_distance_m": 0.13999999999999996,
+      "metrics_sha256": "fb5a0d3f0ae1428d581341921aeaba356e794ffbc1c7a788ad1e04e2131f2b2e"
+    },
+    {
+      "run": "onboard_20261124",
+      "episode": "initial_validation_02",
+      "split": "validation",
+      "skill_sha256": "ea5156d7fccbf7e4480a02c8148bbbab2d9c1728059ca28db47446b7e7bc84da",
+      "success": false,
+      "runtime_reason": "Target pose is absent, stale, or in an unsupported frame",
+      "physics_executed": true,
+      "fallen": false,
+      "timeout": false,
+      "forbidden_contacts": 0,
+      "goal_held": false,
+      "final_inside": false,
+      "hand_clear": true,
+      "agent_pose_sources": [
+        "camera"
+      ],
+      "final_target_distance_m": 0.1400000000496672,
+      "metrics_sha256": "c0adcf94e685f7d9c403dc1e4231793ec79b19d4f828f07db160eab02cdb01c2"
+    },
+    {
+      "run": "onboard_20261124",
+      "episode": "round_00_baseline_development_00",
+      "split": "development",
+      "skill_sha256": "ea5156d7fccbf7e4480a02c8148bbbab2d9c1728059ca28db47446b7e7bc84da",
+      "success": false,
+      "runtime_reason": null,
+      "physics_executed": true,
+      "fallen": false,
+      "timeout": false,
+      "forbidden_contacts": 0,
+      "goal_held": false,
+      "final_inside": false,
+      "hand_clear": true,
+      "agent_pose_sources": [
+        "camera"
+      ],
+      "final_target_distance_m": 0.027903911047558374,
+      "metrics_sha256": "1b8520140f45da355f560e52983b33bd62ec0e6ed9ce281c19ac1569e7c4e0f9"
+    },
+    {
+      "run": "onboard_20261124",
+      "episode": "round_00_candidate_development_00",
+      "split": "development",
+      "skill_sha256": "1d998da14369b5b6aa6b7b2c8f05bb6da14b5a7d16574cf69066de8e58d93337",
+      "success": false,
+      "runtime_reason": "Target pose is absent, stale, or in an unsupported frame",
+      "physics_executed": true,
+      "fallen": false,
+      "timeout": false,
+      "forbidden_contacts": 0,
+      "goal_held": false,
+      "final_inside": false,
+      "hand_clear": true,
+      "agent_pose_sources": [],
+      "final_target_distance_m": 0.032707098958373704,
+      "metrics_sha256": "4e6144c768db13983793ef358ab15f6d51cfe9bc0cf839a3e037b89b3073beeb"
+    },
+    {
+      "run": "onboard_20261124",
+      "episode": "round_00_candidate_validation_00",
+      "split": "validation",
+      "skill_sha256": "1d998da14369b5b6aa6b7b2c8f05bb6da14b5a7d16574cf69066de8e58d93337",
+      "success": false,
+      "runtime_reason": "Target pose is absent, stale, or in an unsupported frame",
+      "physics_executed": true,
+      "fallen": false,
+      "timeout": false,
+      "forbidden_contacts": 0,
+      "goal_held": false,
+      "final_inside": false,
+      "hand_clear": true,
+      "agent_pose_sources": [
+        "camera"
+      ],
+      "final_target_distance_m": 0.14000000001350318,
+      "metrics_sha256": "41fb393c8ef3b3127969916f7eddaa8097eea1e649081388ced61630dd1c5a04"
+    },
+    {
+      "run": "onboard_20261124",
+      "episode": "round_00_candidate_validation_01",
+      "split": "validation",
+      "skill_sha256": "1d998da14369b5b6aa6b7b2c8f05bb6da14b5a7d16574cf69066de8e58d93337",
+      "success": false,
+      "runtime_reason": "Target pose is absent, stale, or in an unsupported frame",
+      "physics_executed": true,
+      "fallen": false,
+      "timeout": false,
+      "forbidden_contacts": 0,
+      "goal_held": false,
+      "final_inside": false,
+      "hand_clear": true,
+      "agent_pose_sources": [
+        "camera"
+      ],
+      "final_target_distance_m": 0.13999999999999996,
+      "metrics_sha256": "233bedc00aab6be233ec1460af1a4fabd64b2c3300f8565135a883a400d8b447"
+    },
+    {
+      "run": "onboard_20261124",
+      "episode": "round_00_candidate_validation_02",
+      "split": "validation",
+      "skill_sha256": "1d998da14369b5b6aa6b7b2c8f05bb6da14b5a7d16574cf69066de8e58d93337",
+      "success": false,
+      "runtime_reason": "Target pose is absent, stale, or in an unsupported frame",
+      "physics_executed": true,
+      "fallen": false,
+      "timeout": false,
+      "forbidden_contacts": 0,
+      "goal_held": false,
+      "final_inside": false,
+      "hand_clear": true,
+      "agent_pose_sources": [
+        "camera"
+      ],
+      "final_target_distance_m": 0.14000000004528992,
+      "metrics_sha256": "4595aa257c2521410329da14a1a2350cf9c5eb1599f82dc4437789a04ffaa78b"
+    },
+    {
+      "run": "onboard_20261124",
+      "episode": "round_01_baseline_development_00",
+      "split": "development",
+      "skill_sha256": "ea5156d7fccbf7e4480a02c8148bbbab2d9c1728059ca28db47446b7e7bc84da",
+      "success": false,
+      "runtime_reason": null,
+      "physics_executed": true,
+      "fallen": false,
+      "timeout": false,
+      "forbidden_contacts": 0,
+      "goal_held": false,
+      "final_inside": false,
+      "hand_clear": true,
+      "agent_pose_sources": [
+        "camera"
+      ],
+      "final_target_distance_m": 0.027903911047558374,
+      "metrics_sha256": "968a88534b0c30bb75214e200934213006773cb93f4353eaa74cc2a5841dd838"
+    },
+    {
+      "run": "onboard_20261124",
+      "episode": "round_01_candidate_development_00",
+      "split": "development",
+      "skill_sha256": "350c14946b904f85770a4e316422c15bb2e37b5e5d5d01cd930a280cf88ac9d0",
+      "success": false,
+      "runtime_reason": null,
+      "physics_executed": true,
+      "fallen": false,
+      "timeout": false,
+      "forbidden_contacts": 0,
+      "goal_held": false,
+      "final_inside": false,
+      "hand_clear": true,
+      "agent_pose_sources": [
+        "camera"
+      ],
+      "final_target_distance_m": 0.03859320812868358,
+      "metrics_sha256": "c91800dd5159fa4bf46fc97a4e2bcc5885f6d460fb53fcc915c0661aea47d47f"
+    },
+    {
+      "run": "onboard_20261124",
+      "episode": "round_01_candidate_validation_00",
+      "split": "validation",
+      "skill_sha256": "350c14946b904f85770a4e316422c15bb2e37b5e5d5d01cd930a280cf88ac9d0",
+      "success": false,
+      "runtime_reason": null,
+      "physics_executed": true,
+      "fallen": false,
+      "timeout": false,
+      "forbidden_contacts": 0,
+      "goal_held": false,
+      "final_inside": false,
+      "hand_clear": true,
+      "agent_pose_sources": [
+        "camera"
+      ],
+      "final_target_distance_m": 0.029500687339337486,
+      "metrics_sha256": "ce4009416bc8fe5735f7d14eb80b78247e1b1b73f8f08b26e088124cbce11822"
+    },
+    {
+      "run": "onboard_20261124",
+      "episode": "round_01_candidate_validation_01",
+      "split": "validation",
+      "skill_sha256": "350c14946b904f85770a4e316422c15bb2e37b5e5d5d01cd930a280cf88ac9d0",
+      "success": false,
+      "runtime_reason": null,
+      "physics_executed": true,
+      "fallen": false,
+      "timeout": false,
+      "forbidden_contacts": 0,
+      "goal_held": false,
+      "final_inside": false,
+      "hand_clear": true,
+      "agent_pose_sources": [
+        "camera"
+      ],
+      "final_target_distance_m": 0.07390646057803563,
+      "metrics_sha256": "47e3d11db36af1ba86d4c331cacf0f65914e73ef3b5fb882973107504f444cf3"
+    },
+    {
+      "run": "onboard_20261124",
+      "episode": "round_01_candidate_validation_02",
+      "split": "validation",
+      "skill_sha256": "350c14946b904f85770a4e316422c15bb2e37b5e5d5d01cd930a280cf88ac9d0",
+      "success": false,
+      "runtime_reason": null,
+      "physics_executed": true,
+      "fallen": false,
+      "timeout": false,
+      "forbidden_contacts": 0,
+      "goal_held": false,
+      "final_inside": false,
+      "hand_clear": true,
+      "agent_pose_sources": [
+        "camera"
+      ],
+      "final_target_distance_m": 0.024622894333830064,
+      "metrics_sha256": "dbdea90e16bab0deb2b21be8776aa05fa67aeaafd73072e61d2d4b89a4e513a9"
+    },
+    {
+      "run": "onboard_20261124",
+      "episode": "round_02_baseline_development_00",
+      "split": "development",
+      "skill_sha256": "ea5156d7fccbf7e4480a02c8148bbbab2d9c1728059ca28db47446b7e7bc84da",
+      "success": false,
+      "runtime_reason": null,
+      "physics_executed": true,
+      "fallen": false,
+      "timeout": false,
+      "forbidden_contacts": 0,
+      "goal_held": false,
+      "final_inside": false,
+      "hand_clear": true,
+      "agent_pose_sources": [
+        "camera"
+      ],
+      "final_target_distance_m": 0.027903911047558374,
+      "metrics_sha256": "92095aa7e2541aaeda837e2e722f7b917f4f3e5a74646253e6cb4f49788713d8"
+    },
+    {
+      "run": "onboard_20261124",
+      "episode": "round_02_candidate_development_00",
+      "split": "development",
+      "skill_sha256": "c045ff27e6e71c6dc230f74f216452a78c948fb12318f07a08d5b61a42f6fe27",
+      "success": false,
+      "runtime_reason": "Target pose is absent, stale, or in an unsupported frame",
+      "physics_executed": true,
+      "fallen": false,
+      "timeout": false,
+      "forbidden_contacts": 0,
+      "goal_held": false,
+      "final_inside": false,
+      "hand_clear": true,
+      "agent_pose_sources": [
+        "camera"
+      ],
+      "final_target_distance_m": 0.12999999997097297,
+      "metrics_sha256": "a735911078bd50c0c2ac6402ce33f172ca8734c52d5779d3818507467c76cab5"
+    },
+    {
+      "run": "onboard_20261124",
+      "episode": "round_02_candidate_validation_00",
+      "split": "validation",
+      "skill_sha256": "c045ff27e6e71c6dc230f74f216452a78c948fb12318f07a08d5b61a42f6fe27",
+      "success": false,
+      "runtime_reason": "Target pose is absent, stale, or in an unsupported frame",
+      "physics_executed": true,
+      "fallen": false,
+      "timeout": false,
+      "forbidden_contacts": 0,
+      "goal_held": false,
+      "final_inside": false,
+      "hand_clear": true,
+      "agent_pose_sources": [
+        "camera"
+      ],
+      "final_target_distance_m": 0.14000000001350318,
+      "metrics_sha256": "b1bdc2b3c2668421a22e19585d46accc5d062e437f965ece25922ad393c0b1d2"
+    },
+    {
+      "run": "onboard_20261124",
+      "episode": "round_02_candidate_validation_01",
+      "split": "validation",
+      "skill_sha256": "c045ff27e6e71c6dc230f74f216452a78c948fb12318f07a08d5b61a42f6fe27",
+      "success": false,
+      "runtime_reason": "Target pose is absent, stale, or in an unsupported frame",
+      "physics_executed": true,
+      "fallen": false,
+      "timeout": false,
+      "forbidden_contacts": 0,
+      "goal_held": false,
+      "final_inside": false,
+      "hand_clear": true,
+      "agent_pose_sources": [
+        "camera"
+      ],
+      "final_target_distance_m": 0.13999999999999996,
+      "metrics_sha256": "9ef29da5de84a89e1a80633a27552c7649966630114cbcf4bab30d6aeb41bc44"
+    },
+    {
+      "run": "onboard_20261124",
+      "episode": "round_02_candidate_validation_02",
+      "split": "validation",
+      "skill_sha256": "c045ff27e6e71c6dc230f74f216452a78c948fb12318f07a08d5b61a42f6fe27",
+      "success": false,
+      "runtime_reason": "Target pose is absent, stale, or in an unsupported frame",
+      "physics_executed": true,
+      "fallen": false,
+      "timeout": false,
+      "forbidden_contacts": 0,
+      "goal_held": false,
+      "final_inside": false,
+      "hand_clear": true,
+      "agent_pose_sources": [
+        "camera"
+      ],
+      "final_target_distance_m": 0.14000000004528992,
+      "metrics_sha256": "0824a8b3b3c2dc8a1aadd8c14b14e3aa81ab63530bbca42f40c2f1a16cac4909"
+    },
+    {
+      "run": "onboard_20261124_occlusion",
+      "episode": "initial_validation_00",
+      "split": "validation",
+      "skill_sha256": "ea5156d7fccbf7e4480a02c8148bbbab2d9c1728059ca28db47446b7e7bc84da",
+      "success": false,
+      "runtime_reason": null,
+      "physics_executed": true,
+      "fallen": false,
+      "timeout": false,
+      "forbidden_contacts": 0,
+      "goal_held": false,
+      "final_inside": false,
+      "hand_clear": true,
+      "agent_pose_sources": [
+        "camera"
+      ],
+      "final_target_distance_m": 0.020963364408846476,
+      "metrics_sha256": "2267cfefa578dc6d63222603c1f1aea2d2065aa85bcdcb625ab9b4391f3d0b2b"
+    },
+    {
+      "run": "onboard_20261124_occlusion",
+      "episode": "initial_validation_01",
+      "split": "validation",
+      "skill_sha256": "ea5156d7fccbf7e4480a02c8148bbbab2d9c1728059ca28db47446b7e7bc84da",
+      "success": false,
+      "runtime_reason": "Target pose is absent, stale, or in an unsupported frame",
+      "physics_executed": true,
+      "fallen": false,
+      "timeout": false,
+      "forbidden_contacts": 0,
+      "goal_held": false,
+      "final_inside": false,
+      "hand_clear": true,
+      "agent_pose_sources": [
+        "camera"
+      ],
+      "final_target_distance_m": 0.13999999999999996,
+      "metrics_sha256": "320a5184696b92c96dc3607264c1f5b23f338d8558429f7cfeeb623f2d668764"
+    },
+    {
+      "run": "onboard_20261124_occlusion",
+      "episode": "initial_validation_02",
+      "split": "validation",
+      "skill_sha256": "ea5156d7fccbf7e4480a02c8148bbbab2d9c1728059ca28db47446b7e7bc84da",
+      "success": false,
+      "runtime_reason": "Target pose is absent, stale, or in an unsupported frame",
+      "physics_executed": true,
+      "fallen": false,
+      "timeout": false,
+      "forbidden_contacts": 0,
+      "goal_held": false,
+      "final_inside": false,
+      "hand_clear": true,
+      "agent_pose_sources": [
+        "camera"
+      ],
+      "final_target_distance_m": 0.1400000000496672,
+      "metrics_sha256": "2559e2f9ad32f3297302135be68d17a33de4a33be567c380671d07295cff9aa5"
+    },
+    {
+      "run": "onboard_20261124_occlusion",
+      "episode": "round_00_baseline_development_00",
+      "split": "development",
+      "skill_sha256": "ea5156d7fccbf7e4480a02c8148bbbab2d9c1728059ca28db47446b7e7bc84da",
+      "success": false,
+      "runtime_reason": null,
+      "physics_executed": true,
+      "fallen": false,
+      "timeout": false,
+      "forbidden_contacts": 0,
+      "goal_held": false,
+      "final_inside": false,
+      "hand_clear": true,
+      "agent_pose_sources": [
+        "camera"
+      ],
+      "final_target_distance_m": 0.027903911047558374,
+      "metrics_sha256": "58bc4e81a5fab4dac8059db7fcdc2c631a4acc1d029578f046a97ddb1600995b"
+    },
+    {
+      "run": "onboard_20261124_occlusion",
+      "episode": "round_00_candidate_development_00",
+      "split": "development",
+      "skill_sha256": "92fefd6e8407bd5ac2fe566bf6b90a44a29ba465ddf79b884a42f257afe8cb78",
+      "success": true,
+      "runtime_reason": null,
+      "physics_executed": true,
+      "fallen": false,
+      "timeout": false,
+      "forbidden_contacts": 0,
+      "goal_held": true,
+      "final_inside": true,
+      "hand_clear": true,
+      "agent_pose_sources": [
+        "camera"
+      ],
+      "final_target_distance_m": 0.009380613110605623,
+      "metrics_sha256": "28f84f6138d44d34b6237641217922095e150ad400c879be0363293dd603efb4"
+    },
+    {
+      "run": "onboard_20261124_occlusion",
+      "episode": "round_00_candidate_validation_00",
+      "split": "validation",
+      "skill_sha256": "92fefd6e8407bd5ac2fe566bf6b90a44a29ba465ddf79b884a42f257afe8cb78",
+      "success": true,
+      "runtime_reason": null,
+      "physics_executed": true,
+      "fallen": false,
+      "timeout": false,
+      "forbidden_contacts": 0,
+      "goal_held": true,
+      "final_inside": true,
+      "hand_clear": true,
+      "agent_pose_sources": [
+        "camera"
+      ],
+      "final_target_distance_m": 0.0012938527453510056,
+      "metrics_sha256": "92c0123b30ca425cc94f00d3d013c48b1ad5e868e88fcb8b077c9d678f89380c"
+    },
+    {
+      "run": "onboard_20261124_occlusion",
+      "episode": "round_00_candidate_validation_01",
+      "split": "validation",
+      "skill_sha256": "92fefd6e8407bd5ac2fe566bf6b90a44a29ba465ddf79b884a42f257afe8cb78",
+      "success": false,
+      "runtime_reason": "Target pose is absent, stale, or in an unsupported frame",
+      "physics_executed": true,
+      "fallen": false,
+      "timeout": false,
+      "forbidden_contacts": 0,
+      "goal_held": false,
+      "final_inside": false,
+      "hand_clear": true,
+      "agent_pose_sources": [
+        "camera"
+      ],
+      "final_target_distance_m": 0.13999999999999996,
+      "metrics_sha256": "b31c454226840aa59c93d675db7ef284ff749163a1b396ef3174d65fb58f7f25"
+    },
+    {
+      "run": "onboard_20261124_occlusion",
+      "episode": "round_00_candidate_validation_02",
+      "split": "validation",
+      "skill_sha256": "92fefd6e8407bd5ac2fe566bf6b90a44a29ba465ddf79b884a42f257afe8cb78",
+      "success": false,
+      "runtime_reason": "Target pose is absent, stale, or in an unsupported frame",
+      "physics_executed": true,
+      "fallen": false,
+      "timeout": false,
+      "forbidden_contacts": 0,
+      "goal_held": false,
+      "final_inside": false,
+      "hand_clear": true,
+      "agent_pose_sources": [
+        "camera"
+      ],
+      "final_target_distance_m": 0.1400000000496672,
+      "metrics_sha256": "f75bd6c3967c607b5b366afd4fc3e73cb3eab0d02e2b18d6268747f2ec0c3c7b"
+    },
+    {
+      "run": "onboard_20261124_occlusion",
+      "episode": "round_01_baseline_development_00",
+      "split": "development",
+      "skill_sha256": "92fefd6e8407bd5ac2fe566bf6b90a44a29ba465ddf79b884a42f257afe8cb78",
+      "success": true,
+      "runtime_reason": null,
+      "physics_executed": true,
+      "fallen": false,
+      "timeout": false,
+      "forbidden_contacts": 0,
+      "goal_held": true,
+      "final_inside": true,
+      "hand_clear": true,
+      "agent_pose_sources": [
+        "camera"
+      ],
+      "final_target_distance_m": 0.009380613110605623,
+      "metrics_sha256": "95756aae874a64b95a3702dccde110290418d2749d7043955c73590abcc97aac"
+    },
+    {
+      "run": "onboard_20261124_occlusion",
+      "episode": "round_01_candidate_development_00",
+      "split": "development",
+      "skill_sha256": "a6c9c9dfefa7cf57883c8be8387a9d535b9d28e439d4b8fc12348c91342ca371",
+      "success": true,
+      "runtime_reason": null,
+      "physics_executed": true,
+      "fallen": false,
+      "timeout": false,
+      "forbidden_contacts": 0,
+      "goal_held": true,
+      "final_inside": true,
+      "hand_clear": true,
+      "agent_pose_sources": [
+        "camera"
+      ],
+      "final_target_distance_m": 0.009380613194790019,
+      "metrics_sha256": "76aac1e5348b623f4a3424333536a4f08ab552d2c2d4a6f2dfcdc3e16c8462fb"
+    },
+    {
+      "run": "onboard_20261124_occlusion",
+      "episode": "round_01_candidate_validation_00",
+      "split": "validation",
+      "skill_sha256": "a6c9c9dfefa7cf57883c8be8387a9d535b9d28e439d4b8fc12348c91342ca371",
+      "success": true,
+      "runtime_reason": null,
+      "physics_executed": true,
+      "fallen": false,
+      "timeout": false,
+      "forbidden_contacts": 0,
+      "goal_held": true,
+      "final_inside": true,
+      "hand_clear": true,
+      "agent_pose_sources": [
+        "camera"
+      ],
+      "final_target_distance_m": 0.001293852774920686,
+      "metrics_sha256": "ee5d6e46ec36f0bf26a112e24423546d9246dec1ea9959c61594033b40f92d13"
+    },
+    {
+      "run": "onboard_20261124_occlusion",
+      "episode": "round_01_candidate_validation_01",
+      "split": "validation",
+      "skill_sha256": "a6c9c9dfefa7cf57883c8be8387a9d535b9d28e439d4b8fc12348c91342ca371",
+      "success": false,
+      "runtime_reason": "Target pose is absent, stale, or in an unsupported frame",
+      "physics_executed": true,
+      "fallen": false,
+      "timeout": false,
+      "forbidden_contacts": 0,
+      "goal_held": false,
+      "final_inside": false,
+      "hand_clear": true,
+      "agent_pose_sources": [
+        "camera"
+      ],
+      "final_target_distance_m": 0.13999999999999996,
+      "metrics_sha256": "f266fdd81544ab4752401905d0b399c4550207cee4fb1a8cb0b478f98b95bb39"
+    },
+    {
+      "run": "onboard_20261124_occlusion",
+      "episode": "round_01_candidate_validation_02",
+      "split": "validation",
+      "skill_sha256": "a6c9c9dfefa7cf57883c8be8387a9d535b9d28e439d4b8fc12348c91342ca371",
+      "success": false,
+      "runtime_reason": "Target pose is absent, stale, or in an unsupported frame",
+      "physics_executed": true,
+      "fallen": false,
+      "timeout": false,
+      "forbidden_contacts": 0,
+      "goal_held": false,
+      "final_inside": false,
+      "hand_clear": true,
+      "agent_pose_sources": [
+        "camera"
+      ],
+      "final_target_distance_m": 0.1400000000496672,
+      "metrics_sha256": "6d0be7bb538ae031235855bef78d7d6301380f8f2a845c191e39d67414adb66c"
+    },
+    {
+      "run": "onboard_20261124_frozen_test",
+      "episode": "test_00",
+      "split": "test",
+      "skill_sha256": "92fefd6e8407bd5ac2fe566bf6b90a44a29ba465ddf79b884a42f257afe8cb78",
+      "success": true,
+      "runtime_reason": null,
+      "physics_executed": true,
+      "fallen": false,
+      "timeout": false,
+      "forbidden_contacts": 0,
+      "goal_held": true,
+      "final_inside": true,
+      "hand_clear": true,
+      "agent_pose_sources": [
+        "camera"
+      ],
+      "final_target_distance_m": 0.008082141369498476,
+      "metrics_sha256": "a59b56e3282f5d3bbc84e6c6b88d01772bb3818eb77335391900a30f056b2d7c"
+    },
+    {
+      "run": "onboard_20261124_frozen_test",
+      "episode": "test_01",
+      "split": "test",
+      "skill_sha256": "92fefd6e8407bd5ac2fe566bf6b90a44a29ba465ddf79b884a42f257afe8cb78",
+      "success": false,
+      "runtime_reason": "Target pose is absent, stale, or in an unsupported frame",
+      "physics_executed": true,
+      "fallen": false,
+      "timeout": false,
+      "forbidden_contacts": 0,
+      "goal_held": false,
+      "final_inside": false,
+      "hand_clear": true,
+      "agent_pose_sources": [
+        "camera"
+      ],
+      "final_target_distance_m": 0.14000013865887856,
+      "metrics_sha256": "212f1ba857e72cbe654c807e97802c86040465f3594a50b52a0277461e4e8909"
+    }
+  ]
+}

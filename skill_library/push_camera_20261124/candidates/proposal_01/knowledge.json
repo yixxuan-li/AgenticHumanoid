@@ -1,0 +1,47 @@
+{
+  "rules": [
+    {
+      "skill": "push_to_region_calibrated",
+      "skill_version": 2,
+      "preconditions": [
+        "visible(?object)"
+      ],
+      "add_effects": [
+        "object_in_region(?object,?target)"
+      ],
+      "delete_effects": [],
+      "status": "revalidation_required",
+      "evidence": {
+        "validation_success": [
+          "round_00_candidate_validation_00"
+        ],
+        "validation_failure": [
+          "round_00_candidate_validation_01",
+          "round_00_candidate_validation_02"
+        ]
+      }
+    },
+    {
+      "skill": "push_to_region_calibrated",
+      "skill_version": 3,
+      "preconditions": [
+        "visible(?object)"
+      ],
+      "add_effects": [
+        "object_in_region(?object,?target)"
+      ],
+      "delete_effects": [],
+      "status": "candidate",
+      "evidence": {
+        "validation_success": [
+          "round_01_candidate_validation_00"
+        ],
+        "validation_failure": [
+          "round_01_candidate_validation_01",
+          "round_01_candidate_validation_02"
+        ]
+      }
+    }
+  ],
+  "sha256": "a5c071e05a989d0b24748a0bbeb9c007df0f5a4982ffcb458237f4749ddc1bbd"
+}

@@ -1,0 +1,105 @@
+{
+  "name": "push_to_region_calibrated",
+  "version": 2,
+  "max_transitions": 8,
+  "stages": [
+    {
+      "id": "settle",
+      "primitive": "wait",
+      "parameters": {
+        "duration": 2.0
+      },
+      "next": "above"
+    },
+    {
+      "id": "above",
+      "primitive": "move_hand_relative",
+      "parameters": {
+        "reference": "object",
+        "offset": [
+          -0.22,
+          -0.015,
+          0.14
+        ],
+        "quaternion_wxyz": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "duration": 3.0,
+        "hand": "right"
+      },
+      "next": "contact"
+    },
+    {
+      "id": "contact",
+      "primitive": "move_hand_relative",
+      "parameters": {
+        "reference": "object",
+        "offset": [
+          -0.22,
+          -0.015,
+          0.03
+        ],
+        "quaternion_wxyz": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "duration": 2.0,
+        "hand": "right"
+      },
+      "next": "push"
+    },
+    {
+      "id": "push",
+      "primitive": "move_hand_relative",
+      "parameters": {
+        "reference": "target",
+        "offset": [
+          -0.055,
+          -0.015,
+          0.055
+        ],
+        "quaternion_wxyz": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "duration": 4.0,
+        "hand": "right"
+      },
+      "next": "lift"
+    },
+    {
+      "id": "lift",
+      "primitive": "retract_hand",
+      "parameters": {
+        "offset": [
+          0,
+          0,
+          0.12
+        ],
+        "duration": 1.5,
+        "hand": "right"
+      },
+      "next": "retreat"
+    },
+    {
+      "id": "retreat",
+      "primitive": "retract_hand",
+      "parameters": {
+        "offset": [
+          -0.1,
+          0,
+          0
+        ],
+        "duration": 1.5,
+        "hand": "right"
+      }
+    }
+  ]
+}

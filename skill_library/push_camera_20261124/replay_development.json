@@ -1,0 +1,15 @@
+{
+  "seed": 1101,
+  "object_xy": [
+    0.455,
+    -0.185
+  ],
+  "target_xy": [
+    0.585,
+    -0.185
+  ],
+  "split": "development",
+  "seconds": 22,
+  "mode": 2,
+  "observation_mode": "onboard_vision"
+}

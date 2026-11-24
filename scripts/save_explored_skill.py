@@ -60,6 +60,12 @@ def main():
     write(args.output/"experiment.json", config)
     write(args.output/"evidence.json", evidence)
     write(args.output/"experiment_summary.json", summary)
+    replay = {**config["development"][0], "split": "development", "seconds": config["episode_seconds"],
+              "mode": 2, "observation_mode": config["observation_mode"]}
+    write(args.output/"replay_development.json", replay)
+    initial = json.loads((run/"initial_validation_00/skill.json").read_text())
+    def structure(program):
+        return [{k:v for k,v in stage.items() if k != "parameters"} for stage in program["stages"]]
     candidates = []
     for proposal in sorted(run.glob("proposal_*")):
         response = proposal/"response.json"
@@ -82,6 +88,8 @@ def main():
                     task="Controlled tabletop cube push with hand retreat", simulator="MuJoCo / ScaleBridge / frozen ScaleBFM",
                     reconstruction_scene=False, perception_assumptions="Known 8cm cube and colored markers; simulated RGB-D camera",
                     selected_snapshot=snapshot, skill_sha256=canonical_hash(skill),
+                    initial_skill_sha256=canonical_hash(initial),
+                    acquisition_type="parameter_refinement" if structure(initial) == structure(skill) else "stage_program_revision",
                     experiment_directory=str(run.relative_to(ROOT)), episodes=len(evidence),
                     new_skill_selected=accepted, api_calls=summary["api_calls"], tokens=summary["tokens"],
                     uses_online_pose_targets=any(s["primitive"] == "move_hand_relative" for s in skill["stages"]),
@@ -93,7 +101,7 @@ def main():
         "`skill.json` and `knowledge.json` are the registry-selected pair. Candidate programs and their decisions are retained under `candidates/`. "
         "Saving a file does not establish acquired capability or validated symbolic rules. See `manifest.json` and `evidence.json` for selection and physical execution evidence.\n\n"
         "Replay in the same bounded simulation benchmark:\n\n```bash\n"
-        f".venv-skill-lab/bin/humanoid-lab run --skill {args.output.as_posix()}/skill.json --observation-mode onboard_vision --output outputs/skill_lab/new_replay\n```\n")
+        f".venv-skill-lab/bin/humanoid-lab run --skill {args.output.as_posix()}/skill.json --config {args.output.as_posix()}/replay_development.json --observation-mode onboard_vision --output outputs/skill_lab/new_replay\n```\n")
     print(json.dumps(manifest, indent=2))
 
 
